@@ -43,8 +43,9 @@ function styles() {
 
 function scripts() {
 	return src([
-		// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
-		'app/js/app.js' // app.js. Always at the end
+		'node_modules/jquery/dist/jquery.min.js',
+		'node_modules/swiper/js/swiper.min.js',
+		'app/js/app.js'
 		])
 	.pipe(concat('app.min.js'))
 	.pipe(uglify()) // Minify JS (opt.)

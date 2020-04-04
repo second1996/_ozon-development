@@ -1,4 +1,226 @@
 @import config
+@import components
 
-// CUSTOM USER STYLES & IMPORTS
+/* ==========================================================================
+   Site Aside (menu)
+   ========================================================================== */
+.site-aside
+	position: fixed
+	top: 0
+	left: 0
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	width: 150px
+	height: 100vh
+	padding: 75px 0
+	background: #151515
+	border-right: 1px solid rgba($border, 0.65)
+	.logo
+	.social
+		&-list
+			display: flex
+			flex-direction: column
+			align-items: center
+		&-item
+			line-height: 1
+			&:not(:first-child)
+				margin-top: 30px
+			> a
+				color: #5a5c5f
+				font-size: 22px
+				&:hover
+					color: $accent
+
+
+
+/* ==========================================================================
+   Site Main (content)
+   ========================================================================== */
+.site-main
+	position: relative
+	margin-left: 150px
+
+
+
+/* ==========================================================================
+   Site Header
+   ========================================================================== */
+.site-header
+	position: absolute
+	top: 70px
+	left: 0
+	right: 0
+	z-index: 3
+	width: 100%
+	&-wrapper
+		display: flex
+		justify-content: space-between
+	.info-block
+		&--phone
+			text-align: right
+		.title
+			color: $white
+			font-size: 22px
+		.adress
+			color: $white
+			font-size: 22px
+			font-weight: $font-medium
+		.phone
+			display: flex
+			flex-direction: column
+			> a
+				display: inline-block
+				font-size: 22px
+				font-weight: $font-medium
+		.link
+			display: inline-block
+			margin-top: 8px
+			color: $accent
+			font-size: 18px
+			font-weight: $font-medium
+			&:hover
+				opacity: 0.75
+
+
+/* ==========================================================================
+   Home section: Heroes
+   ========================================================================== */
+.h-heroes
+	height: 100vh
+	min-height: 900px
+	&-slider
+		width: 100%
+		height: 100%
+		// Slider pagination
+		.swiper-pagination-bullets
+			right: 0
+			bottom: 90px
+			text-align: left
+			.swiper-pagination-bullet
+				display: inline-block
+				width: auto
+				height: auto
+				margin: 0
+				background: $trsp
+				text-align: left
+				outline: 0
+				opacity: 0.5
+				transition: .45s ease
+				&:not(:first-child)
+					margin-left: 60px
+				&:hover:not(.swiper-pagination-bullet-active)
+					opacity: 0.75
+				&-active
+					opacity: 1
+					.progress
+						width: 100%!important
+						transition: width 6s linear
+				.current
+					display: block
+					margin-bottom: 8px
+					color: $white
+					font-size: 18px
+					line-height: 1
+				.title
+					display: block
+					color: $white
+					font-size: 20px
+					font-weight: $font-regular
+					line-height: 1
+				.progress
+					// content: ''
+					display: block
+					width: 0
+					height: 3px
+					margin-top: 10px
+					background: $accent
+					// transition: width 5s ease
+	// Slider slide
+	&-slide
+		position: relative
+		z-index: 0
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		background-color: #222
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			background: rgba(0,0,0, 0.5)
+	// Slider content
+	&-content
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: center
+		height: 100%
+		padding-left: 25px
+		.title
+			max-width: 75%
+			margin-bottom: 10px
+			color: $white
+			font-size: 80px
+			font-weight: $font-bold
+			line-height: 1
+			> span
+				color: $accent
+		.descr
+			max-width: 70%
+			margin-bottom: 40px
+			color: $white
+			font-size: 20px
+		.slide-number
+			user-select: none
+			position: absolute
+			top: 50%
+			right: 0
+			color: $trsp
+			font-size: 300px
+			font-weight: $font-bold
+			line-height: 1
+			-webkit-text-stroke-width: 2px
+			-webkit-text-stroke-color: $white
+			opacity: 0.15
+			transform: translateY(-50%)
+
+
+
+
+
+/* ==========================================================================
+   Hamburger menu
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Hamburger menu
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Hamburger menu
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Hamburger menu
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Hamburger menu
+   ========================================================================== */
+
+
 
