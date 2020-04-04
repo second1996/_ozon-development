@@ -8,7 +8,6 @@
 $(document).ready(function(){
 
 	//initialize swiper when document ready
-	var homeSwiperAutoplay = 5000;
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
 		loop: true,
@@ -18,7 +17,8 @@ $(document).ready(function(){
 		},
 		allowTouchMove: false,
 		autoplay: {
-			delay: homeSwiperAutoplay,
+			delay: 5000,
+			disableOnInteraction: false,
 		},
 		// preloadImages: false,
 		// navigation: {
@@ -38,37 +38,6 @@ $(document).ready(function(){
 		},
 	});
 
-	// homeSwiper.on('initialSlide', function () {
-	// 	console.log('slide changed');
-	// 	var elem         = $('.h-heroes-slider .swiper-pagination-bullets .swiper-pagination-bullet .progress'),
-	// 			width        = 0,
-	// 			autoplayTime = homeSwiperAutoplay / 100,
-	// 			id           = setInterval(frame, autoplayTime);
-	// 	function frame() {
-	// 			if (width >= 100) {
-	// 					clearInterval(id);
-	// 			} else {
-	// 					width++; 
-	// 					elem.css({ width: width + '%' }); 
-	// 			}
-	// 	}
-	// });
-
-	// function () {
-	// 	var elem         = $('.h-heroes-slider .swiper-pagination-bullets .swiper-pagination-bullet .title'),
-	// 			width        = 1,
-	// 			autoplayTime = homeSwiperAutoplay / 100,
-	// 			id           = setInterval(frame, autoplayTime);
-	// 			elem.hide();
-	// 	function frame() {
-	// 			if (width >= 100) {
-	// 					clearInterval(id);
-	// 			} else {
-	// 					width++; 
-	// 					elem.css({ width: width + '%' }); 
-	// 			}
-	// 	}
-	// }
 
 	// $('.hamburger').on('click', function() {
 	// 	$(this).toggleClass('is-active')

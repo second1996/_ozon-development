@@ -93,12 +93,24 @@
 	&-slider
 		width: 100%
 		height: 100%
+		// Animation on active slide
+		.swiper-slide-active
+			.h-heroes-content
+				.title
+					animation: fromLeft 1.5s 0.25s both
+				.descr
+					animation: fromLeft 1.5s 0.5s both
+				.btn
+					animation: fromLeft 1.5s 0.75s both
+				.slide-number
+					opacity: 0.15
 		// Slider pagination
 		.swiper-pagination-bullets
 			right: 0
 			bottom: 90px
 			text-align: left
 			.swiper-pagination-bullet
+				position: relative
 				display: inline-block
 				width: auto
 				height: auto
@@ -108,15 +120,33 @@
 				outline: 0
 				opacity: 0.5
 				transition: .45s ease
+				&::before
+					content: ''
+					position: absolute
+					left: 0
+					right: 0
+					bottom: 0
+					z-index: 1
+					display: block
+					width: 100%
+					height: 3px
+					background: rgba($white, 0.15)
+					opacity: 0
+					transition: opacity .45s ease
 				&:not(:first-child)
 					margin-left: 60px
 				&:hover:not(.swiper-pagination-bullet-active)
 					opacity: 0.75
 				&-active
 					opacity: 1
+					&:before
+						opacity: 1
 					.progress
-						width: 100%!important
-						transition: width 6s linear
+						animation-name: animatePagination
+						// animation-delay: 0.25s
+						animation-duration: 6s
+						animation-timing-function: linear
+						animation-fill-mode: both
 				.current
 					display: block
 					margin-bottom: 8px
@@ -125,18 +155,21 @@
 					line-height: 1
 				.title
 					display: block
+					// overflow: hidden
+					// max-width: 200px
+					// white-space: nowrap
+					// text-overflow: ellipsis
 					color: $white
 					font-size: 20px
 					font-weight: $font-regular
 					line-height: 1
 				.progress
-					// content: ''
 					display: block
-					width: 0
 					height: 3px
 					margin-top: 10px
 					background: $accent
-					// transition: width 5s ease
+					transform: scaleX(0)
+					transform-origin: left center
 	// Slider slide
 	&-slide
 		position: relative
@@ -187,8 +220,9 @@
 			line-height: 1
 			-webkit-text-stroke-width: 2px
 			-webkit-text-stroke-color: $white
-			opacity: 0.15
+			opacity: 0
 			transform: translateY(-50%)
+			transition: opacity 2s ease
 
 
 

@@ -100,3 +100,19 @@ ul
 	stroke-width: 0
 	stroke: currentColor
 	fill: currentColor
+
+
+
+@keyframes animatePagination
+	from
+		transform: scaleX(0)
+	to
+		transform: scaleX(1)
+
+@keyframes fromLeft
+	from
+		transform: translate3d(-40px, 0, 0)
+		opacity: 0
+	to
+		transform: translate3d(0, 0, 0)
+		opacity: 1
