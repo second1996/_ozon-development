@@ -11,7 +11,7 @@ $(document).ready(function(){
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
 		loop: true,
-		speed: 1000,
+		speed: 0,
 		lazy: {
 			loadOnTransitionStart: true,
 		},

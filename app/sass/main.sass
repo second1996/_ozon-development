@@ -95,7 +95,7 @@
 		height: 100%
 		// Animation on active slide
 		.swiper-slide-active
-			.h-heroes-content
+			.h-heroes-slide-content
 				.title
 					animation: fromLeft 1.5s 0.25s both
 				.descr
@@ -104,6 +104,8 @@
 					animation: fromLeft 1.5s 0.75s both
 				.slide-number
 					opacity: 0.15
+			.h-heroes-slide-photo
+				opacity: 1
 		// Slider pagination
 		.swiper-pagination-bullets
 			right: 0
@@ -144,7 +146,7 @@
 					.progress
 						animation-name: animatePagination
 						// animation-delay: 0.25s
-						animation-duration: 6s
+						animation-duration: 5s
 						animation-timing-function: linear
 						animation-fill-mode: both
 				.current
@@ -173,56 +175,68 @@
 	// Slider slide
 	&-slide
 		position: relative
-		z-index: 0
-		background-repeat: no-repeat
-		background-size: cover
-		background-position: center
 		background-color: #222
-		&::before
-			content: ''
+		// Slider content
+		&-content
+			position: relative
+			display: flex
+			flex-direction: column
+			justify-content: center
+			height: 100%
+			padding-left: 25px
+			.title
+				max-width: 75%
+				margin-bottom: 10px
+				color: $white
+				font-size: 80px
+				font-weight: $font-bold
+				line-height: 1
+				> span
+					color: $accent
+			.descr
+				max-width: 70%
+				margin-bottom: 40px
+				color: $white
+				font-size: 20px
+			.slide-number
+				user-select: none
+				position: absolute
+				top: 50%
+				right: 0
+				color: $trsp
+				font-size: 300px
+				font-weight: $font-bold
+				line-height: 1
+				-webkit-text-stroke-width: 2px
+				-webkit-text-stroke-color: $white
+				opacity: 0
+				transform: translateY(-50%)
+				transition: opacity 2s ease
+		// Slider background photo
+		&-photo
 			position: absolute
 			top: 0
 			left: 0
 			right: 0
 			bottom: 0
-			z-index: -1
-			background: rgba(0,0,0, 0.5)
-	// Slider content
-	&-content
-		position: relative
-		display: flex
-		flex-direction: column
-		justify-content: center
-		height: 100%
-		padding-left: 25px
-		.title
-			max-width: 75%
-			margin-bottom: 10px
-			color: $white
-			font-size: 80px
-			font-weight: $font-bold
-			line-height: 1
-			> span
-				color: $accent
-		.descr
-			max-width: 70%
-			margin-bottom: 40px
-			color: $white
-			font-size: 20px
-		.slide-number
-			user-select: none
-			position: absolute
-			top: 50%
-			right: 0
-			color: $trsp
-			font-size: 300px
-			font-weight: $font-bold
-			line-height: 1
-			-webkit-text-stroke-width: 2px
-			-webkit-text-stroke-color: $white
-			opacity: 0
-			transform: translateY(-50%)
-			transition: opacity 2s ease
+			z-index: 0
+			display: block
+			width: 100%
+			height: 100%
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+			opacity: 0.6
+			transition: opacity 0.5s linear
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: -1
+				background: rgba(0,0,0, 0.45)
 
 
 
