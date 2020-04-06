@@ -68,19 +68,12 @@
 .btn
 	display: inline-flex
 	padding: 20px 40px
-	box-shadow: 0 0 0 2px rgba($border-accent, 0.6)
 	border: 0
-	background-color: $accent
-	color: $text-dark
 	font-size: 14px
 	font-weight: $font-regular
 	line-height: 1
 	text-transform: uppercase
 	transition: .45s ease
-	&:hover
-		box-shadow: 0 0 0 2px rgba($white, 0.4)
-		background-color: $white
-		color: $text-dark
 	&-icon
 		position: relative
 		&::after
@@ -89,7 +82,6 @@
 			width: 12px
 			height: 12px
 			margin-left: 10px
-			background-image: url('../images/icons/arrow.svg')
 			background-repeat: no-repeat
 			background-position-y: center
 			background-size: cover
@@ -97,6 +89,24 @@
 			transition: transform .45s ease
 		&:hover::after
 			transform: translate3d(4px, 0, 0)
+	&-solid
+		box-shadow: 0 0 0 2px rgba($border-accent, 0.6)
+		background-color: $accent
+		color: $text-dark
+		&:hover
+			box-shadow: 0 0 0 2px rgba($white, 0.4)
+			background-color: $white
+			color: $text-dark
+		&.btn-icon::after
+			background-image: url('../images/icons/arrow.svg')
+	&-outline
+		box-shadow: 0 0 0 2px rgba($white, 0.15)
+		background: $dark
+		color: $white
+		&:hover
+			background: $item-bg
+		&.btn-icon::after
+			background-image: url('../images/icons/arrow-white.svg')
 
 
 /* ==========================================================================
@@ -208,26 +218,39 @@
 
 
 /* ==========================================================================
-   Background Text
+   Background Text, Pattern
    ========================================================================== */
-.bg-text
-	user-select: none
-	position: absolute
-	top: 0
-	left: 0
-	right: 0
-	z-index: -1
-	-webkit-text-stroke: 2px $white
-	text-shadow: 1px 1px 0 $white, -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white
-	color: $text-dark
-	// font-size: 30vw
-	// font-size: 60vh
-	font-size: 500px
-	font-weight: $font-bold
-	line-height: 0.8
-	text-align: center
-	text-transform: uppercase
-	opacity: 0.04
+.bg
+	&-pattern
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-image: url('../images/dest/ozon_pattern-white.png')
+			opacity: 0.01
+	&-text
+		user-select: none
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		z-index: -1
+		-webkit-text-stroke: 2px $white
+		text-shadow: 1px 1px 0 $white, -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white
+		color: $text-dark
+		// font-size: 30vw
+		// font-size: 60vh
+		font-size: 500px
+		font-weight: $font-bold
+		line-height: 0.8
+		text-align: center
+		text-transform: uppercase
+		opacity: 0.04
+
 
 
 /* ==========================================================================
