@@ -16,8 +16,7 @@
 	height: 100vh
 	padding: 75px 0
 	background: #151515
-	border-right: 1px solid rgba($border, 0.65)
-	.logo
+	border-right: 1px solid rgba($border, 0.5)
 	.social
 		&-list
 			display: flex
@@ -58,11 +57,8 @@
 		display: flex
 		justify-content: space-between
 	.info-block
-		&--phone
+		&_phone
 			text-align: right
-		.title
-			color: $white
-			font-size: 22px
 		.adress
 			color: $white
 			font-size: 22px
@@ -161,10 +157,10 @@
 					// max-width: 200px
 					// white-space: nowrap
 					// text-overflow: ellipsis
-					color: $white
 					font-size: 20px
-					font-weight: $font-regular
+					font-weight: $font-light
 					line-height: 1
+					text-transform: none
 				.progress
 					display: block
 					height: 3px
@@ -187,12 +183,10 @@
 			.title
 				max-width: 75%
 				margin-bottom: 10px
-				color: $white
-				font-size: 80px
+				font-size: 70px
 				font-weight: $font-bold
 				line-height: 1
-				> span
-					color: $accent
+				text-transform: none
 			.descr
 				max-width: 70%
 				margin-bottom: 40px
@@ -203,12 +197,12 @@
 				position: absolute
 				top: 50%
 				right: 0
-				color: $trsp
+				color: $text-dark
 				font-size: 300px
 				font-weight: $font-bold
 				line-height: 1
-				-webkit-text-stroke-width: 2px
-				-webkit-text-stroke-color: $white
+				-webkit-text-stroke: 1px $white
+				text-shadow: 1px 1px 0 $white, -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white
 				opacity: 0
 				transform: translateY(-50%)
 				transition: opacity 2s ease
@@ -236,38 +230,120 @@
 				right: 0
 				bottom: 0
 				z-index: -1
-				background: rgba(0,0,0, 0.45)
-
-
+				background: rgba(0,0,0, 0.6)
 
 
 
 /* ==========================================================================
-   Hamburger menu
+   Home section: Promo
+   ========================================================================== */
+.h-promo
+	margin: 130px 0
+	&-wrapper
+		position: relative
+		overflow: hidden
+		height: 445px
+		position: relative
+		border: 1px solid $border
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 0
+			background: rgba(#222, 0.75)
+	&-content
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		width: 100%
+		margin: 0 auto
+		text-align: center
+		transform: translateY(-50%)
+		.title
+			margin-bottom: 30px
+			font-weight: $font-bold
+			text-transform: uppercase
+			> span
+				display: block
+				font-size: 26px
+				font-weight: $font-regular
+	&-photo
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+
+
+/* ==========================================================================
+   Home section: About
+   ========================================================================== */
+.h-about
+	.bg-text
+		top: 110px
+	&-photo
+		width: 100%
+		height: 550px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&-content
+		margin-top: 50px
+		.title
+			margin-bottom: 30px
+			text-transform: none
+		.descr
+			max-width: 545px
+
+
+
+/* ==========================================================================
+   Home section: Features
+   ========================================================================== */
+.h-features
+	&-item
+		margin-bottom: 80px
+	&-head
+		display: flex
+		align-items: center
+		margin-bottom: 15px
+		.icon
+			flex: 0 0 auto
+			fill: $accent
+			font-size: 50px
+		.title
+			padding-left: 30px
+			font-weight: $font-medium
+			text-transform: uppercase
+	&-content
+		border-left: 2px solid $border
+		margin-left: 24px
+		padding-left: 20px
+		.descr
+			padding-left: 34px
+			line-height: 27px
+			// line-height: 1.5
+
+
+/* ==========================================================================
+   Home section: Promo
    ========================================================================== */
 
 
 
 /* ==========================================================================
-   Hamburger menu
+   Home section: Promo
    ========================================================================== */
 
 
 
-/* ==========================================================================
-   Hamburger menu
-   ========================================================================== */
-
-
 
 /* ==========================================================================
-   Hamburger menu
-   ========================================================================== */
-
-
-
-/* ==========================================================================
-   Hamburger menu
+   Home section: Promo
    ========================================================================== */
 
 

@@ -76,7 +76,7 @@ body
 	font-family: $firasans
 	font-size: $font-size
 	font-weight: $font-light
-	line-height: 1.5
+	line-height: 1.6
 
 a
 	color: $white
@@ -85,13 +85,25 @@ a
 		color: $accent
 		text-decoration: none
 
+p
+	margin-bottom: 0
+	&:not(:first-child)
+		margin-top: 15px
+
 ul
 	list-style: none
 	margin: 0
 	padding: 0
 
-.container-fluid
-	max-width: 1570px
+img
+	display: block
+	max-width: 100%
+	height: auto
+
+h1, h2, h3, h4, h5, h6
+	margin-bottom: 0
+	font-weight: $font-bold
+	line-height: 1.4
 
 .icon
 	display: inline-block
@@ -101,6 +113,11 @@ ul
 	stroke: currentColor
 	fill: currentColor
 
+.container-fluid
+	max-width: 1570px
+
+.pt-80
+	padding-top: 80px
 
 
 @keyframes animatePagination
