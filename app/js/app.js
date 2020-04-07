@@ -7,7 +7,6 @@
 
 $(document).ready(function(){
 
-	//initialize swiper when document ready
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
 		loop: true,
@@ -37,6 +36,20 @@ $(document).ready(function(){
 			}
 		},
 	});
+
+	var constructionSwiper = new Swiper ('.h-construction-slider', {
+		spaceBetween: 20,
+		slidesPerView: 3,
+		grabCursor: true,
+		freeMode: true,
+		navigation: {
+			nextEl: '.h-construction-slider-next',
+			prevEl: '.h-construction-slider-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+	})
 
 
 	// $('.hamburger').on('click', function() {

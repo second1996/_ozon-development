@@ -1,4 +1,5 @@
 @import config
+@import base
 @import components
 
 /* ==========================================================================
@@ -8,6 +9,7 @@
 	position: fixed
 	top: 0
 	left: 0
+	z-index: 10
 	display: flex
 	flex-direction: column
 	align-items: center
@@ -373,9 +375,10 @@
 .h-gallery
 	&-item
 		will-change: transform
+		transform: none
 		&:hover
 			box-shadow: 0 5px 5px 0 rgba($dark, 0.5)
-			transform: translate3d(0,-10px,0)
+			transform: translateY(-10px)
 	&-content
 		display: flex
 		align-items: center
@@ -393,15 +396,66 @@
 			&-number
 				display: inline-block
 				color: $white
-				font-size: 16px
 				font-weight: $font-medium
 				line-height: 1
 
 
 
 /* ==========================================================================
-   Home section: Promo
+   CTA
    ========================================================================== */
+.cta
+	&-title
+		max-width: 90%
 
 
 
+/* ==========================================================================
+   Home section: Houses
+   ========================================================================== */
+.h-houses
+	&-head
+		.price
+			display: block
+			color: $accent
+			font-weight: $font-regular
+			i
+				font-style: normal
+	&-meta
+		&-list
+			display: flex
+			flex-wrap: wrap
+			margin-bottom: 20px
+			> li
+				flex-basis: 50%
+				margin-bottom: 20px
+				color: rgba($white, 0.5)
+				line-height: 1.35
+				em
+					display: block
+					color: $white
+					font-style: normal
+
+
+
+/* ==========================================================================
+   Home section: Construction
+   ========================================================================== */
+.h-construction
+	&-slider
+		overflow: visible
+	&-content
+		display: flex
+		justify-content: space-between
+		.count
+			display: inline-flex
+			align-items: center
+			.icon
+				margin-right: 8px
+				fill: $accent
+				font-size: 18px
+			&-number
+				display: inline-block
+				color: $white
+				font-weight: $font-medium
+				line-height: 1

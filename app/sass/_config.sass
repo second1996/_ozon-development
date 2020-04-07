@@ -50,7 +50,7 @@ $gutter             : $grid-gutter-width
 
 // GENERAL DOCUMENT STYLES
 ::placeholder
-	color: #666
+	color: $text-main
 
 ::selection
 	background-color: $accent
@@ -58,10 +58,14 @@ $gutter             : $grid-gutter-width
 
 input, textarea
 	outline: none
+	&:focus
+		outline: none
 	&:focus:required:invalid
 		border-color: red
+		box-shadow: 0 0 0 4px rgba(red, 0.075)
 	&:required:valid
-		border-color: green
+		border-color: $accent
+		box-shadow: 0 0 0 4px rgba($accent, 0.075)
 
 button:focus,
 button:active
