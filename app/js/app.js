@@ -4,9 +4,19 @@
 
 // });
 
-
 $(document).ready(function(){
+	
+	// LazyLoad images
+	var lazyLoadInstance = new LazyLoad({
+		elements_selector: ".lazy",
+		load_delay: 250,
+		callback_loaded: function(element) {
+			// console.log("👍 LOADED", element);
+			$(element).siblings('.lazy-spin').remove();
+		},
+	});
 
+	// Swiper for Home section: "Heroes"
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
 		loop: true,
@@ -19,11 +29,7 @@ $(document).ready(function(){
 			delay: 5000,
 			disableOnInteraction: false,
 		},
-		// preloadImages: false,
-		// navigation: {
-		// 	nextEl: '.swiper-button-next',
-		// 	prevEl: '.swiper-button-prev',
-		// },
+		preloadImages: false,
 		pagination: {
 			el: '.h-heroes-slider-pagination',
 			clickable: true,
@@ -37,6 +43,7 @@ $(document).ready(function(){
 		},
 	});
 
+	// Swiper for Home section "Construction"
 	var constructionSwiper = new Swiper ('.h-construction-slider', {
 		spaceBetween: 20,
 		slidesPerView: 3,
