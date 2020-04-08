@@ -84,6 +84,15 @@
 				opacity: 0.75
 
 
+
+/* ==========================================================================
+   Site Footer
+   ========================================================================== */
+.site-footer
+	
+
+
+
 /* ==========================================================================
    Home section: Heroes
    ========================================================================== */
@@ -442,8 +451,14 @@
    Home section: Construction
    ========================================================================== */
 .h-construction
+	overflow: hidden
 	&-slider
 		overflow: visible
+		.swiper-lazy
+			opacity: 0
+			transition: opacity .45s ease
+			&-loaded
+				opacity: 1
 	&-content
 		display: flex
 		justify-content: space-between

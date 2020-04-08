@@ -42,12 +42,17 @@ $(document).ready(function(){
 		slidesPerView: 3,
 		grabCursor: true,
 		freeMode: true,
+		preloadImages: false,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchSlidesVisibility: true,
 		navigation: {
 			nextEl: '.h-construction-slider-next',
 			prevEl: '.h-construction-slider-prev',
 		},
 		scrollbar: {
-			el: '.swiper-scrollbar',
+			el: '.h-construction-scrollbar',
 		},
 	})
 
