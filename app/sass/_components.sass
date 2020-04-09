@@ -110,7 +110,7 @@
    ========================================================================== */
 .btn
 	display: inline-flex
-	padding: 20px 40px
+	padding: 20px 36px
 	border: 1px solid $trsp
 	font-size: 14px
 	font-weight: $font-regular
@@ -132,6 +132,21 @@
 			transition: transform .45s ease
 		&:hover::after
 			transform: translateX(4px)
+		&-key
+			position: relative
+			align-items: center
+			&::before
+				content: ''
+				display: inline-block
+				width: 16px
+				height: 16px
+				margin-right: 10px
+				background-image: url('../images/icons/key.svg')
+				background-repeat: no-repeat
+				background-position-y: center
+				background-size: 100%
+				transform: none
+				transition: transform .45s ease
 	&-primary
 		box-shadow: 0 0 0 2px rgba($border-accent, 0.6)
 		background-color: $accent
@@ -152,6 +167,46 @@
 			background: $item-bg
 		&.btn-icon::after
 			background-image: url('../images/icons/arrow-white.svg')
+	&-link-icon
+		position: relative
+		display: inline-flex
+		align-items: center
+		padding-bottom: 10px
+		padding-left: 26px
+		color: $white
+		font-size: 16px
+		font-weight: $font-light
+		line-height: 1
+		text-transform: uppercase
+		transition: .45s ease
+		background-repeat: no-repeat
+		background-position: 2px 0
+		background-size: cover
+		background-size: 16px
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+			height: 2px
+		&::before
+			width: 100%
+			background: rgba($white, 0.05)
+		&::after
+			width: 20px
+			background: $accent
+			transition: .45s ease
+		&:hover
+			color: $white
+			&::after
+				width: 100%
+		&-call
+			background-image: url('../images/icons/phone-accent.svg')
+		&-question
+			background-image: url('../images/icons/question-accent.svg')
+
 
 
 
@@ -319,6 +374,7 @@
    ========================================================================== */
 .swiper-lazy-preloader-white
 	opacity: 0.25
+
 .swiper-button
 	&-prev,
 	&-next
@@ -348,6 +404,14 @@
 .swiper-scrollbar-drag
 	border-radius: 0
 	background: $accent
+
+.swiper-pagination-bullet
+	width: 6px
+	height: 6px
+	&-active
+		width: 8px
+		height: 8px
+		background: $text-dark
 
 
 

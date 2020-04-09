@@ -5,6 +5,10 @@
 // });
 
 $(document).ready(function(){
+
+	$('a').click(function(e) {
+		e.preventDefault();
+	});
 	
 	// LazyLoad images
 	var lazyLoadInstance = new LazyLoad({
@@ -19,7 +23,7 @@ $(document).ready(function(){
 	// Swiper for Home section: "Heroes"
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
-		loop: true,
+		// loop: true,
 		speed: 0,
 		lazy: {
 			loadOnTransitionStart: true,
@@ -38,8 +42,21 @@ $(document).ready(function(){
 				$(".swiper-wrapper .swiper-slide").each(function(i) {
 					names.push($(this).data("title"));
 				});
-				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (names[index + 1]) + '</span><span class="progress"></span></div>';
+				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (names[index]) + '</span><span class="progress"></span></div>';
 			}
+		},
+	});
+
+	// Swiper for Home section: "About Us"
+	var quoteSwiper = new Swiper ('.h-about-quote-slider', {
+		slidesPerView: 1,
+		grabCursor: true,
+		autoplay: {
+			delay: 5000,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
 		},
 	});
 
