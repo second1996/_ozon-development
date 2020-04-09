@@ -46,6 +46,11 @@ function scripts() {
 		'node_modules/jquery/dist/jquery.min.js',
 		'node_modules/swiper/js/swiper.min.js',
 		'node_modules/vanilla-lazyload/dist/lazyload.min.js',
+		'node_modules/bootstrap/js/dist/util.js',
+		'node_modules/bootstrap/js/dist/modal.js',
+		'node_modules/smooth-scrollbar/dist/smooth-scrollbar.js',
+		'app/libs/fancybox/dist/jquery.fancybox.min.js',
+		'app/libs/popper.min.js',
 		'app/js/app.js'
 		])
 	.pipe(concat('app.min.js'))

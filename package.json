@@ -9,6 +9,7 @@
 	"author": "WebDesign Master",
 	"license": "ISC",
 	"devDependencies": {
+		"@fancyapps/fancybox": "^3.5.7",
 		"bootstrap": "^4.4.1",
 		"browser-sync": "^2.26.7",
 		"del": "^5.1.0",
@@ -24,6 +25,7 @@
 		"gulp-stylus": "^2.7.0",
 		"gulp-uglify-es": "^2.0.0",
 		"jquery": "^3.4.1",
+		"smooth-scrollbar": "^8.5.2",
 		"swiper": "^5.3.6",
 		"vanilla-lazyload": "^15.1.1"
 	}

@@ -4,10 +4,37 @@
 
 // });
 
+Scrollbar.initAll({
+	damping: 0.09,
+})
+
 $(document).ready(function(){
 
-	$('a').click(function(e) {
-		e.preventDefault();
+	$('#constructionModal').on('show.bs.modal', function (event) {
+		var button  = $(event.relatedTarget),
+				title   = button.data('constr-title'),
+				images  = button.data('constr-images'),
+				text    = button.data('constr-text'),
+				modal   = $(this);
+
+		modal.find('.modal-title > span').text(title);
+		modal.find('.modal-fancy').html(images);
+		modal.find('.modal-text').html(text);
+	});
+
+	// Fancybox
+	$('[data-fancybox]').fancybox({
+		buttons: [
+			"zoom",
+			"fullScreen",
+			"thumbs",
+			"close"
+		],
+		thumbs : {
+			autoStart : true,
+			axis: 'x'
+		},
+		backFocus: false,
 	});
 	
 	// LazyLoad images
