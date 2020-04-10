@@ -107,9 +107,13 @@ $(document).ready(function(){
 		},
 	})
 
+	// Site Menu
+	var humbBtn   = $('.hamburger'),
+			siteMenu  = $('.site-menu');
 
-	// $('.hamburger').on('click', function() {
-	// 	$(this).toggleClass('is-active')
-	// });
+	humbBtn.on('click', function() {
+		$(humbBtn).toggleClass('is-active');
+		siteMenu.toggleClass('shown');
+	});
 
 });

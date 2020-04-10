@@ -73,8 +73,7 @@
 	display: block
 	top: 50%
 	margin-top: -1px
-	&
-		width: 50px
+	width: 50px
 	&::before,
 	&::after
 		width: 30px
@@ -85,11 +84,11 @@
 		height: 2px
 		background-color: $accent
 		transition-property: transform
-		transition-duration: 0.25s
+		transition-duration: 0.45s
 		transition-timing-function: ease
 	&::before,
 	&::after
-		content: ""
+		content: ''
 		left: 50%
 		margin-left: -15px
 		display: block
@@ -98,10 +97,17 @@
 	&::after
 		bottom: -12px
 
+// When hover on button
 .hamburger--arrow-r:hover .hamburger-inner::before
 	transform: translate3d(18px, 5px, 0) rotate(45deg) scale(0.7, 1)
 .hamburger--arrow-r:hover .hamburger-inner::after
 	transform: translate3d(18px, -5px, 0) rotate(-45deg) scale(0.7, 1)
+
+// When open menu
+.hamburger--arrow-r.is-active .hamburger-inner::before
+	transform: translate3d(-18px, 5px, 0) rotate(-45deg) scale(0.7, 1)
+.hamburger--arrow-r.is-active .hamburger-inner::after
+	transform: translate3d(-18px, -5px, 0) rotate(45deg) scale(0.7, 1)
 
 
 
@@ -303,16 +309,17 @@
 		left: 0
 		right: 0
 		z-index: -1
-		-webkit-text-stroke: 2px $white
+		-webkit-text-stroke: 1px $white
 		text-shadow: 1px 1px 0 $white, -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white
 		color: $text-dark
 		// font-size: 30vw
 		// font-size: 60vh
 		font-size: 500px
 		font-weight: $font-bold
-		line-height: 0.8
+		line-height: 0.85
 		text-align: center
 		text-transform: uppercase
+		white-space: nowrap
 		opacity: 0.04
 
 
@@ -496,20 +503,8 @@
 				object-fit: cover
 	&-text
 		position: relative
-		// height: 100%
-		// max-height: 375px
 		margin-top: 10px
 		padding-right: 20px
-		// padding-bottom: 20px
-		// &::after
-		// 	content: ''
-		// 	position: absolute
-		// 	left: 0
-		// 	right: 0
-		// 	bottom: 0
-		// 	width: 100%
-		// 	height: 40px
-		// 	background: linear-gradient(to top, #252525 0%, #252525 0.01%, rgba(37, 37, 37, 0) 100%)
 	&-backdrop
 		&.fade
 			transition: opacity .15s linear
