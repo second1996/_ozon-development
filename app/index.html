@@ -15,8 +15,8 @@
 
 <body class="home">
 
-	<!-- ASIDE Navigation-->
-	<aside class="site-aside">
+	<!-- SITE Aside navigation-->
+	<header class="site-aside">
 		<div class="logo">
 			<a href="index.html" rel="home">
 				<img src="images/dest/ozon-logo.png" alt="OZON Development">
@@ -42,21 +42,21 @@
 				</li>
 			</ul>
 		</div>
-	</aside>
+	</header>
 
 	<!-- MAIN Content -->
 	<main class="site-main smooth-scroll" data-scrollbar>
 
-		<!-- Site header -->
-		<header class="site-header">
+		<!-- MAIN Header -->
+		<div class="main-header">
 			<div class="container-fluid">
 				<div class="row justify-content-between">
-					<div class="site-header-item col-auto">
+					<div class="main-header-item col-auto">
 						<div class="title title-sm w-light">Відділ продажу:</div>
 						<div class="adress">м. Івано-Франківськ, <br>вул. Бельведерська, 59</div>
 						<a class="link" href="https://goo.gl/maps/28myE4aj5NkiCDxf8" title="Перейти на Google Maps">Переглянути на карті</a>
 					</div>
-					<div class="site-header-item col-auto text-right">
+					<div class="main-header-item col-auto text-right">
 						<div class="title title-sm w-light">Телефонуйте:</div>
 						<div class="phone">
 							<a href="tel:+380667020707" title="Зателефонувати">+38 (066) 702-07-07</a>
@@ -66,14 +66,14 @@
 					</div>
 				</div>
 			</div>
-		</header>
+		</div>
 		
 		<!-- Section: Heroes -->
 		<section class="h-heroes">
 			<div class="h-heroes-slider swiper-container">
 				<div class="h-heroes-wrapper swiper-wrapper">
 					<!-- Slides -->
-					<div data-title="OZON Village" class="h-heroes-slide swiper-slide">
+					<div class="h-heroes-slide swiper-slide">
 						<div data-background="images/dest/home-heroes-photo-01.jpg" class="h-heroes-slide-photo swiper-lazy"></div>
 						<div class="h-heroes-slide-content container-fluid">
 							<h3 class="title"><span>OZON</span> Village</h3>
@@ -84,7 +84,7 @@
 							<div class="slide-number">01</div>
 						</div>
 					</div><!-- /.swiper-slide -->
-					<div data-title="Котедж зі сонячними панелями" class="h-heroes-slide swiper-slide">
+					<div class="h-heroes-slide swiper-slide">
 						<div data-background="https://tobiarchitects.com/wp-content/uploads/2017/11/1.1-min.jpg" class="h-heroes-slide-photo swiper-lazy"></div>
 						<div class="h-heroes-slide-content container-fluid">
 							<h3 class="title">Котедж зі <span>сонячними панелями</span></h3>
@@ -95,11 +95,20 @@
 							<div class="slide-number">02</div>
 						</div>
 					</div><!-- /.swiper-slide -->
-					<div data-title="Власне подвір’я" class="h-heroes-slide swiper-slide">
+					<div class="h-heroes-slide swiper-slide">
 						<div data-background="https://architecturebeast.com/wp-content/uploads/2018/04/Simple-modern-house-with-an-amazing-floating-stairs-Architecture-Beast-33-main-min.jpg" class="h-heroes-slide-photo swiper-lazy"></div>
 						<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 						<div class="h-heroes-slide-content container-fluid">
 							<h3 class="title">Власне <span>подвір’я</span></h3>
+							<p class="descr">Перше енергозберігаюче котеджне містечко в Івано-Франківську</p>
+							<div class="slide-number">03</div>
+						</div>
+					</div><!-- /.swiper-slide -->
+					<div class="h-heroes-slide swiper-slide">
+						<div data-background="https://architecturebeast.com/wp-content/uploads/2018/04/Simple-modern-house-with-an-amazing-floating-stairs-Architecture-Beast-33-main-min.jpg" class="h-heroes-slide-photo swiper-lazy"></div>
+						<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+						<div class="h-heroes-slide-content container-fluid">
+							<h3 class="title">Котедж з власною <span>зарядкою для автомобіля</span></h3>
 							<p class="descr">Перше енергозберігаюче котеджне містечко в Івано-Франківську</p>
 							<div class="slide-number">03</div>
 						</div>
@@ -829,64 +838,62 @@
 
 	</main>
 
-	<!-- MAIN Navigation -->
+	<!-- SITE Main menu -->
 	<div class="site-menu">
-		<div class="container-fluid">
-			<div class="site-menu-wrapper">
-				<!-- Header -->
-				<div class="site-menu-header">
-					<div class="row justify-content-between">
-						<div class="site-menu-header-item col-auto">
-							<div class="title title-sm w-light">Відділ продажу:</div>
-							<div class="adress">м. Івано-Франківськ, <br>вул. Бельведерська, 59</div>
-							<a class="link" href="https://goo.gl/maps/28myE4aj5NkiCDxf8" title="Перейти на Google Maps">Переглянути на карті</a>
+		<div class="site-menu-wrapper">
+			<!-- Header -->
+			<div class="site-menu-header">
+				<div class="row justify-content-between">
+					<div class="site-menu-header-item col-auto">
+						<div class="title title-sm w-light">Відділ продажу:</div>
+						<div class="adress">м. Івано-Франківськ, <br>вул. Бельведерська, 59</div>
+						<a class="link" href="https://goo.gl/maps/28myE4aj5NkiCDxf8" title="Перейти на Google Maps">Переглянути на карті</a>
+					</div>
+					<div class="site-menu-header-item col-auto text-right">
+						<div class="title title-sm w-light">Телефонуйте:</div>
+						<div class="phone">
+							<a href="tel:+380667020707" title="Зателефонувати">+38 (066) 702-07-07</a>
+							<a href="tel:+380687020707" title="Зателефонувати">+38 (068) 702-07-07</a>
 						</div>
-						<div class="site-menu-header-item col-auto text-right">
-							<div class="title title-sm w-light">Телефонуйте:</div>
-							<div class="phone">
-								<a href="tel:+380667020707" title="Зателефонувати">+38 (066) 702-07-07</a>
-								<a href="tel:+380687020707" title="Зателефонувати">+38 (068) 702-07-07</a>
-							</div>
-							<a class="link" href="https://goo.gl/maps/28myE4aj5NkiCDxf8" title="Залишити заявку на безкоштовний дзвінок">Замовити дзвінок</a>
-						</div>
-					</div><!-- /.row -->
-				</div><!-- /.site-menu-header -->
-				<!-- Navigation -->
-				<div class="site-menu-navigation">
-					<div class="row">
-						<div class="col-6">
-							<ul class="site-menu-navigation-list site-menu-navigation-left">
-								<li><a href="#">Про компанію</a></li>
-								<li><a href="#">Типи будинків</a></li>
-								<li><a href="#">Енергоефективність</a></li>
-								<li><a href="#">3D-модель містечка</a></li>
-								<li><a href="#">Інфраструктура</a></li>
-							</ul>
-						</div>
-						<div class="col-6">
-							<ul class="site-menu-navigation-list site-menu-navigation-right">
-								<li><a href="#">Придбай вигідно</a></li>
-								<li><a href="#">Хід будівництва</a></li>
-								<li><a href="#">Документи</a></li>
-								<li><a href="#">Новини та акції</a></li>
-								<li><a href="#">Контакти</a></li>
-							</ul>
-						</div>
-					</div><!-- /.row -->
-				</div><!-- /.site-menu-navigation -->
-				<!-- Footer -->
-				<div class="site-menu-footer">
-					<div class="row justify-content-between align-items-end">
-						<div class="col-auto">
-							<a href="#" class="btn btn-primary btn-icon">Оберіть свій будинок</a>
-						</div>
-						<div class="col-auto">
-							<a href="https://marketing.aprostir.com" class="title title-xs text-uppercase w-medium" target="_blank"><span>Розроблено</span> A Prostir</a>
-						</div>
-					</div><!-- /.row -->
-				</div><!-- /.site-menu-footer -->
-			</div><!-- /.site-menu-wrapper -->
-		</div><!-- /.container-fluid -->
+						<a class="link" href="https://goo.gl/maps/28myE4aj5NkiCDxf8" title="Залишити заявку на безкоштовний дзвінок">Замовити дзвінок</a>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.site-menu-header -->
+			<!-- Navigation -->
+			<div class="site-menu-navigation">
+				<div class="row">
+					<div class="col-6">
+						<ul class="site-menu-navigation-list site-menu-navigation-left">
+							<li><a href="#">Про компанію</a></li>
+							<li><a href="#">Типи будинків</a></li>
+							<li><a href="#">Енергоефективність</a></li>
+							<li><a href="#">3D-модель містечка</a></li>
+							<li><a href="#">Інфраструктура</a></li>
+						</ul>
+					</div>
+					<div class="col-6">
+						<ul class="site-menu-navigation-list site-menu-navigation-right">
+							<li><a href="#">Придбай вигідно</a></li>
+							<li><a href="#">Хід будівництва</a></li>
+							<li><a href="#">Документи</a></li>
+							<li><a href="#">Новини та акції</a></li>
+							<li><a href="#">Контакти</a></li>
+						</ul>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.site-menu-navigation -->
+			<!-- Footer -->
+			<div class="site-menu-footer">
+				<div class="row justify-content-between align-items-end">
+					<div class="col-auto">
+						<a href="#" class="btn btn-primary btn-icon">Оберіть свій будинок</a>
+					</div>
+					<div class="col-auto">
+						<a href="https://marketing.aprostir.com" class="title title-xs text-uppercase w-medium" target="_blank"><span>Розроблено</span> A Prostir</a>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.site-menu-footer -->
+		</div><!-- /.site-menu-wrapper -->
 		<marquee direction="left" scrollamount="15" class="bg-text">OZON Development</marquee>
 	</div>
 

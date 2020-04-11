@@ -28,6 +28,7 @@ $gutter             : $grid-gutter-width
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
 @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
 @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'
+@import 'node_modules/bootstrap/scss/_transitions.scss'
 @import 'node_modules/bootstrap/scss/_modal.scss'
 @import 'node_modules/swiper/css/swiper.min'
 @import "../libs/fancybox/dist/jquery.fancybox.min.css"
@@ -84,6 +85,9 @@ body
 	font-size: $font-size
 	font-weight: $font-light
 	line-height: 1.6
+	&.menu-open
+		overflow: hidden
+		padding-right: 17px
 
 a
 	color: $white

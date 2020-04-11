@@ -4,9 +4,9 @@
 
 // });
 
-Scrollbar.initAll({
-	damping: 0.09,
-})
+// Scrollbar.initAll({
+// 	damping: 0.09,
+// })
 
 $(document).ready(function(){
 
@@ -48,6 +48,7 @@ $(document).ready(function(){
 	});
 
 	// Swiper for Home section: "Heroes"
+	var homeSwiperAutoplay = 5000;
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
 		// loop: true,
@@ -65,11 +66,14 @@ $(document).ready(function(){
 			el: '.h-heroes-slider-pagination',
 			clickable: true,
 			renderBullet: function(index, className) {
-				var names = [];
-				$(".swiper-wrapper .swiper-slide").each(function(i) {
-					names.push($(this).data("title"));
+				var slideNames = [],
+						slideTitle = $('.h-heroes-slide-content > .title');
+
+				slideTitle.each(function(i) {
+					slideNames.push($(this).text());
+					// console.log(slideNames);
 				});
-				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (names[index]) + '</span><span class="progress"></span></div>';
+				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (slideNames[index]) + '</span><span class="progress"></span></div>';
 			}
 		},
 	});
@@ -112,6 +116,7 @@ $(document).ready(function(){
 			siteMenu  = $('.site-menu');
 
 	humbBtn.on('click', function() {
+		$('body').toggleClass('menu-open');
 		$(humbBtn).toggleClass('is-active');
 		siteMenu.toggleClass('shown');
 	});
