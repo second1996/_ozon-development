@@ -4,11 +4,13 @@
 
 // });
 
-// Scrollbar.initAll({
-// 	damping: 0.09,
-// })
+Scrollbar.initAll({
+	damping: 0.125,
+});
 
 $(document).ready(function(){
+
+	$(":input").inputmask();
 
 	$('#constructionModal').on('show.bs.modal', function (event) {
 		var button  = $(event.relatedTarget),
@@ -48,7 +50,7 @@ $(document).ready(function(){
 	});
 
 	// Swiper for Home section: "Heroes"
-	var homeSwiperAutoplay = 5000;
+	var homeSwiperAutoplay = 6000;
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
 		// loop: true,
@@ -58,7 +60,7 @@ $(document).ready(function(){
 		},
 		allowTouchMove: false,
 		autoplay: {
-			delay: 5000,
+			delay: homeSwiperAutoplay,
 			disableOnInteraction: false,
 		},
 		preloadImages: false,
@@ -73,7 +75,7 @@ $(document).ready(function(){
 					slideNames.push($(this).text());
 					// console.log(slideNames);
 				});
-				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (slideNames[index]) + '</span><span class="progress"></span></div>';
+				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (slideNames[index]) + '</span><span class="progress" style="animation-duration: ' + homeSwiperAutoplay + 'ms"></span></div>';
 			}
 		},
 	});
@@ -81,6 +83,7 @@ $(document).ready(function(){
 	// Swiper for Home section: "About Us"
 	var quoteSwiper = new Swiper ('.h-about-quote-slider', {
 		slidesPerView: 1,
+		speed: 1000,
 		grabCursor: true,
 		autoplay: {
 			delay: 5000,

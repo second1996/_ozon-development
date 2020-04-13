@@ -24,6 +24,7 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-stylus": "^2.7.0",
 		"gulp-uglify-es": "^2.0.0",
+		"inputmask": "^5.0.3",
 		"jquery": "^3.4.1",
 		"smooth-scrollbar": "^8.5.2",
 		"swiper": "^5.3.6",

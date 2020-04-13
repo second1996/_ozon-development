@@ -102,11 +102,12 @@
 			.link
 				display: inline-block
 				margin-top: 8px
+				border-bottom: 1px solid $trsp
 				color: $accent
 				font-size: 18px
 				font-weight: $font-regular
 				&:hover
-					opacity: 0.75
+					border-color: $accent
 	// Navigation
 	&-navigation
 		position: relative
@@ -189,11 +190,12 @@
 		.link
 			display: inline-block
 			margin-top: 8px
+			border-bottom: 1px solid $trsp
 			color: $accent
 			font-size: 18px
 			font-weight: $font-regular
 			&:hover
-				opacity: 0.75
+				border-color: $accent
 
 
 
@@ -354,8 +356,6 @@
 						opacity: 1
 					.progress
 						animation-name: animatePagination
-						// animation-delay: 0.25s
-						animation-duration: 5s
 						animation-timing-function: linear
 						animation-fill-mode: both
 				.current
@@ -367,14 +367,14 @@
 				.title
 					display: block
 					overflow: hidden
-					max-width: 300px
+					max-width: 295px
 					width: 100%
-					// white-space: nowrap
-					// text-overflow: ellipsis
 					font-size: 20px
 					font-weight: $font-light
 					line-height: 1
 					text-transform: none
+					white-space: nowrap
+					text-overflow: ellipsis
 				.progress
 					display: block
 					height: 3px
@@ -393,7 +393,8 @@
 			flex-direction: column
 			justify-content: center
 			height: 100%
-			padding-left: 25px
+			// padding-left: 25px
+			box-sizing: border-box
 			.title
 				max-width: 75%
 				margin-bottom: 10px
@@ -410,7 +411,7 @@
 				user-select: none
 				position: absolute
 				top: 50%
-				right: 0
+				right: 90px
 				color: $text-dark
 				font-size: 300px
 				font-weight: $font-bold
@@ -669,6 +670,8 @@
 .cta
 	&-title
 		max-width: 90%
+	&-form-text
+		padding-right: 20px
 
 
 

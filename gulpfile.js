@@ -43,15 +43,16 @@ function styles() {
 
 function scripts() {
 	return src([
-		'node_modules/jquery/dist/jquery.min.js',
-		'node_modules/swiper/js/swiper.min.js',
-		'node_modules/vanilla-lazyload/dist/lazyload.min.js',
-		'node_modules/bootstrap/js/dist/util.js',
-		'node_modules/bootstrap/js/dist/modal.js',
-		'node_modules/smooth-scrollbar/dist/smooth-scrollbar.js',
-		'app/libs/fancybox/dist/jquery.fancybox.min.js',
-		'app/libs/popper.min.js',
-		'app/js/app.js'
+		'node_modules/jquery/dist/jquery.min.js', // jQuery Lib
+		'node_modules/swiper/js/swiper.min.js', // Swiper Carousel
+		'node_modules/vanilla-lazyload/dist/lazyload.min.js', // LazyLoad
+		'node_modules/bootstrap/js/dist/util.js', // Bootstrap Lib Util
+		'node_modules/bootstrap/js/dist/modal.js', // Bootstrap Modal
+		'node_modules/smooth-scrollbar/dist/smooth-scrollbar.js', // Smooth Scrollbar
+		'app/libs/fancybox/dist/jquery.fancybox.min.js', // Fancybox 3
+		'app/libs/jquery.inputmask.min.js', // jQuery Inputmask
+		'app/libs/popper.min.js', // Lib Popper
+		'app/js/app.js' // Main JS
 		])
 	.pipe(concat('app.min.js'))
 	.pipe(uglify()) // Minify JS (opt.)

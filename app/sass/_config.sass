@@ -19,9 +19,12 @@ $font-bold          : 800
 $font-black         : 900
 $system             : -apple-system, BlinkMacSystemFont, Arial, sans-serif
 $firasans           : 'Fira Sans', sans-serif
-$grid-gutter-width  : 20px
-$gutter             : $grid-gutter-width
 
+// BOOTSTRAP VARIABLES
+$grid-gutter-width     : 20px
+$gutter                : $grid-gutter-width
+$container-max-widths  : (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1540px)
+$grid-breakpoints      : (xss: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px)
 
 // IMPORT SECTION
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
@@ -32,7 +35,6 @@ $gutter             : $grid-gutter-width
 @import 'node_modules/bootstrap/scss/_modal.scss'
 @import 'node_modules/swiper/css/swiper.min'
 @import "../libs/fancybox/dist/jquery.fancybox.min.css"
-
 
 // FONTS LOAD SECTION
 @mixin font($fname, $fstyle, $fweight, $furl)
@@ -50,6 +52,7 @@ $gutter             : $grid-gutter-width
 @include font('Fira Sans', normal, 700, '../fonts/firasans-bold-webfont.woff2')
 @include font('Fira Sans', normal, 800, '../fonts/firasans-extrabold-webfont.woff2')
 @include font('Fira Sans', normal, 900, '../fonts/firasans-black-webfont.woff2')
+
 
 
 // GENERAL DOCUMENT STYLES
@@ -87,7 +90,7 @@ body
 	line-height: 1.6
 	&.menu-open
 		overflow: hidden
-		padding-right: 17px
+		// padding-right: 17px
 
 a
 	color: $white
@@ -116,6 +119,9 @@ h1, h2, h3, h4, h5, h6
 	font-weight: $font-bold
 	line-height: 1.4
 
+
+
+// ANIMATIONS
 @keyframes animatePagination
 	from
 		transform: scaleX(0)
