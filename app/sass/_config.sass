@@ -10,7 +10,6 @@ $text-main          : #c2c2c2
 $text-dark          : #222
 $black              : #000
 $trsp               : transparent
-$font-size          : 17px
 $font-light         : 300
 $font-regular       : 400
 $font-medium        : 500
@@ -18,13 +17,15 @@ $font-semibold      : 600
 $font-bold          : 800
 $font-black         : 900
 $system             : -apple-system, BlinkMacSystemFont, Arial, sans-serif
-$firasans           : 'Fira Sans', sans-serif
+$font               : 'Fira Sans', sans-serif
 
 // BOOTSTRAP VARIABLES
 $grid-gutter-width     : 20px
 $gutter                : $grid-gutter-width
 $container-max-widths  : (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1540px)
-$grid-breakpoints      : (xss: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px)
+$grid-breakpoints      : (xss: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1240px, xxl: 1600px)
+
+
 
 // IMPORT SECTION
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
@@ -35,6 +36,8 @@ $grid-breakpoints      : (xss: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl
 @import 'node_modules/bootstrap/scss/_modal.scss'
 @import 'node_modules/swiper/css/swiper.min'
 @import "../libs/fancybox/dist/jquery.fancybox.min.css"
+
+
 
 // FONTS LOAD SECTION
 @mixin font($fname, $fstyle, $fweight, $furl)
@@ -84,13 +87,17 @@ body
 	min-width: 320px
 	background: #222
 	color: $text-main
-	font-family: $firasans
-	font-size: $font-size
+	font-family: $font
+	font-size: 17px
 	font-weight: $font-light
 	line-height: 1.6
+	+media-breakpoint-down(xl)
+		font-size: 16px
 	&.menu-open
 		overflow: hidden
-		// padding-right: 17px
+		padding-right: 17px
+		+media-breakpoint-down(lg)
+			padding-right: 0
 
 a
 	color: $white

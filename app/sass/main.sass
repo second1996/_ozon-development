@@ -19,20 +19,74 @@
 	padding: 75px 0
 	background: #151515
 	border-right: 1px solid rgba($border, 0.4)
+	+media-breakpoint-down(xl)
+		padding: 60px 0
+	+media-breakpoint-down(lg)
+		right: 0
+		flex-direction: row
+		width: 100%
+		height: 80px
+		padding: 0 30px
+		.logo
+			order: 1
+		.menu
+			order: 0
+		.social
+			order: 2
+	+media-breakpoint-down(xs)
+		padding: 0 15px
+	.logo
+		+media-breakpoint-down(lg)
+			flex: 0 0 140px
+		+media-breakpoint-down(xs)
+			flex: 0 0 120px
+		&-desktop
+			max-width: 80px
+			height: auto
+			+media-breakpoint-down(lg)
+				display: none
+		&-mobile
+			display: none
+			max-width: 140px
+			height: auto
+			+media-breakpoint-down(lg)
+				display: block
+			+media-breakpoint-down(xs)
+				max-width: 120px
+	.menu
+		height: 27px
+		+media-breakpoint-down(lg)
+			flex: 1 0 80px
 	.social
+		+media-breakpoint-down(lg)
+			flex: 1 0 80px
 		&-list
 			display: flex
 			flex-direction: column
 			align-items: center
+			+media-breakpoint-down(lg)
+				flex-direction: row
+				justify-content: flex-end
 		&-item
 			line-height: 1
 			&:not(:first-child)
 				margin-top: 30px
+				+media-breakpoint-down(xl)
+					margin-top: 20px
+				+media-breakpoint-down(lg)
+					margin-top: 0
+					margin-left: 20px
+				+media-breakpoint-down(xs)
+					margin-left: 10px
 			> a
 				color: #5a5c5f
 				font-size: 22px
 				&:hover
 					color: $accent
+				+media-breakpoint-down(xl)
+					font-size: 20px
+				+media-breakpoint-down(xs)
+					font-size: 16px
 
 
 
@@ -77,6 +131,8 @@
 		flex-direction: column
 		height: 100vh
 		padding: 70px 100px
+		+media-breakpoint-down(xl)
+			padding: 55px 75px 60px
 		&::-webkit-scrollbar
 			width: 6px
 			background-color: $darken
@@ -92,6 +148,10 @@
 				color: $white
 				font-size: 22px
 				font-weight: $font-regular
+				+media-breakpoint-down(xl)
+					font-size: 20px
+				+media-breakpoint-down(lg)
+					font-size: 18px
 			.phone
 				display: flex
 				flex-direction: column
@@ -99,6 +159,10 @@
 					display: inline-block
 					font-size: 22px
 					font-weight: $font-regular
+					+media-breakpoint-down(xl)
+						font-size: 20px
+					+media-breakpoint-down(lg)
+						font-size: 18px
 			.link
 				display: inline-block
 				margin-top: 8px
@@ -108,6 +172,9 @@
 				font-weight: $font-regular
 				&:hover
 					border-color: $accent
+				+media-breakpoint-down(lg)
+					margin-top: 4px
+					font-size: 16px
 	// Navigation
 	&-navigation
 		position: relative
@@ -160,6 +227,9 @@
 .site-main
 	position: relative
 	margin-left: 150px
+	+media-breakpoint-down(lg)
+		margin-top: 80px
+		margin-left: 0
 	&.smooth-scroll
 		height: 100vh
 
@@ -175,11 +245,26 @@
 	right: 0
 	z-index: 3
 	width: 100%
+	+media-breakpoint-down(xl)
+		top: 55px
+	+media-breakpoint-down(xs)
+		top: 40px
+	+media-breakpoint-down(xss)
+		display: none
 	&-item
+		.title
+			+media-breakpoint-down(xs)
+				font-size: 15px
 		.adress
 			color: $white
 			font-size: 22px
 			font-weight: $font-regular
+			+media-breakpoint-down(xl)
+				font-size: 20px
+			+media-breakpoint-down(lg)
+				font-size: 18px
+			+media-breakpoint-down(xs)
+				font-size: 15px
 		.phone
 			display: flex
 			flex-direction: column
@@ -187,6 +272,12 @@
 				display: inline-block
 				font-size: 22px
 				font-weight: $font-regular
+				+media-breakpoint-down(xl)
+					font-size: 20px
+				+media-breakpoint-down(lg)
+					font-size: 18px
+				+media-breakpoint-down(xs)
+					font-size: 15px
 		.link
 			display: inline-block
 			margin-top: 8px
@@ -196,6 +287,11 @@
 			font-weight: $font-regular
 			&:hover
 				border-color: $accent
+			+media-breakpoint-down(lg)
+				margin-top: 4px
+				font-size: 16px
+			+media-breakpoint-down(xs)
+					font-size: 15px
 
 
 
@@ -205,18 +301,26 @@
 .site-footer
 	background: $darken
 	&-main
-		padding: 80px 0
+		padding: 50px 0 80px
 	&-bottom
 		padding: 25px 0
 		border-top: 1px solid rgba($border, 0.4)
 		background: $dark
 		&-buttons
 			display: flex
+			flex-wrap: wrap
 			align-items: center
-			> a:not(:last-child)
+			+media-breakpoint-down(md)
+				justify-content: center
+			> div:not(:last-child)
 				margin-right: 40px
+				+media-breakpoint-down(xl)
+					margin-right: 30px
 		&-text
 			text-align: right
+			+media-breakpoint-down(md)
+				margin-top: 20px
+				text-align: center
 			> .copy
 				display: block
 				color: #949494
@@ -300,7 +404,11 @@
    ========================================================================== */
 .h-heroes
 	height: 100vh
-	min-height: 900px
+	min-height: 800px
+	+media-breakpoint-down(xl)
+		min-height: 750px
+	+media-breakpoint-down(xs)
+		// display: none
 	&-slider
 		width: 100%
 		height: 100%
@@ -322,6 +430,8 @@
 			right: 0
 			bottom: 75px
 			text-align: left
+			+media-breakpoint-down(xl)
+				bottom: 60px
 			.swiper-pagination-bullet
 				position: relative
 				display: inline-block
@@ -346,13 +456,19 @@
 					background: rgba($white, 0.15)
 					opacity: 0
 					transition: opacity .45s ease
+					+media-breakpoint-down(sm)
+						opacity: 1
 				&:not(:last-child)
 					margin-right: 60px
+					+media-breakpoint-down(md)
+						margin-right: 30px
+					+media-breakpoint-down(sm)
+						margin-right: 20px
 				&:hover:not(.swiper-pagination-bullet-active)
 					opacity: 0.75
 				&-active
 					opacity: 1
-					&:before
+					&::before
 						opacity: 1
 					.progress
 						animation-name: animatePagination
@@ -364,6 +480,9 @@
 					color: $white
 					font-size: 18px
 					line-height: 1
+					+media-breakpoint-down(sm)
+						font-size: 22px
+						font-weight: $font-regular
 				.title
 					display: block
 					overflow: hidden
@@ -375,6 +494,10 @@
 					text-transform: none
 					white-space: nowrap
 					text-overflow: ellipsis
+					+media-breakpoint-down(md)
+						max-width: 160px
+					+media-breakpoint-down(sm)
+						display: none
 				.progress
 					display: block
 					height: 3px
@@ -382,6 +505,8 @@
 					background: $accent
 					transform: scaleX(0)
 					transform-origin: left center
+					+media-breakpoint-down(sm)
+						width: 40px
 	// Slider slide
 	&-slide
 		position: relative
@@ -393,20 +518,31 @@
 			flex-direction: column
 			justify-content: center
 			height: 100%
-			// padding-left: 25px
 			box-sizing: border-box
 			.title
 				max-width: 75%
-				margin-bottom: 10px
 				font-size: 70px
 				font-weight: $font-bold
 				line-height: 1
 				text-transform: none
+				+media-breakpoint-down(xl)
+					max-width: 80%
+					font-size: 50px
+				+media-breakpoint-down(sm)
+					max-width: 100%
 			.descr
 				max-width: 70%
-				margin-bottom: 40px
 				color: $white
 				font-size: 20px
+				+media-breakpoint-down(xl)
+					max-width: 80%
+					font-size: 18px
+				+media-breakpoint-down(sm)
+					max-width: 100%
+			.btn
+				margin-top: 40px
+				+media-breakpoint-down(xl)
+					margin-top: 30px
 			.slide-number
 				user-select: none
 				position: absolute
@@ -421,6 +557,11 @@
 				opacity: 0
 				transform: translateY(-50%)
 				transition: opacity 2s ease
+				+media-breakpoint-down(xl)
+					right: 65px
+					font-size: 160px
+				+media-breakpoint-down(lg)
+					right: 20px
 		// Slider background photo
 		&-photo
 			position: absolute
@@ -469,6 +610,8 @@
 			bottom: 0
 			z-index: 1
 			background: rgba(#222, 0.75)
+		+media-breakpoint-down(xl)
+			height: 400px
 	&-content
 		position: absolute
 		top: 50%
@@ -487,6 +630,14 @@
 				display: block
 				font-size: 26px
 				font-weight: $font-regular
+				+media-breakpoint-down(xl)
+					font-size: 24px
+				+media-breakpoint-down(lg)
+					font-size: 22px
+				+media-breakpoint-down(md)
+					font-size: 20px
+				+media-breakpoint-down(sm)
+					font-size: 18px
 	&-photo
 		width: 100%
 		height: 100%
@@ -504,6 +655,7 @@
 	&-quote
 		position: relative
 		&-photo
+			max-width: 500px
 			width: 100%
 			height: 550px
 			border: 1px solid $border
@@ -561,8 +713,10 @@
    Home section: Features
    ========================================================================== */
 .h-features
+	padding-top: 80px
+	padding-bottom: 20px
 	&-item
-		margin-bottom: 80px
+		margin-bottom: 60px
 	&-head
 		display: flex
 		align-items: center
@@ -580,45 +734,52 @@
 		.descr
 			padding-left: 34px
 			line-height: 27px
-			// line-height: 1.5
+
 
 
 /* ==========================================================================
    Home section: Advantages
    ========================================================================== */
 .h-advantages
-	&-item
-		padding: 40px 50px
 	&-head
 		display: flex
 		align-items: center
 		justify-content: space-between
-		margin-bottom: 20px
 		.number
+			margin-right: 100px
 			-webkit-text-stroke: 2px $accent
 			text-shadow: 1px 1px 0 $accent, -1px -1px 0 $accent, 1px -1px 0 $accent, -1px 1px 0 $accent, 1px 1px 0 $accent
 			color: $text-dark
 			font-size: 80px
 			font-weight: $font-bold
 			line-height: 1
+			letter-spacing: 4px
+			+media-breakpoint-down(xl)
+				font-size: 60px
+			+media-breakpoint-down(xs)
+				-webkit-text-stroke: 1px $accent
 		.picture
 			overflow: hidden
 			width: 100px
 			height: 100px
 			border-radius: 100%
 			border: 2px solid #6b6b6b
+			+media-breakpoint-down(xl)
+				width: 80px
+				height: 80px
 			img
 				width: 100%
 				height: 100%
 				object-fit: cover
 	&-content
+		margin-top: 30px
 		.title
-			margin-bottom: 30px
+			margin-bottom: 20px
 		.descr
 			> p
 				margin-top: 10px
 		.link
-			margin-top: 30px
+			margin-top: 40px
 
 
 /* ==========================================================================
@@ -626,7 +787,6 @@
    ========================================================================== */
 .h-gallery
 	&-item
-		will-change: transform
 		transform: none
 		transition: .45s ease
 		&:hover
@@ -649,9 +809,13 @@
 		.title
 			font-weight: $font-regular
 			line-height: 1
+			white-space: nowrap
 		.count
 			display: inline-flex
 			align-items: center
+			margin-left: 100px
+			+media-breakpoint-down(xs)
+				margin-left: 20px
 			.icon
 				margin-right: 8px
 				fill: $accent
@@ -659,7 +823,7 @@
 			&-number
 				display: inline-block
 				color: $white
-				font-weight: $font-medium
+				font-weight: $font-regular
 				line-height: 1
 
 
@@ -668,8 +832,16 @@
    CTA
    ========================================================================== */
 .cta
+	padding: 80px 0
+	+media-breakpoint-down(xl)
+		padding: 60px 0
 	&-title
 		max-width: 90%
+		+media-breakpoint-down(xl)
+			max-width: 100%
+	&-descr
+		+media-breakpoint-down(xl)
+			margin-bottom: 40px
 	&-form-text
 		padding-right: 20px
 
@@ -696,6 +868,9 @@
 				margin-bottom: 20px
 				color: rgba($white, 0.5)
 				line-height: 1.35
+				+media-breakpoint-down(xl)
+					flex-basis: 100%
+					text-align: center
 				em
 					display: block
 					color: $white
@@ -719,6 +894,7 @@
 		outline: none
 	&-content
 		display: flex
+		align-items: center
 		justify-content: space-between
 		.count
 			display: inline-flex
@@ -730,5 +906,5 @@
 			&-number
 				display: inline-block
 				color: $white
-				font-weight: $font-medium
+				font-weight: $font-regular
 				line-height: 1

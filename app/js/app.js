@@ -4,9 +4,9 @@
 
 // });
 
-Scrollbar.initAll({
-	damping: 0.125,
-});
+// Scrollbar.initAll({
+// 	damping: 0.125,
+// });
 
 $(document).ready(function(){
 
@@ -112,6 +112,17 @@ $(document).ready(function(){
 		scrollbar: {
 			el: '.h-construction-scrollbar',
 		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+			},
+			660: {
+				slidesPerView: 2,
+			},
+			940: {
+				slidesPerView: 3,
+			}
+		}
 	})
 
 	// Site Menu

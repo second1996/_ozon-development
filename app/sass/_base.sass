@@ -5,6 +5,12 @@
 .container-fluid
 	max-width: 1670px
 	padding: 0 100px
+	+media-breakpoint-down(xl)
+		padding: 0 75px
+	+media-breakpoint-down(lg)
+		padding: 0 30px
+	+media-breakpoint-down(xs)
+		padding: 0 15px
 
 .icon
 	display: inline-block
@@ -46,6 +52,58 @@ img.error
 
 
 /* ==========================================================================
+   Section, Row
+   ========================================================================== */
+.row-items
+	> [class*="col"]
+		margin-top: 30px
+
+.section
+	position: relative
+	overflow-x: hidden
+	margin: 160px 0
+	+media-breakpoint-down(xl)
+		margin: 100px 0
+	&-dark
+		background: $dark
+	&-head
+		margin-bottom: 30px
+		&-title
+			padding-right: 30px
+			font-size: 40px
+			color: $white
+			font-weight: $font-medium
+			text-transform: uppercase
+			> span
+				display: block
+				color: $accent
+				font-size: 26px
+				font-weight: $font-regular
+			+media-breakpoint-down(xl)
+				font-size: 32px
+		&-descr
+			position: relative
+			padding-left: 50px
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: -11px
+				width: 2px
+				height: 100%
+				background: $accent
+			+media-breakpoint-down(xl)
+				padding-left: 30px
+				padding-right: 15px
+			+media-breakpoint-down(lg)
+				margin-top: 10px
+				padding-left: 0
+				padding-right: 0
+				&::before
+					display: none
+
+
+/* ==========================================================================
    Padding, margin etc.
    ========================================================================== */
 .pt-80
@@ -70,15 +128,41 @@ img.error
 .title-xl
 	font-size: 50px
 	line-height: 1.4
+	+media-breakpoint-down(xl)
+		font-size: 46px
+	+media-breakpoint-down(lg)
+		font-size: 42px
+	+media-breakpoint-down(md)
+		font-size: 38px
+	+media-breakpoint-down(sm)
+		font-size: 34px
+	+media-breakpoint-down(xs)
+		font-size: 30px
 .title-lg
 	font-size: 40px
 	line-height: 1.25
+	+media-breakpoint-down(xl)
+		font-size: 36px
+	+media-breakpoint-down(lg)
+		font-size: 32px
+	+media-breakpoint-down(md)
+		font-size: 28px
+	+media-breakpoint-down(sm)
+		font-size: 24px
 .title-md
 	font-size: 26px
+	+media-breakpoint-down(xl)
+		font-size: 24px
+	+media-breakpoint-down(lg)
+		font-size: 22px
 .title-sm
 	font-size: 20px
+	+media-breakpoint-down(lg)
+		font-size: 18px
 .title-xs
 	font-size: 18px
+	+media-breakpoint-down(lg)
+		font-size: 17px
 
 
 
