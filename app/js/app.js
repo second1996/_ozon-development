@@ -53,16 +53,15 @@ $(document).ready(function(){
 	var homeSwiperAutoplay = 6000;
 	var homeSwiper = new Swiper ('.h-heroes-slider', {
 		effect: 'fade',
-		// loop: true,
 		speed: 0,
-		lazy: {
-			loadOnTransitionStart: true,
-		},
-		allowTouchMove: false,
 		autoplay: {
 			delay: homeSwiperAutoplay,
 			disableOnInteraction: false,
 		},
+		lazy: {
+			loadOnTransitionStart: true,
+		},
+		allowTouchMove: false,
 		preloadImages: false,
 		pagination: {
 			el: '.h-heroes-slider-pagination',
@@ -77,6 +76,17 @@ $(document).ready(function(){
 				});
 				return '<div class="' + className + '"><span class="current">0' + [index + 1] + '</span><span class="title">' + (slideNames[index]) + '</span><span class="progress" style="animation-duration: ' + homeSwiperAutoplay + 'ms"></span></div>';
 			}
+		},
+		breakpoints: {
+			320: {
+				autoplay: false,
+			},
+			768: {
+				autoplay: {
+					delay: homeSwiperAutoplay,
+					disableOnInteraction: false,
+				},
+			},
 		},
 	});
 

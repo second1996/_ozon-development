@@ -60,7 +60,6 @@ img.error
 
 .section
 	position: relative
-	overflow-x: hidden
 	margin: 160px 0
 	+media-breakpoint-down(xl)
 		margin: 100px 0
@@ -70,7 +69,7 @@ img.error
 		margin-bottom: 30px
 		&-title
 			padding-right: 30px
-			font-size: 40px
+			font-size: 2vw
 			color: $white
 			font-weight: $font-medium
 			text-transform: uppercase
@@ -81,6 +80,10 @@ img.error
 				font-weight: $font-regular
 			+media-breakpoint-down(xl)
 				font-size: 32px
+			+media-breakpoint-down(sm)
+				font-size: 28px
+				> span
+					font-size: 24px
 		&-descr
 			position: relative
 			padding-left: 50px

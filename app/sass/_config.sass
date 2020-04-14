@@ -93,6 +93,8 @@ body
 	line-height: 1.6
 	+media-breakpoint-down(xl)
 		font-size: 16px
+	+media-breakpoint-down(xs)
+		font-size: 15px
 	&.menu-open
 		overflow: hidden
 		padding-right: 17px
@@ -100,6 +102,7 @@ body
 			padding-right: 0
 
 a
+	outline: 0
 	color: $white
 	transition: .45s ease
 	&:hover

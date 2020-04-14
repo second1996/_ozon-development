@@ -18,6 +18,8 @@
 	background-position: 100% 26%
 	background-size: cover
 	background-size: 13px
+	+media-breakpoint-down(md)
+		font-size: 18px
 	&::before,
 	&::after
 		content: ''
@@ -78,6 +80,11 @@
 	&::before,
 	&::after
 		width: 30px
+	+media-breakpoint-down(xs)
+		width: 46px
+		&::before,
+		&::after
+			width: 24px
 	&,
 	&::before,
 	&::after
@@ -93,10 +100,17 @@
 		left: 50%
 		margin-left: -15px
 		display: block
+		+media-breakpoint-down(xs)
+			margin-left: -12px
 	&::before
 		top: -12px
 	&::after
 		bottom: -12px
+	+media-breakpoint-down(xs)
+		&::before
+			top: -10px
+		&::after
+			bottom: -10px
 
 // When hover on button
 .hamburger--arrow-r:hover .hamburger-inner::before
@@ -128,6 +142,8 @@
 	transition: .45s ease
 	+media-breakpoint-down(xl)
 		padding: 18px 30px
+	+media-breakpoint-down(sm)
+		padding: 16px 28px
 	&-icon
 		position: relative
 		&::after
@@ -260,11 +276,13 @@
 		line-height: 56px
 		color: $white
 		transition: border-color .3s ease-in-out, box-shadow .3s ease-in-out
+		+media-breakpoint-down(xs)
+			height: 50px
+			margin-bottom: 15px
+			line-height: 50px
 	&-text
 		color: rgba($white, 0.3)
-		+media-breakpoint-down(xs)
-			margin-top: 10px
-			margin-bottom: 15px
+		margin-bottom: 15px
 
 
 
@@ -325,6 +343,10 @@
 			width: 10px
 			height: 1px
 			background: $text-main
+			+media-breakpoint-down(xl)
+				top: 11px
+			+media-breakpoint-down(xs)
+				top: 10px
 	&-square
 		> li
 			&::before
@@ -349,6 +371,8 @@
 		padding: 30px 50px
 		+media-breakpoint-down(xl)
 			padding: 30px 40px
+		+media-breakpoint-down(xs)
+			padding: 20px 30px
 	&-image
 		position: relative
 		width: 100%
@@ -365,6 +389,8 @@
 		padding: 40px 50px
 		+media-breakpoint-down(xl)
 			padding: 30px 40px
+		+media-breakpoint-down(xs)
+			padding: 30px
 
 
 
@@ -445,18 +471,33 @@
 .modal
 	&-xl
 		max-width: 1400px
+	&-dialog
+		padding-left: 30px
+		padding-right: 30px
+		+media-breakpoint-down(xs)
+			padding-left: 5px
+			padding-right: 5px
 	&-content
 		padding: 60px
 		border-radius: 0
 		border: 1px solid $border
 		background: $item-bg
+		+media-breakpoint-down(lg)
+			padding: 40px
+		+media-breakpoint-down(xs)
+			padding: 30px
 	&-header
+		position: relative
 		padding: 0
+		padding-right: 60px
 		border-bottom: 0
 		.close
-			position: relative
+			position: absolute
+			top: 0
+			right: 0
 			width: 50px
 			height: 50px
+			background: $white
 			margin: 0
 			padding: 0
 			> span
@@ -476,23 +517,42 @@
 				background-color: $accent
 			&:active
 				transform: scale(0.95, 0.95)
+			+media-breakpoint-down(xs)
+				width: 30px
+				height: 30px
+				> span
+					width: 20px
+					margin-left: -10px
 	&-title
 		padding-top: 10px
+		+media-breakpoint-down(xs)
+			padding-top: 0
 	&-body
 		padding: 0
 		padding-top: 60px
+		+media-breakpoint-down(lg)
+			padding-top: 40px
 	&-fancy
-		display: flex
-		flex-wrap: wrap
+		overflow-x: auto
+		height: 100%
 		margin-bottom: 10px
+		white-space: nowrap
 		&-item
-			display: block
+			display: inline-block
 			width: 140px
 			height: 100px
 			margin-bottom: 16px
 			border-bottom: 4px solid $trsp
 			&:not(:last-child)
 				margin-right: 20px
+			+media-breakpoint-down(lg)
+				width: 100px
+				height: 80px
+				&:not(:last-child)
+					margin-right: 15px
+			+media-breakpoint-down(sm)
+				width: 80px
+				height: 60px
 			&:hover
 				border-color: $accent
 			> img
@@ -517,3 +577,89 @@
 	.scrollbar-thumb
 		border-radius: 0
 		background: $accent
+
+
+
+/* ==========================================================================
+   Quick buttons
+   ========================================================================== */
+.q-buttons
+	position: fixed
+	right: 20px
+	bottom: 75px
+	backface-visibility: hidden
+	z-index: 99
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+	padding: 3px 0
+	text-align: right
+	+media-breakpoint-down(xl)
+		right: 12px
+		bottom: 60px
+	+media-breakpoint-down(lg)
+		right: 15px
+		bottom: 30px
+	&-link
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 60px
+		height: 60px
+		border-radius: 50%
+		background: $white
+		+media-breakpoint-down(xl)
+			width: 50px
+			height: 50px
+		+media-breakpoint-down(xs)
+			width: 44px
+			height: 44px
+		&:not(:first-child)
+			margin-top: 20px
+			+media-breakpoint-down(xs)
+				margin-top: 15px
+		&:hover
+			background: $accent
+			> span
+				visibility: visible
+				border-radius: 40px 0 0 40px
+				background: $accent
+				opacity: 1
+				transform: translateX(28px)
+				+media-breakpoint-down(xs)
+					transform: translateX(24px)
+		> span
+			visibility: hidden
+			position: absolute
+			top: 0
+			right: 100%
+			z-index: -1
+			bottom: 0
+			display: block
+			height: 60px
+			padding-left: 26px
+			padding-right: 30px
+			box-shadow: 0 0 0 3px rgba($text-dark, 0.25)
+			border-radius: 40px
+			background: $white
+			color: $text-dark
+			font-size: 14px
+			font-weight: $font-medium
+			text-transform: uppercase
+			line-height: 60px
+			white-space: nowrap
+			opacity: 0
+			transform: translateX(60px)
+			transform-origin: right
+			transition: .45s ease
+			+media-breakpoint-down(xl)
+				height: 50px
+				line-height: 50px
+			+media-breakpoint-down(xs)
+				height: 44px
+				line-height: 44px
+				transform: translateX(46px)
+		.icon
+			font-size: 20px
+			color: $text-dark
