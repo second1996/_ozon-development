@@ -61,10 +61,11 @@
 	+media-breakpoint-down(lg)
 		padding: 0
 
-	&.is-active .hamburger-inner,
-	&.is-active .hamburger-inner::before,
-	&.is-active .hamburger-inner::after
-		background-color: $accent
+	+media-breakpoint-up(lg)
+		&.hamburger--arrow:hover .hamburger-inner,
+		&.hamburger--arrow:hover .hamburger-inner::before,
+		&.hamburger--arrow:hover .hamburger-inner::after
+			background: #5a5c5f
 
 .hamburger-box
 	width: 50px
@@ -91,9 +92,7 @@
 		position: absolute
 		height: 2px
 		background-color: $accent
-		transition-property: transform
-		transition-duration: 0.45s
-		transition-timing-function: ease
+		transition: .45s ease
 	&::before,
 	&::after
 		content: ''
@@ -112,16 +111,10 @@
 		&::after
 			bottom: -10px
 
-// When hover on button
-.hamburger--arrow-r:hover .hamburger-inner::before
-	transform: translate3d(18px, 5px, 0) rotate(45deg) scale(0.7, 1)
-.hamburger--arrow-r:hover .hamburger-inner::after
-	transform: translate3d(18px, -5px, 0) rotate(-45deg) scale(0.7, 1)
-
 // When open menu
-.hamburger--arrow-r.is-active .hamburger-inner::before
+.hamburger--arrow.is-active .hamburger-inner::before
 	transform: translate3d(-18px, 5px, 0) rotate(-45deg) scale(0.7, 1)
-.hamburger--arrow-r.is-active .hamburger-inner::after
+.hamburger--arrow.is-active .hamburger-inner::after
 	transform: translate3d(-18px, -5px, 0) rotate(45deg) scale(0.7, 1)
 
 
@@ -185,8 +178,8 @@
 		&.btn-icon::after
 			background-image: url('../images/icons/arrow.svg')
 	&-outline
-		box-shadow: 0 0 0 2px rgba($white, 0.15)
-		background: $trsp
+		box-shadow: 0 0 0 1px rgba($white, 0.15)
+		background: $text-dark
 		color: $white
 		&:active
 			border: 1px solid rgba($white, 0.15)
@@ -262,6 +255,7 @@
 			padding-right: 10px
 			padding-left: 10px
 	&-control
+		appearance: none
 		display: block
 		width: 100%
 		height: 56px
@@ -279,7 +273,26 @@
 		+media-breakpoint-down(xs)
 			height: 50px
 			margin-bottom: 15px
+			padding: 0 20px
 			line-height: 50px
+	&-textarea
+		appearance: none
+		resize: none
+		display: block
+		width: 100%
+		margin-bottom: 20px
+		padding: 16px 30px
+		border-radius: 0
+		border: 1px solid rgba($white, 0.15)
+		background-color: $dark
+		background-clip: padding-box
+		font-size: 15px
+		font-weight: 400
+		color: $white
+		transition: border-color .3s ease-in-out, box-shadow .3s ease-in-out
+		+media-breakpoint-down(xs)
+			margin-bottom: 15px
+			padding: 14px 20px
 	&-text
 		color: rgba($white, 0.3)
 		margin-bottom: 15px
@@ -483,9 +496,9 @@
 		border: 1px solid $border
 		background: $item-bg
 		+media-breakpoint-down(lg)
-			padding: 40px
+			padding: 50px 40px
 		+media-breakpoint-down(xs)
-			padding: 30px
+			padding: 40px 30px
 	&-header
 		position: relative
 		padding: 0
@@ -513,16 +526,16 @@
 				&:nth-child(2)
 					transform: rotate(45deg)
 			&:hover
-				box-shadow: 0 0 0 2px rgba($white, 0.15)
+				box-shadow: 0 0 0 3px rgba($white, 0.15)
 				background-color: $accent
 			&:active
-				transform: scale(0.95, 0.95)
+				box-shadow: none
 			+media-breakpoint-down(xs)
 				width: 30px
 				height: 30px
 				> span
-					width: 20px
-					margin-left: -10px
+					width: 18px
+					margin-left: -9px
 	&-title
 		padding-top: 10px
 		+media-breakpoint-down(xs)
@@ -565,6 +578,10 @@
 		background: $darken
 		&.show
 			opacity: 0.9
+	.form
+		&-control,
+		&-textarea
+			background: $text-dark
 
 
 
