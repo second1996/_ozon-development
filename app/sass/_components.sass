@@ -42,7 +42,6 @@
 			background: $accent
 
 
-
 /* ==========================================================================
    Hamburger menu
    ========================================================================== */
@@ -116,7 +115,6 @@
 	transform: translate3d(-18px, 5px, 0) rotate(-45deg) scale(0.7, 1)
 .hamburger--arrow.is-active .hamburger-inner::after
 	transform: translate3d(-18px, -5px, 0) rotate(45deg) scale(0.7, 1)
-
 
 
 /* ==========================================================================
@@ -238,8 +236,6 @@
 			background-image: url('../images/icons/question-accent.svg')
 
 
-
-
 /* ==========================================================================
    Form
    ========================================================================== */
@@ -298,7 +294,6 @@
 		margin-bottom: 15px
 
 
-
 /* ==========================================================================
    Background Text, Pattern
    ========================================================================== */
@@ -316,6 +311,7 @@
 			opacity: 0.01
 	&-text
 		user-select: none
+		overflow: hidden
 		position: absolute
 		top: 0
 		left: 0
@@ -324,8 +320,6 @@
 		-webkit-text-stroke: 1px $white
 		text-shadow: 1px 1px 0 $white, -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white
 		color: $text-dark
-		// font-size: 30vw
-		// font-size: 60vh
 		font-size: 500px
 		font-weight: $font-bold
 		line-height: 0.85
@@ -334,6 +328,11 @@
 		white-space: nowrap
 		opacity: 0.04
 		+media-breakpoint-down(lg)
+			top: 40px
+			font-size: 400px
+		+media-breakpoint-down(xs)
+			// font-size: 300px
+		+media-breakpoint-down(xs)
 			display: none
 
 
@@ -380,6 +379,12 @@
 	height: 100%
 	border: 1px solid $border
 	background: $item-bg
+	&-animate
+		will-change: transform
+		transition: box-shadow .3s ease, transform .45s ease
+		&:hover
+			box-shadow: 0 5px 10px 0 rgba($dark, 0.5)
+			transform: translateY(-8px)
 	&-head
 		padding: 30px 50px
 		+media-breakpoint-down(xl)

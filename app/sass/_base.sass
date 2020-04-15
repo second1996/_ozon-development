@@ -1,5 +1,23 @@
 
 /* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes animatePagination
+	from
+		transform: scaleX(0)
+	to
+		transform: scaleX(1)
+
+@keyframes fromLeft
+	from
+		transform: translate3d(-40px, 0, 0)
+		opacity: 0
+	to
+		transform: translate3d(0, 0, 0)
+		opacity: 1
+
+
+/* ==========================================================================
    Other
    ========================================================================== */
 .container-fluid
@@ -11,7 +29,7 @@
 		padding: 0 30px
 	+media-breakpoint-down(xs)
 		padding: 0 15px
-
+// Default icon
 .icon
 	display: inline-block
 	width: 1em
@@ -19,7 +37,6 @@
 	stroke-width: 0
 	stroke: currentColor
 	fill: currentColor
-
 // LazyLoad
 img.lazy
 	position: relative
@@ -33,7 +50,7 @@ img.initial,
 img.loaded,
 img.error
 	opacity: 1
-
+// Lazy preloader
 .lazy-spin
 	width: 42px
 	height: 42px
@@ -50,62 +67,6 @@ img.error
 	border-top-color: transparent
 
 
-
-/* ==========================================================================
-   Section, Row
-   ========================================================================== */
-.row-items
-	> [class*="col"]
-		margin-top: 30px
-
-.section
-	position: relative
-	margin: 160px 0
-	+media-breakpoint-down(xl)
-		margin: 100px 0
-	&-dark
-		background: $dark
-	&-head
-		margin-bottom: 30px
-		&-title
-			padding-right: 30px
-			font-size: 2vw
-			color: $white
-			font-weight: $font-medium
-			text-transform: uppercase
-			> span
-				display: block
-				color: $accent
-				font-size: 26px
-				font-weight: $font-regular
-			+media-breakpoint-down(xl)
-				font-size: 32px
-			+media-breakpoint-down(sm)
-				font-size: 28px
-				> span
-					font-size: 24px
-		&-descr
-			position: relative
-			padding-left: 50px
-			&::before
-				content: ''
-				position: absolute
-				top: 0
-				left: -11px
-				width: 2px
-				height: 100%
-				background: $accent
-			+media-breakpoint-down(xl)
-				padding-left: 30px
-				padding-right: 15px
-			+media-breakpoint-down(lg)
-				margin-top: 10px
-				padding-left: 0
-				padding-right: 0
-				&::before
-					display: none
-
-
 /* ==========================================================================
    Padding, margin etc.
    ========================================================================== */
@@ -117,7 +78,6 @@ img.error
 	margin-top: 0
 .mb-0
 	margin-bottom: 0
-
 
 
 /* ==========================================================================
@@ -168,7 +128,6 @@ img.error
 		font-size: 17px
 
 
-
 /* ==========================================================================
    Text
    ========================================================================== */
@@ -182,7 +141,7 @@ img.error
 	font-size: 15px
 .text-xss
 	font-size: 14px
-
+// Text style
 .text-uppercase
 	text-transform: uppercase
 .text-center
@@ -191,12 +150,11 @@ img.error
 	text-align: left
 .text-right
 	text-align: right
-
+// Text color
 .text-accent
 	color: $accent
 .text-white
 	color: $white
-
 
 
 /* ==========================================================================
@@ -216,3 +174,560 @@ img.error
 	font-weight: 800
 .w-black
 	font-weight: 900
+
+
+/* ==========================================================================
+   Section, Row
+   ========================================================================== */
+.row-items
+	> [class*="col"]
+		margin-top: 30px
+.section
+	position: relative
+	margin: 160px 0
+	+media-breakpoint-down(xl)
+		margin: 100px 0
+	&-dark
+		background: $dark
+	&-head
+		margin-bottom: 30px
+		&-title
+			padding-right: 30px
+			font-size: 2vw
+			color: $white
+			font-weight: $font-medium
+			text-transform: uppercase
+			> span
+				display: block
+				color: $accent
+				font-size: 26px
+				font-weight: $font-regular
+			+media-breakpoint-down(xl)
+				font-size: 32px
+			+media-breakpoint-down(sm)
+				font-size: 28px
+				> span
+					font-size: 24px
+		&-descr
+			position: relative
+			padding-left: 50px
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: -11px
+				width: 2px
+				height: 100%
+				background: $accent
+			+media-breakpoint-down(xl)
+				padding-left: 30px
+				padding-right: 15px
+			+media-breakpoint-down(lg)
+				margin-top: 10px
+				padding-left: 0
+				padding-right: 0
+				&::before
+					display: none
+
+
+/* ==========================================================================
+   Site Aside (menu)
+   ========================================================================== */
+.site-aside
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 1000
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	width: 150px
+	height: 100vh
+	padding: 75px 0
+	background: #151515
+	border-right: 1px solid rgba($border, 0.4)
+	+media-breakpoint-down(xl)
+		padding: 60px 0
+	+media-breakpoint-down(lg)
+		right: 0
+		flex-direction: row
+		width: 100%
+		height: 80px
+		padding: 0 30px
+		border-right: 0
+		border-bottom: 1px solid rgba($border, 0.4)
+		.logo
+			order: 1
+		.menu
+			order: 0
+		.social
+			order: 2
+	+media-breakpoint-down(xs)
+		padding: 0 15px
+	.logo
+		+media-breakpoint-down(lg)
+			flex: 0 0 140px
+		+media-breakpoint-down(xs)
+			flex: 0 0 120px
+		&-desktop
+			max-width: 80px
+			height: auto
+			+media-breakpoint-down(lg)
+				display: none
+		&-mobile
+			display: none
+			max-width: 140px
+			height: auto
+			+media-breakpoint-down(lg)
+				display: block
+			+media-breakpoint-down(xs)
+				max-width: 120px
+	.menu
+		height: 27px
+		+media-breakpoint-down(lg)
+			flex: 1 0 80px
+	.social
+		+media-breakpoint-down(lg)
+			flex: 1 0 80px
+		&-list
+			display: flex
+			flex-direction: column
+			align-items: center
+			+media-breakpoint-down(lg)
+				flex-direction: row
+				justify-content: flex-end
+		&-item
+			line-height: 1
+			&:not(:first-child)
+				margin-top: 30px
+				+media-breakpoint-down(xl)
+					margin-top: 20px
+				+media-breakpoint-down(lg)
+					margin-top: 0
+					margin-left: 20px
+				+media-breakpoint-down(xs)
+					margin-left: 10px
+			> a
+				color: #5a5c5f
+				font-size: 22px
+				&:hover
+					color: $accent
+				+media-breakpoint-down(xl)
+					font-size: 20px
+				+media-breakpoint-down(xs)
+					font-size: 16px
+
+
+/* ==========================================================================
+   Site menu (Navigation)
+   ========================================================================== */
+.site-menu
+	visibility: hidden
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 999
+	width: 100%
+	height: 100%
+	padding-left: 150px
+	background: $darken
+	will-change: transform
+	transform: translateX(-100%)
+	transition: 1s ease
+	// Show menu
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 85px
+		bottom: 0
+		z-index: 0
+		display: block
+		width: 50%
+		height: 100%
+		background: $dark
+	+media-breakpoint-down(lg)
+		padding-left: 0
+		&::before
+			left: 0
+	+media-breakpoint-down(xs)
+		background: $dark
+		&::before
+			display: none
+	&.shown
+		visibility: visible
+		transform: translateX(0)
+	&-wrapper
+		position: relative
+		overflow-y: auto
+		overflow-x: hidden
+		display: flex
+		flex-direction: column
+		height: 100vh
+		padding: 70px 100px
+		+media-breakpoint-down(xl)
+			padding: 55px 75px 60px
+		+media-breakpoint-down(lg)
+			padding: 135px 30px 60px
+		+media-breakpoint-down(sm)
+			padding-top: 120px
+		+media-breakpoint-down(xs)
+			padding-left: 15px
+			padding-right: 15px
+		&::-webkit-scrollbar
+			width: 6px
+			background-color: $darken
+		&::-webkit-scrollbar-thumb
+			background-color: $border
+	// Header
+	&-header
+		position: relative
+		z-index: 2
+		margin-bottom: 100px
+		+media-breakpoint-down(xs)
+			margin-bottom: 60px
+		+media-breakpoint-down(xss)
+			.text-right
+				margin-top: 20px
+				text-align: left
+		&-item
+			.title
+				+media-breakpoint-down(xs)
+					font-size: 15px
+			.adress
+				color: $white
+				font-size: 22px
+				font-weight: $font-regular
+				+media-breakpoint-down(xl)
+					font-size: 20px
+				+media-breakpoint-down(lg)
+					font-size: 18px
+				+media-breakpoint-down(xs)
+					font-size: 15px
+			.phone
+				display: flex
+				flex-direction: column
+				> a
+					display: inline-block
+					font-size: 22px
+					font-weight: $font-regular
+					+media-breakpoint-down(xl)
+						font-size: 20px
+					+media-breakpoint-down(lg)
+						font-size: 18px
+					+media-breakpoint-down(xs)
+						font-size: 15px
+			.link
+				display: inline-block
+				margin-top: 8px
+				border-bottom: 1px solid $trsp
+				color: $accent
+				font-size: 18px
+				font-weight: $font-regular
+				&:hover
+					border-color: $accent
+				+media-breakpoint-down(lg)
+					margin-top: 4px
+					font-size: 16px
+				+media-breakpoint-down(xs)
+						font-size: 15px
+	// Navigation
+	&-navigation
+		position: relative
+		z-index: 2
+		&-right
+			padding-left: 100px
+			+media-breakpoint-down(lg)
+				padding-left: 30px
+			+media-breakpoint-down(xs)
+				margin-top: 15px
+				padding-left: 0
+		&-list
+			> li
+				&:not(:first-child)
+					margin-top: 30px
+					+media-breakpoint-down(lg)
+						margin-top: 20px
+					+media-breakpoint-down(sm)
+						margin-top: 15px
+				> a
+					position: relative
+					color: $white
+					font-size: 1.9vw
+					font-weight: $font-semibold
+					line-height: 1.25
+					text-transform: uppercase
+					+media-breakpoint-down(lg)
+						font-size: 24px
+					+media-breakpoint-down(sm)
+						font-size: 20px
+					+media-breakpoint-down(xs)
+						font-size: 24px
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -10px
+						width: 80px
+						height: 3px
+						background: $accent
+						transform: scaleX(0)
+						transform-origin: left center
+						transition: transform .45s ease
+						+media-breakpoint-down(xs)
+							bottom: -7px
+					&:hover
+						color: $accent
+						&::after
+							transform: scaleX(1)
+	// Footer
+	&-footer
+		position: relative
+		z-index: 2
+		margin-top: auto
+		padding-top: 70px
+		+media-breakpoint-down(xs)
+			padding-top: 60px
+		&-madeby
+			margin-top: 20px
+	// Background Sliding Text
+	> .bg-text
+		position: fixed
+		top: 57%
+		z-index: 1
+		transform: translateY(-57%)
+
+
+/* ==========================================================================
+   Site Footer
+   ========================================================================== */
+.site-footer
+	background: $darken
+	&-main
+		padding: 50px 0 80px
+	&-bottom
+		padding: 30px 0
+		border-top: 1px solid rgba($border, 0.4)
+		background: $dark
+		&-buttons
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			+media-breakpoint-down(md)
+				justify-content: center
+			+media-breakpoint-down(sm)
+				> div
+					margin: 0 10px 20px
+				> div:first-child
+					flex-basis: 100%
+					margin-right: 10px!important
+					text-align: center
+			> div:not(:last-child)
+				margin-right: 40px
+				+media-breakpoint-down(xl)
+					margin-right: 30px
+				+media-breakpoint-down(sm)
+					margin-left: 10px
+					margin-right: 10px
+		&-text
+			text-align: right
+			+media-breakpoint-down(md)
+				margin-top: 30px
+				text-align: center
+			> .copy
+				display: block
+				color: #949494
+			> .descr
+				display: block
+				margin-top: 0
+				color: #5a5c5f
+	&-title
+		position: relative
+		display: inline-block
+		padding-bottom: 10px
+		&::after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			display: block
+			width: 100%
+			height: 1px
+			background: rgba($white, 0.05)
+	&-menu
+		margin-top: 20px
+		&-list
+			&:not(:last-child)
+				margin-bottom: 10px
+			> li
+				line-height: 1.3
+				&:not(:first-child)
+					margin-top: 10px
+				> a
+					color: #949494
+					font-size: 16px
+					font-weight: $font-regular
+					&:hover
+						color: $accent
+	&-contacts
+		margin-top: 20px
+		&-item
+			&:not(:last-child)
+				margin-bottom: 20px
+			.head
+				display: flex
+				align-items: center
+				margin-bottom: 6px
+				> .icon
+					flex: 0 0 auto
+					color: $accent
+					font-size: 16px
+				> .title
+					padding-left: 10px
+					line-height: 1.3
+			.info
+				span
+					color: #949494
+				a
+					color: #949494
+					&:hover
+						color: $accent
+	&-news
+		margin-top: 20px
+		&-item
+			padding-bottom: 15px
+			&:not(:first-child)
+				padding-top: 15px
+				border-top: 1px solid rgba($white, 0.05)
+			> .date
+				display: block
+				margin-bottom: 6px
+				color: $accent
+				line-height: 1
+			> .link
+				display: inline-block
+				color: #949494
+				&:hover
+					color: $white
+
+
+/* ==========================================================================
+   Page customize
+   ========================================================================== */
+.page-main
+	position: relative
+	margin-left: 150px
+	+media-breakpoint-down(lg)
+		margin-top: 140px
+		margin-left: 0
+	+media-breakpoint-down(xs)
+		margin-top: 130px
+body.home
+	+media-breakpoint-down(lg)
+		.page-main
+			margin-top: 80px
+// Header
+body.home
+	.page-head
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		z-index: 3
+		width: 100%
+.page-head
+	margin-top: 70px
+	+media-breakpoint-down(xl)
+		margin-top: 55px
+	+media-breakpoint-down(xs)
+		margin-top: 40px
+	+media-breakpoint-down(xss)
+		display: none
+	&-item
+		.title
+			+media-breakpoint-down(xs)
+				font-size: 15px
+		.adress
+			color: $white
+			font-size: 22px
+			font-weight: $font-regular
+			+media-breakpoint-down(xl)
+				font-size: 20px
+			+media-breakpoint-down(lg)
+				font-size: 18px
+			+media-breakpoint-down(xs)
+				font-size: 15px
+		.phone
+			display: flex
+			flex-direction: column
+			> a
+				display: inline-block
+				font-size: 22px
+				font-weight: $font-regular
+				+media-breakpoint-down(xl)
+					font-size: 20px
+				+media-breakpoint-down(lg)
+					font-size: 18px
+				+media-breakpoint-down(xs)
+					font-size: 15px
+		.link
+			display: inline-block
+			margin-top: 8px
+			border-bottom: 1px solid $trsp
+			color: $accent
+			font-size: 18px
+			font-weight: $font-regular
+			&:hover
+				border-color: $accent
+			+media-breakpoint-down(lg)
+				margin-top: 4px
+				font-size: 16px
+			+media-breakpoint-down(xs)
+					font-size: 15px
+// Heroes (Icon, Title, Descr)
+.page-heroes
+	position: relative
+	padding-top: 125px
+	+media-breakpoint-down(xs)
+		padding-top: 80px
+	+media-breakpoint-down(xss)
+		padding-top: 20px
+	&-icon
+		margin-bottom: 20px
+		line-height: 1
+		.icon
+			color: $accent
+			font-size: 60px
+			+media-breakpoint-down(lg)
+				font-size: 52px
+			+media-breakpoint-down(sm)
+				font-size: 46px
+			+media-breakpoint-down(xs)
+				font-size: 40px
+	&-title
+		.title
+			font-size: 62px
+			+media-breakpoint-down(xl)
+				font-size: 56px
+			+media-breakpoint-down(lg)
+				font-size: 48px
+			+media-breakpoint-down(md)
+				font-size: 42px
+			+media-breakpoint-down(sm)
+				font-size: 36px
+			+media-breakpoint-down(xs)
+				font-size: 32px
+			+media-breakpoint-down(xss)
+				font-size: 28px
+	&-descr
+		margin-top: 10px
+// Content
+.page-content
+	padding-top: 60px
+	padding-bottom: 160px
+	+media-breakpoint-down(xl)
+		padding-bottom: 100px
+
