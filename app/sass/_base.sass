@@ -30,7 +30,7 @@
 	+media-breakpoint-down(xs)
 		padding: 0 15px
 // Default icon
-.icon
+svg.icon
 	display: inline-block
 	width: 1em
 	height: 1em
@@ -74,6 +74,10 @@ img.error
 	padding-top: 80px
 .pb-80
 	padding-bottom: 80px
+.mt-60
+	margin-top: 60px
+.mt-30
+	margin-top: 30px
 .mt-0
 	margin-top: 0
 .mb-0
@@ -723,6 +727,7 @@ body.home
 			+media-breakpoint-down(xss)
 				font-size: 28px
 	&-descr
+		max-width: 900px
 		margin-top: 10px
 // Content
 .page-content
@@ -730,4 +735,30 @@ body.home
 	padding-bottom: 160px
 	+media-breakpoint-down(xl)
 		padding-bottom: 100px
-
+// Section
+.page-section
+	margin-top: 100px
+	margin-bottom: 60px
+	+media-breakpoint-down(lg)
+		&:first-child
+			margin-top: 40px
+	&-title
+		padding-right: 30px
+		font-size: 40px
+		color: $white
+		font-weight: $font-medium
+		text-transform: uppercase
+		> span
+			display: block
+			color: $accent
+			font-size: 26px
+			font-weight: $font-regular
+		+media-breakpoint-down(xl)
+			font-size: 32px
+		+media-breakpoint-down(sm)
+			font-size: 28px
+			> span
+				font-size: 24px
+	&-descr
+		max-width: 900px
+		margin-top: 20px

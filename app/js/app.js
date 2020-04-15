@@ -170,7 +170,7 @@ $(window).on('load', function () {
  * Marquee string for background text (classname: .bg-text)
  */
 	$('.marquee').marquee({
-		speed: 10000,
+		// duration: 12000,
 		delayBeforeStart: 0,
 		startVisible: true,
 		duplicated: true,
