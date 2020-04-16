@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Сторінка — OZON Development</title>
+	<title>Наші контакти — OZON Development</title>
 	<meta name="description" content="OZON Village – Перше енергозберігаюче котеджне містечко в Івано-Франківську">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.png">
@@ -73,22 +73,98 @@
 		<div class="page-heroes">
 			<div class="container-fluid">
 				<div class="page-heroes-icon">
-					<svg class="icon icon-name"><use xlink:href="images/symbol-defs.svg#icon-name"></use></svg>
+					<svg class="icon icon-contacts"><use xlink:href="images/symbol-defs.svg#icon-contacts"></use></svg>
 				</div>
 				<div class="page-heroes-title">
-					<h1 class="title title-xl text-uppercase">Заголовок</h1>
+					<h1 class="title title-xl text-uppercase">Наші контакти</h1>
 				</div>
 				<div class="page-heroes-descr">
-					<p>Опис</p>
+					<p>Для консультації з питань купівлі будинку, будь ласка, звертайтесь за контактами нижче.</p>
 				</div>
 			</div><!-- /.container-fluid -->
-			<div class="bg-text marquee" data-duration="12000">Title</div>
+			<div class="bg-text marquee" data-duration="13000">Contacts</div>
 		</div><!-- /.page-heroes -->
 
 		<!-- Page Content -->
 		<div class="page-content">
 			<div class="container-fluid">
-				Content
+				<div class="p-contacts">
+					<ul class="p-contacts-list row">
+						<li class="p-contacts-list-item col-sm-7 col-lg-4">
+							<div class="head">
+								<svg class="icon icon-placeholder"><use xlink:href="images/symbol-defs.svg#icon-placeholder"></use></svg>
+								<span class="title title-sm text-uppercase w-regular">Адреса:</span>
+							</div>
+							<div class="info">
+								<p>Відділ з продажів: <br>м. Івано-Франківськ, вул. Бельведерська, 59</p>
+								<p>Адреса містечка: <br>м. Івано-Франківськ, с. Черніїв, заправка «Shell»</p>
+							</div>
+						</li><!-- /.col -->
+						<li class="p-contacts-list-item col-sm-5 col-lg-3">
+							<div class="head">
+								<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#icon-clock"></use></svg>
+								<span class="title title-sm text-uppercase w-regular">Графік роботи:</span>
+							</div>
+							<div class="info">
+								<p>Пн-Пт: 09:00-18:00 <br>Субота: 10:00-15:00 <br>Неділя — вихідний</p>
+							</div>
+						</li><!-- /.col -->
+						<li class="p-contacts-list-item col-sm-7 col-lg-3">
+							<div class="head">
+								<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#icon-phone"></use></svg>
+								<span class="title title-sm text-uppercase w-regular">Телефон:</span>
+							</div>
+							<div class="info">
+								<div><a href="tel:+380667020707" title="Зателефонувати">+38 (066) 702-07-07</a></div>
+								<div><a href="tel:+380687020707" title="Зателефонувати">+38 (068) 702-07-07</a></div>
+							</div>
+						</li><!-- /.col -->
+						<li class="p-contacts-list-item col-sm-5 col-lg-2">
+							<div class="head">
+								<svg class="icon icon-mail"><use xlink:href="images/symbol-defs.svg#icon-mail"></use></svg>
+								<span class="title title-sm text-uppercase w-regular">E-mail:</span>
+							</div>
+							<div class="info">
+								<div><a href="mailto:office@ozon-ltd.com" title="Написати листа">office@ozon-ltd.com</a></div>
+							</div>
+						</li><!-- /.col -->
+					</ul><!-- /.p-contacts-list -->
+					<div class="p-contacts-map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10486.00666126152!2d24.697149!3d48.924886!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6290de406d1cf095!2sOZON%20Development!5e0!3m2!1suk!2sua!4v1587009434531!5m2!1suk!2sua" width="600" height="450" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					</div>
+				</div><!-- /.p-contacts -->
+				<div class="p-contacts-form">
+					<h2 class="title title-md text-uppercase text-center w-medium">Зворотній зв'язок</h2>
+					<form action="#" class="form">
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Ваше ім’я" required>
+							</div>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="+38 (___) __-__-___" data-inputmask="'mask': '+38 (999) 99-99-999'" required>
+							</div>
+							<div class="col-sm-6">
+								<input type="email" class="form-control" placeholder="E-mail" required>
+							</div>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Тема повідомлення" required>
+							</div>
+							<div class="col-12">
+								<textarea class="form-textarea" placeholder="Ваше повідомлення..." required></textarea>
+							</div>
+							<div class="col-12">
+								<div class="form-row text-center">
+									<div class="col-12">
+										<p class="form-text text-xs">Гарантуємо повну конфіденційність і нерозголошення ваших даних третім особам.</p>
+									</div>
+									<div class="col-12">
+										<button class="form-submit btn btn-outline btn-icon">Надіслати</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div><!-- /.p-contacts-form -->
 			</div><!-- /.container-fluid -->
 		</div><!-- /.page-content -->
 
