@@ -9,6 +9,7 @@
 .h-heroes
 	height: 100vh
 	min-height: 800px
+	max-height: 1100px
 	+media-breakpoint-down(xl)
 		min-height: 750px
 	+media-breakpoint-down(sm)
@@ -633,7 +634,6 @@
 /* ==========================================================================
    Page: Infrastructure
    ========================================================================== */
-
 .inf-external
 	.row > [class*="col"]
 		margin-bottom: 20px
@@ -711,8 +711,6 @@
 				height: 500px
 			+media-breakpoint-down(md)
 				height: 400px
-			// +media-breakpoint-down(xl)
-				// height: 500px
 	&-form
 		max-width: 1040px
 		margin: 0 auto
@@ -725,3 +723,103 @@
 			margin-top: 20px
 		.form-submit
 			border-color: $accent
+
+
+/* ==========================================================================
+   Page: Energy
+   ========================================================================== */
+.p-energy
+	.render
+		position: relative
+		&-points
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 1
+			+media-breakpoint-down(xs)
+				position: static
+			.point
+				position: absolute
+				max-width: 300px
+				+media-breakpoint-down(xs)
+					position: static
+					max-width: 100%
+					margin-top: 20px
+				&-anchor
+					position: relative
+					z-index: 2
+					width: 30px
+					height: 30px
+					margin: 0 auto
+					border-radius: 50%
+					border: 4px solid $white
+					background: $accent
+					animation: pulse 2s infinite
+					+media-breakpoint-down(xs)
+						display: none
+					&:hover
+						cursor: pointer
+						~ .point-content
+							z-index: 3
+							visibility: visible
+							opacity: 1
+							transform: translateY(0)
+				&-content
+					visibility: hidden
+					position: relative
+					top: 20px
+					padding: 30px 20px
+					border-radius: 5px
+					border: 1px solid rgba($white, 0.05)
+					box-shadow: 0 10px 15px rgba($black, 0.5)
+					background: $item-bg
+					text-align: center
+					opacity: 0
+					transform: translateY(40px)
+					transition: .45s ease
+					&::before
+						content: ''
+						position: absolute
+						left: 50%
+						bottom: 100%
+						display: block
+						border: 8px solid $trsp
+						border-bottom: 8px solid $item-bg
+						transform: translateX(-50%)
+					+media-breakpoint-down(xs)
+						visibility: visible
+						border-radius: 0
+						box-shadow: none
+						opacity: 1
+						transform: none
+						&::before
+							display: none
+				&-icon
+					margin-bottom: 20px
+					line-height: 1
+					.icon
+						color: $accent
+						font-size: 50px
+				&-title
+					color: $white
+					font-size: 18px
+					font-weight: $font-regular
+					text-transform: uppercase
+				&-brand
+					color: $accent
+					font-size: 14px
+					font-weight: $font-regular
+				&-descr
+					margin-top: 15px
+					font-size: 15px
+		&-photo
+			width: 100%
+			height: 750px
+			+media-breakpoint-down(xs)
+				display: none
+			> img
+				width: 100%
+				height: 100%
+				object-fit: cover

@@ -16,6 +16,14 @@
 		transform: translate3d(0, 0, 0)
 		opacity: 1
 
+@keyframes pulse
+	0%
+		box-shadow: 0 0 0 0 rgba($white, 0.75)
+	70%
+		box-shadow: 0 0 0 15px rgba($black, 0)
+	100%
+		box-shadow: 0 0 0 0 rgba($black, 0)
+
 
 /* ==========================================================================
    Other
@@ -507,6 +515,9 @@ img.error
 		top: 57%
 		z-index: 1
 		transform: translateY(-57%)
+		+media-breakpoint-down(xs)
+			top: 60%
+			transform: translateY(-60%)
 
 
 /* ==========================================================================

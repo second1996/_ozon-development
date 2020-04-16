@@ -161,8 +161,9 @@ $(document).ready(function(){
 		siteMenu.toggleClass('shown');
 	});
 
-
 });
+
+
 
 $(window).on('load', function () {
 
