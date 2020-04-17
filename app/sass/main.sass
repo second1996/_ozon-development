@@ -729,24 +729,34 @@
    Page: Energy
    ========================================================================== */
 .p-energy
+	// Render photo with points
 	.render
 		position: relative
 		&-points
 			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
+			top: 10px
+			left: 10px
+			right: 10px
+			bottom: 10px
 			z-index: 1
-			+media-breakpoint-down(xs)
+			+media-breakpoint-down(md)
 				position: static
+				display: flex
+				flex-wrap: wrap
+				margin-left: -10px
+				margin-right: -10px
 			.point
 				position: absolute
 				max-width: 300px
-				+media-breakpoint-down(xs)
+				+media-breakpoint-down(md)
 					position: static
-					max-width: 100%
+					flex-basis: 50%
+					max-width: 50%
 					margin-top: 20px
+					padding: 0 10px
+					+media-breakpoint-down(xs)
+						flex-basis: 100%
+						max-width: 100%
 				&-anchor
 					position: relative
 					z-index: 2
@@ -757,26 +767,29 @@
 					border: 4px solid $white
 					background: $accent
 					animation: pulse 2s infinite
-					+media-breakpoint-down(xs)
+					+media-breakpoint-down(md)
 						display: none
 					&:hover
 						cursor: pointer
 						~ .point-content
 							z-index: 3
 							visibility: visible
+							height: 100%
 							opacity: 1
 							transform: translateY(0)
 				&-content
 					visibility: hidden
 					position: relative
 					top: 20px
+					height: 1px
 					padding: 30px 20px
 					border-radius: 5px
 					border: 1px solid rgba($white, 0.05)
-					box-shadow: 0 10px 15px rgba($black, 0.5)
+					box-shadow: 0 10px 15px rgba($black, 0.15)
 					background: $item-bg
 					text-align: center
 					opacity: 0
+					will-change: transform
 					transform: translateY(40px)
 					transition: .45s ease
 					&::before
@@ -785,11 +798,12 @@
 						left: 50%
 						bottom: 100%
 						display: block
-						border: 8px solid $trsp
-						border-bottom: 8px solid $item-bg
+						border: 10px solid $trsp
+						border-bottom: 10px solid $item-bg
 						transform: translateX(-50%)
-					+media-breakpoint-down(xs)
+					+media-breakpoint-down(md)
 						visibility: visible
+						height: 100%
 						border-radius: 0
 						box-shadow: none
 						opacity: 1
@@ -798,10 +812,9 @@
 							display: none
 				&-icon
 					margin-bottom: 20px
-					line-height: 1
-					.icon
-						color: $accent
-						font-size: 50px
+					> img
+						display: inline-block
+						height: 50px
 				&-title
 					color: $white
 					font-size: 18px
@@ -817,9 +830,64 @@
 		&-photo
 			width: 100%
 			height: 750px
-			+media-breakpoint-down(xs)
+			+media-breakpoint-down(md)
 				display: none
 			> img
 				width: 100%
 				height: 100%
 				object-fit: cover
+	// Energy in figures
+	.figures
+		> .row [class*="col"]
+			margin-top: 20px
+		&-item
+			padding-top: 50px
+			padding-bottom: 50px
+			.title
+				margin-bottom: 20px
+			&--red
+				+media-breakpoint-down(xs)
+					> .title
+						text-align: center
+				> .title,
+				svg.icon
+					color: #dd6a6a
+			&--green
+				> .title,
+				svg.icon
+					color: #28ff64
+			&--yellow
+				> .title,
+				svg.icon
+					color: $accent
+		&-list
+			display: flex
+			flex-wrap: wrap
+			margin-left: -5px
+			margin-right: -5px
+			&-w-50
+				.figures-list-item
+					flex-basis: 50%
+					max-width: 50%
+					padding: 0 5px
+					+media-breakpoint-down(xs)
+						flex-basis: 100%
+						max-width: 100%
+						text-align: center
+			&-w-100
+				.figures-list-item
+					flex-basis: 100%
+					max-width: 100%
+					padding: 0 5px
+					text-align: center
+			&-item
+				margin-top: 30px
+				.picture
+					margin-bottom: 15px
+					line-height: 1
+					.icon
+						font-size: 30px
+				.title
+					margin-bottom: 5px
+				.descr
+					margin-top: 0
