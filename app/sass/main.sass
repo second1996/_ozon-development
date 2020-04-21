@@ -15,6 +15,8 @@
 	+media-breakpoint-down(sm)
 		min-height: 300px
 		max-height: 600px
+	+media-breakpoint-down(xss)
+		max-height: 500px
 	&-slider
 		width: 100%
 		height: 100%
@@ -133,6 +135,9 @@
 			box-sizing: border-box
 			+media-breakpoint-down(sm)
 				padding-top: 60px
+			+media-breakpoint-down(xss)
+				// pt0
+				justify-content: flex-start
 			.title
 				max-width: 75%
 				font-size: 70px

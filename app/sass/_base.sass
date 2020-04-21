@@ -377,7 +377,6 @@ img.error
 	will-change: transform
 	transform: translateX(-100%)
 	transition: 1s ease
-	// Show menu
 	&::before
 		content: ''
 		position: absolute
@@ -411,10 +410,9 @@ img.error
 		+media-breakpoint-down(xl)
 			padding: 55px 75px 60px
 		+media-breakpoint-down(lg)
-			padding: 135px 30px 60px
-		+media-breakpoint-down(sm)
-			padding-top: 120px
+			padding: 140px 30px 60px
 		+media-breakpoint-down(xs)
+			padding-top: 130px
 			padding-left: 15px
 			padding-right: 15px
 		&::-webkit-scrollbar
@@ -681,12 +679,16 @@ body.home
 		right: 0
 		z-index: 3
 		width: 100%
+		+media-breakpoint-down(lg)
+			margin-top: 60px
+		+media-breakpoint-down(xs)
+			margin-top: 50px
 .page-head
-	margin-top: 70px
+	padding-top: 70px
 	+media-breakpoint-down(xl)
-		margin-top: 55px
-	+media-breakpoint-down(xs)
-		margin-top: 40px
+		padding-top: 55px
+	+media-breakpoint-down(lg)
+		padding-top: 0
 	+media-breakpoint-down(xss)
 		display: none
 	&-item
@@ -730,6 +732,23 @@ body.home
 				font-size: 16px
 			+media-breakpoint-down(xs)
 					font-size: 15px
+// Background photo
+.page-bg-photo
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 0
+	width: 100%
+	height: 700px
+	&::after
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		b
 // Heroes (Icon, Title, Descr)
 .page-heroes
 	position: relative
