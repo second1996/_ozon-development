@@ -561,7 +561,6 @@
 	&-slider
 		overflow: visible
 		+media-breakpoint-down(xs)
-			overflow: hidden
 			&-prev,
 			&-next
 				margin-top: 20px
@@ -947,8 +946,15 @@
 		position: relative
 		margin-top: 170px
 		z-index: 1
+		+media-breakpoint-down(xl)
+			margin-top: 100px
+		+media-breakpoint-down(lg)
+			margin-top: 60px
 // Section: Other news
 .s-news
+	&-other
+		overflow: hidden
+		padding-bottom: 10px
 	&-nav
 		display: flex
 		align-items: center
@@ -963,7 +969,6 @@
 	&-slider
 		overflow: visible
 		+media-breakpoint-down(xs)
-			overflow: hidden
 			&-prev,
 			&-next
 				margin-top: 20px
