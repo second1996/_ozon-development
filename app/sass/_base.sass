@@ -126,6 +126,21 @@ img.error
 	color: $white
 	> span
 		color: $accent
+.title-xxl
+	font-size: 62px
+	line-height: 1.2
+	+media-breakpoint-down(xl)
+		font-size: 56px
+	+media-breakpoint-down(lg)
+		font-size: 48px
+	+media-breakpoint-down(md)
+		font-size: 42px
+	+media-breakpoint-down(sm)
+		font-size: 36px
+	+media-breakpoint-down(xs)
+		font-size: 32px
+	+media-breakpoint-down(xss)
+		font-size: 28px
 .title-xl
 	font-size: 50px
 	line-height: 1.4
@@ -684,6 +699,8 @@ body.home
 		+media-breakpoint-down(xs)
 			margin-top: 50px
 .page-head
+	position: relative
+	z-index: 1
 	padding-top: 70px
 	+media-breakpoint-down(xl)
 		padding-top: 55px
@@ -742,13 +759,26 @@ body.home
 	z-index: 0
 	width: 100%
 	height: 700px
+	&::before,
 	&::after
+		content: ''
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
 		bottom: 0
-		b
+		z-index: 1
+		display: block
+		width: 100%
+		height: 100%
+	&::before
+		background: rgba(#222, 0.3)
+	&::after
+		background: linear-gradient(to top, #222 0%, rgba($dark, 0) 100%)
+	> img
+		width: 100%
+		height: 100%
+		object-fit: cover
 // Heroes (Icon, Title, Descr)
 .page-heroes
 	position: relative
@@ -793,6 +823,17 @@ body.home
 	padding-bottom: 160px
 	+media-breakpoint-down(xl)
 		padding-bottom: 100px
+// Article
+.page-article
+	padding: 75px 50px
+	border: 1px solid $border
+	background: rgba($item-bg, 0.85)
+	.date
+		margin-bottom: 10px
+	.content
+		margin-top: 60px
+		p:not(:first-child)
+			margin-top: 20px
 // Section
 .page-section
 	margin-top: 100px

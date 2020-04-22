@@ -943,3 +943,30 @@
 				color: $accent
 			&-descr
 				margin-top: 10px
+	&-single
+		position: relative
+		margin-top: 170px
+		z-index: 1
+// Section: Other news
+.s-news
+	&-nav
+		display: flex
+		align-items: center
+	&-more
+		margin-right: 30px
+		line-height: 1
+		> a
+			display: inline-block
+			color: $accent
+			&:hover
+				color: $white
+	&-slider
+		overflow: visible
+		+media-breakpoint-down(xs)
+			overflow: hidden
+			&-prev,
+			&-next
+				margin-top: 20px
+	&-slide
+		height: auto
+
