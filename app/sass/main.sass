@@ -958,9 +958,17 @@
 	&-nav
 		display: flex
 		align-items: center
+		+media-breakpoint-down(xs)
+			justify-content: space-between
+			margin-top: 20px
+			white-space: nowrap
 	&-more
 		margin-right: 30px
 		line-height: 1
+		+media-breakpoint-down(xss)
+			margin-right: 10px
+			> a
+				font-size: 16px
 		> a
 			display: inline-block
 			color: $accent
@@ -968,10 +976,6 @@
 				color: $white
 	&-slider
 		overflow: visible
-		+media-breakpoint-down(xs)
-			&-prev,
-			&-next
-				margin-top: 20px
 	&-slide
 		height: auto
 
