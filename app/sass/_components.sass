@@ -165,6 +165,21 @@
 				background-size: 100%
 				transform: none
 				transition: transform .45s ease
+		&-question
+			position: relative
+			align-items: center
+			&::before
+				content: ''
+				display: inline-block
+				width: 16px
+				height: 16px
+				margin-right: 10px
+				background-image: url('../images/icons/question-accent.svg')
+				background-repeat: no-repeat
+				background-position-y: center
+				background-size: 100%
+				transform: none
+				transition: transform .45s ease
 	&-primary
 		box-shadow: 0 0 0 2px rgba($border-accent, 0.6)
 		background-color: $accent
@@ -185,6 +200,16 @@
 			background: $dark
 		&.btn-icon::after
 			background-image: url('../images/icons/arrow-white.svg')
+	&-outline-accent
+		box-shadow: 0 0 0 1px $accent
+		background: $text-dark
+		color: $accent
+		&:active
+			border: 1px solid $accent
+		&:hover
+			background: $dark
+		&.btn-icon::after
+			background-image: url('../images/icons/arrow-accent.svg')
 	&-solid
 		box-shadow: 0 0 0 2px rgba($white, 0.15)
 		background: $dark
@@ -520,7 +545,8 @@
 			right: 0
 			width: 50px
 			height: 50px
-			background: $white
+			border: 1px solid $accent
+			background: $trsp
 			margin: 0
 			padding: 0
 			> span
@@ -530,7 +556,8 @@
 				width: 30px
 				height: 1px
 				margin-left: -15px
-				background: $text-dark
+				background: $accent
+				transition: background-color .45s ease
 				&:nth-child(1)
 					transform: rotate(-45deg)
 				&:nth-child(2)
@@ -538,6 +565,8 @@
 			&:hover
 				box-shadow: 0 0 0 3px rgba($white, 0.15)
 				background-color: $accent
+				> span
+					background: $text-dark
 			&:active
 				box-shadow: none
 			+media-breakpoint-down(xs)
