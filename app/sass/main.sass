@@ -691,6 +691,111 @@
 
 
 /* ==========================================================================
+   Page: Dynamic sales
+   ========================================================================== */
+.d-graph
+	padding: 40px
+	&-title
+		margin-bottom: 10px
+		> span
+			display: block
+			font-size: 16px
+			font-weight: $font-regular
+	&-descr
+		font-size: 15px
+	// Graph
+	&-inner
+		height: 100%
+		margin-top: 40px
+	&-body
+		// overflow: hidden
+		display: flex
+		height: 100%
+		flex-wrap: wrap
+		justify-content: space-between
+		border: 1px solid #454545
+		border-top: 0
+		border-left: 0
+		// border-right: 0
+	&-group
+		position: relative
+		display: flex
+		// min-height: 100%
+		padding-top: 70px
+		&-title
+			position: absolute
+			top: 0
+			left: 50%
+			display: inline-block
+			padding: 10px 20px
+			background: $accent
+			color: $text-dark
+			font-size: 14px
+			line-height: 1
+			transform: translateX(-50%)
+		// &:nth-child(2)
+		// 	.d-graph-label:last-child::after
+		// 		display: none
+	&-columns
+		display: flex
+		align-items: flex-end
+	&-col
+		width: 100px
+		padding: 0 15px
+	&-bar
+		display: flex
+		flex-direction: column-reverse
+		width: 100%
+		margin: 0 auto
+		padding: 26px 0 20px
+		border: 1px solid #454545
+		border-bottom: 0
+		background: #303030
+		// &:hover
+		// 	box-shadow: 0 0 0 3px #454545
+	&-house
+		display: block
+		width: 18px
+		height: 18px
+		margin: 0 auto 12px
+		&-sold-out
+			background: url('../images/icons/house-accent.svg') no-repeat center/cover
+		&-sale
+			background: url('../images/icons/house.svg') no-repeat center/cover
+	&-labels
+		position: absolute
+		top: 100%
+		left: 0
+		display: flex
+		justify-content: space-between
+	&-label
+		position: relative
+		width: 100px
+		padding: 0 15px
+		text-align: center
+		> span
+			color: $white
+			font-size: 14px
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 1px
+			height: 8px
+			background:#454545
+		&:last-child::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			width: 1px
+			height: 8px
+			background:#454545
+
+
+
+/* ==========================================================================
    Page: Documents
    ========================================================================== */
 .documents-list
@@ -804,7 +909,10 @@
 						color: $accent
 	&-map
 		border: 1px solid $border
-		filter: grayscale(0.5)
+		filter: grayscale(1)
+		transition: .45s ease
+		&:hover
+			filter: grayscale(0)
 		iframe
 			display: block
 			width: 100%
