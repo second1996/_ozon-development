@@ -749,12 +749,10 @@
 			font-weight: $font-regular
 	&-descr
 		font-size: 15px
-	// Graph
 	&-inner
 		height: 100%
 		margin-top: 40px
 	&-body
-		// overflow: hidden
 		display: flex
 		height: 100%
 		flex-wrap: wrap
@@ -762,7 +760,6 @@
 		border: 1px solid #454545
 		border-top: 0
 		border-left: 0
-		// border-right: 0
 	&-group
 		position: relative
 		display: flex
@@ -800,6 +797,10 @@
 		padding: 0 15px
 		+media-breakpoint-down(xl)
 			padding: 0 10px
+		&--unavailable
+			pointer-events: none
+			user-select: none
+			opacity: 0.15
 	&-bar
 		display: flex
 		flex-direction: column-reverse
@@ -809,8 +810,6 @@
 		border: 1px solid #454545
 		border-bottom: 0
 		background: #303030
-		// &:hover
-		// 	box-shadow: 0 0 0 3px #454545
 	&-house
 		display: block
 		width: 18px
