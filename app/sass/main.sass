@@ -693,8 +693,54 @@
 /* ==========================================================================
    Page: Dynamic sales
    ========================================================================== */
+.p-graphs
+	.row > [class*="col"]
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	@media (max-width: 1376px)
+		.d-graph
+			&-body
+				border: 0
+				height: 100%
+				flex-wrap: nowrap
+				flex-direction: column
+			&-group
+				flex: 1 1 auto
+				border: 1px solid #454545
+				border-top: 0
+				border-left: 0
+				&:nth-child(2)
+					margin-top: 60px
+			&-columns,
+			&-labels
+				justify-content: center
+				width: 100%
+			&-col,
+			&-label
+				min-width: 100px
+	+media-breakpoint-down(md)
+		.d-graph-group-title
+			font-size: 12px
+		.d-graph-col,
+		.d-graph-label
+			min-width: 80px
+		.d-graph-house
+			width: 15px
+			height: 15px
+		.d-graph-label > span
+			font-size: 12px
+	+media-breakpoint-down(xss)
+		.d-graph-col,
+		.d-graph-label
+			min-width: 70px
+
 .d-graph
 	padding: 40px
+	+media-breakpoint-down(md)
+		padding: 30px
+	+media-breakpoint-down(sm)
+		padding-bottom: 40px
 	&-title
 		margin-bottom: 10px
 		> span
@@ -721,6 +767,16 @@
 		position: relative
 		display: flex
 		padding-top: 70px
+		// Customize unavailable group
+		&--unavailable
+			pointer-events: none
+			user-select: none
+			.d-graph-group-title
+				background: $white
+				opacity: 0.15
+			.d-graph-bar
+				opacity: 0.15
+		// Main customize
 		&-title
 			position: absolute
 			top: 0
@@ -739,8 +795,11 @@
 		display: flex
 		align-items: flex-end
 	&-col
-		width: 100px
+		width: 5.25vw
+		max-width: 100px
 		padding: 0 15px
+		+media-breakpoint-down(xl)
+			padding: 0 10px
 	&-bar
 		display: flex
 		flex-direction: column-reverse
@@ -769,8 +828,9 @@
 		justify-content: space-between
 	&-label
 		position: relative
-		width: 100px
-		padding: 0 15px
+		width: 5.25vw
+		max-width: 100px
+		padding: 0 5px
 		text-align: center
 		> span
 			color: $white
@@ -791,6 +851,53 @@
 			width: 1px
 			height: 8px
 			background:#454545
+	&-info
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		margin-top: 50px
+		+media-breakpoint-down(lg)
+			flex-direction: column
+			flex-wrap: nowrap
+		+media-breakpoint-down(sm)
+			align-items: center
+		&-item
+			display: flex
+			margin: 5px 20px
+			+media-breakpoint-down(lg)
+				margin: 0
+				&:not(:first-child)
+					margin-top: 15px
+			+media-breakpoint-down(xss)
+				flex-direction: column
+				align-items: center
+				text-align: center
+				.icon
+					margin-right: 0!important
+					margin-bottom: 6px
+					&::after
+						display: none!important
+			.icon
+				position: relative
+				margin-right: 18px
+				&::after
+					content: ''
+					position: absolute
+					top: 10px
+					left: 100%
+					display: inline-block
+					width: 6px
+					height: 1px
+					margin-top: -1px
+					margin-left: 6px
+					background: $text-main
+				.d-graph-house
+					margin: 0
+			.descr
+				font-size: 15px
+				line-height: 1.4
+				+media-breakpoint-down(md)
+					font-size: 14px
 
 
 
