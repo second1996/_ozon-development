@@ -1291,3 +1291,92 @@
 	&-slide
 		height: auto
 
+
+/* ==========================================================================
+   Page: House
+   ========================================================================== */
+.p-house
+	position: relative
+	z-index: 1
+	margin-top: 170px
+	+media-breakpoint-down(xl)
+		margin-top: 100px
+	+media-breakpoint-down(lg)
+		margin-top: 60px
+	.details
+		padding-top: 60px
+		&-prices
+			display: flex
+			flex-wrap: wrap
+			.price-sqm,
+			.price-full
+				margin-bottom: 10px
+				padding: 15px 25px
+				font-size: 20px
+				font-weight: $font-regular
+				line-height: 1
+				> em
+					font-style: normal
+			.price-sqm
+				margin-right: 20px
+				border: 2px solid $border-accent
+				background: $accent
+				color: $text-dark
+			.price-full
+				border: 2px solid #4f4f4f
+				background: #353535
+				font-weight: $font-light
+				color: $white
+		&-title
+			padding-top: 30px
+		&-list
+			padding-top: 10px
+			display: flex
+			flex-wrap: wrap
+			&-item
+				margin-top: 20px
+				&:not(:last-child)
+					margin-right: 60px
+				.value
+					display: block
+					color: $accent
+					font-size: 26px
+					font-weight: $font-medium
+					+media-breakpoint-down(xl)
+						font-size: 24px
+					+media-breakpoint-down(lg)
+						font-size: 22px
+					+media-breakpoint-down(sm)
+						font-size: 20px
+				.name
+					display: block
+					font-size: 18px
+					+media-breakpoint-down(lg)
+						font-size: 17px
+					+media-breakpoint-down(sm)
+						font-size: 16px
+					+media-breakpoint-down(xs)
+						font-size: 15px
+		&-more-btn
+			display: inline-flex
+			align-items: center
+			margin-top: 80px
+			padding-bottom: 4px
+			border-bottom: 1px dashed $trsp
+			line-height: 1
+			> span
+				display: inline-block
+				color: $white
+				font-size: 20px
+				font-weight: $font-regular
+				transition: color .45s ease
+			> .icon
+				position: relative
+				margin-left: 12px
+				color: $accent
+				font-size: 14px
+				transform: rotate(90deg)
+			&:hover
+				border-bottom-color: $accent
+				> span
+					color: $accent
