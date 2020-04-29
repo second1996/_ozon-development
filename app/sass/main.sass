@@ -1295,16 +1295,39 @@
 /* ==========================================================================
    Page: House
    ========================================================================== */
+.single-house
+	position: relative
+.page-bg-photo
+	height: 100vh
+	min-height: 800px
+	max-height: 1100px
+	+media-breakpoint-down(xl)
+		min-height: 750px
+	+media-breakpoint-down(sm)
+		min-height: 300px
+		max-height: 600px
+	+media-breakpoint-down(xss)
+		max-height: 500px
 .p-house
 	position: relative
 	z-index: 1
-	margin-top: 170px
-	+media-breakpoint-down(xl)
-		margin-top: 100px
-	+media-breakpoint-down(lg)
-		margin-top: 60px
+	padding-top: 0
+	// Section: Details
 	.details
-		padding-top: 60px
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		height: 100vh
+		min-height: 800px
+		max-height: 1100px
+		padding-bottom: 70px
+		+media-breakpoint-down(xl)
+			min-height: 750px
+		+media-breakpoint-down(sm)
+			min-height: 300px
+			max-height: 600px
+		+media-breakpoint-down(xss)
+			max-height: 500px
 		&-prices
 			display: flex
 			flex-wrap: wrap
@@ -1312,7 +1335,7 @@
 			.price-full
 				margin-bottom: 10px
 				padding: 15px 25px
-				font-size: 20px
+				font-size: 18px
 				font-weight: $font-regular
 				line-height: 1
 				> em
@@ -1357,26 +1380,134 @@
 						font-size: 16px
 					+media-breakpoint-down(xs)
 						font-size: 15px
-		&-more-btn
-			display: inline-flex
-			align-items: center
-			margin-top: 80px
-			padding-bottom: 4px
-			border-bottom: 1px dashed $trsp
-			line-height: 1
-			> span
-				display: inline-block
-				color: $white
-				font-size: 20px
-				font-weight: $font-regular
-				transition: color .45s ease
-			> .icon
-				position: relative
-				margin-left: 12px
-				color: $accent
-				font-size: 14px
-				transform: rotate(90deg)
-			&:hover
-				border-bottom-color: $accent
+		&-button
+			padding-top: 80px
+			.read-more
+				display: inline-flex
+				align-items: center
+				padding-bottom: 4px
+				border-bottom: 1px dashed $trsp
+				line-height: 1
 				> span
+					display: inline-block
+					color: $white
+					font-size: 20px
+					font-weight: $font-regular
+					transition: color .45s ease
+				> .icon
+					position: relative
+					margin-left: 12px
 					color: $accent
+					font-size: 14px
+					transform: rotate(90deg)
+				&:hover
+					border-bottom-color: $accent
+					> span
+						color: $accent
+	// Section: About
+	.about
+		&-back-btn
+			margin-bottom: 15px
+			.go-back
+				display: inline-flex
+				align-items: center
+				color: $accent
+				> .icon
+					margin-right: 8px
+					font-size: 16px
+					transform: rotate(-180deg)
+				> span
+					display: inline-block
+					font-size: 20px
+					font-weight: $font-regular
+					text-transform: uppercase
+					transition: transform .45s ease
+				&:hover
+					color: $white
+					> span
+						transform: translateX(4px)
+		&-title
+			margin-bottom: 20px
+		&-descr
+			justify-content: space-between
+			> .row > [class*="col"]
+				max-width: 680px
+	// Section: Planning
+	.planning
+		&-table
+			width: 100%
+			margin-bottom: 40px
+			thead
+				th, td
+					padding: 15px 30px
+					color: $white
+					font-weight: $font-regular
+					line-height: 1.3
+				th
+					padding-top: 0
+					padding-bottom: 20px
+				td
+					border-bottom: 1px solid $border
+				.name
+					color: $accent
+				.value
+					color: $accent
+					text-align: center
+			tbody
+				tr
+					border-bottom: 1px solid $border
+				td
+					padding: 15px 30px
+					line-height: 1.3
+				.name
+					display: flex
+					align-items: center
+					> .number
+						flex: 0 0 auto
+						display: inline-block
+						width: 20px
+						height: 20px
+						border-radius: 100%
+						background: $accent
+						color: $text-dark
+						font-size: 12px
+						font-weight: $font-regular
+						text-align: center
+						line-height: 20px
+					> .title
+						display: inline-block
+						margin-left: 15px
+						color: $white
+				.value
+					color: $accent
+					font-weight: $font-regular
+					text-align: center
+			&-section
+				padding: 16px 30px
+				border-bottom: 1px solid $border
+				background: #262626
+				color: $white
+				font-weight: $font-regular
+				line-height: 1.3
+				text-align: center
+				text-transform: uppercase
+		&-buttons
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			+media-breakpoint-down(md)
+				justify-content: center
+			+media-breakpoint-down(sm)
+				> div
+					margin: 0 10px 20px
+				> div:first-child
+					flex-basis: 100%
+					margin-right: 10px!important
+					text-align: center
+			> div:not(:last-child)
+				margin-right: 40px
+				+media-breakpoint-down(xl)
+					margin-right: 30px
+				+media-breakpoint-down(sm)
+					margin-left: 10px
+					margin-right: 10px

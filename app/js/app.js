@@ -183,6 +183,18 @@ $(document).ready(function(){
 		siteMenu.toggleClass('shown');
 	});
 
+	/**
+	 * Anchor smooth scroll link
+	 */
+		// Anchors Links
+		$('a[data-link^="anchor"]').bind('click.smoothscroll', function(){
+			var target = $(this).attr('href'),
+					bl_top = $(target).offset().top - 75;
+
+			$('body, html').animate({scrollTop: bl_top}, 1000);
+			return false;
+		});
+
 });
 
 
