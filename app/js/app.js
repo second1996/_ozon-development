@@ -148,7 +148,7 @@ $(document).ready(function(){
 	/**
 	 * Swiper for single page News & Promo section "Other news"
 	 */
-	var constructionSwiper = new Swiper ('.s-news-slider', {
+	var newsSwiper = new Swiper ('.s-news-slider', {
 		spaceBetween: 20,
 		slidesPerView: 3,
 		freeMode: true,
@@ -171,6 +171,27 @@ $(document).ready(function(){
 		}
 	});
 
+		/**
+	 * Swiper for House section "Planning"
+	 */
+	var planningSwiper = $('.planning-slider');
+	planningSwiper.each(function(){
+		var planningSlider = new Swiper (this, {
+			slidesPerView: 1,
+			grabCursor: true,
+			preloadImages: false,
+			navigation: {
+				nextEl: $(this).parent().find('.planning-slider-next')[0],
+				prevEl: $(this).parent().find('.planning-slider-prev')[0],
+			},
+		});
+		$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			// e.target // newly activated tab
+			// e.relatedTarget // previous active tab
+			planningSlider.update();
+		});
+	});
+
 	/**
 	 * Open "Site menu" when clicked on hamburger button
 	 */
@@ -186,14 +207,13 @@ $(document).ready(function(){
 	/**
 	 * Anchor smooth scroll link
 	 */
-		// Anchors Links
-		$('a[data-link^="anchor"]').bind('click.smoothscroll', function(){
-			var target = $(this).attr('href'),
-					bl_top = $(target).offset().top - 75;
+	$('a[data-link^="anchor"]').bind('click.smoothscroll', function(){
+		var target = $(this).attr('href'),
+				bl_top = $(target).offset().top - 75;
 
-			$('body, html').animate({scrollTop: bl_top}, 1000);
-			return false;
-		});
+		$('body, html').animate({scrollTop: bl_top}, 1000);
+		return false;
+	});
 
 });
 

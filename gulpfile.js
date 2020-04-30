@@ -48,6 +48,7 @@ function scripts() {
 		'node_modules/vanilla-lazyload/dist/lazyload.min.js', // LazyLoad
 		'node_modules/bootstrap/js/dist/util.js', // Bootstrap Lib Util
 		'node_modules/bootstrap/js/dist/modal.js', // Bootstrap Modal
+		'node_modules/bootstrap/js/dist/tab.js', // Bootstrap Tabs
 		'node_modules/smooth-scrollbar/dist/smooth-scrollbar.js', // Smooth Scrollbar
 		'app/libs/popper.min.js', // Lib Popper
 		'app/libs/fancybox/dist/jquery.fancybox.min.js', // Fancybox 3

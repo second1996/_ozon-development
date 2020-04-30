@@ -1511,3 +1511,57 @@
 				+media-breakpoint-down(sm)
 					margin-left: 10px
 					margin-right: 10px
+		// Planning 2D/3D switch buttons
+		&-switch
+			&-tabs
+				justify-content: center
+				border: 0
+				margin-bottom: 40px
+				.nav-link
+					width: 80px
+					padding: 0
+					border-radius: 0
+					border: 0
+					border: 1px solid $border
+					background: $item-bg
+					font-size: 16px
+					font-weight: $font-regular
+					text-align: center
+					line-height: 50px
+					&.active
+						border-color: $accent
+						background: $accent
+						color: $text-dark
+		// Planning 2D/3D slider
+		&-slider
+			&-prev,
+			&-next
+				position: absolute
+				top: 50%
+				margin-top: -25px
+		&-slide
+			&-photo
+				position: relative
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 400px
+				height: 600px
+				margin: 0 auto
+				> img
+					width: 100%
+					height: 100%
+					object-fit: contain
+		// Planning 2D/3D floor
+		&-floor
+			margin-top: 30px
+			text-align: center
+			> span
+				display: inline-block
+				padding-bottom: 6px
+				border-bottom: 1px solid $accent
+				color: $white
+				font-size: 20px
+				font-weight: $font-medium
+				text-transform: uppercase
+				line-height: 1
