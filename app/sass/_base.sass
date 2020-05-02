@@ -580,6 +580,8 @@ img.error
 	background: $darken
 	&-main
 		padding: 50px 0 80px
+		.row-items > [class*="col"]
+			margin-top: 40px
 	&-bottom
 		padding: 30px 0
 		border-top: 1px solid rgba($border, 0.4)
@@ -684,6 +686,29 @@ img.error
 				color: #949494
 				&:hover
 					color: $white
+
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+.cta
+	padding: 80px 0
+	+media-breakpoint-down(xl)
+		padding: 60px 0
+	&-title
+		max-width: 90%
+		+media-breakpoint-down(xl)
+			max-width: 100%
+	&-descr
+		+media-breakpoint-down(xl)
+			margin-bottom: 40px
+	.form-control
+		background: $dark
+	&-form-text
+		margin: 0
+		padding-right: 20px
+		+media-breakpoint-down(xs)
+			margin-bottom: 15px
 
 
 /* ==========================================================================

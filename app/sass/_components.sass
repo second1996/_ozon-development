@@ -150,7 +150,9 @@
 			transition: transform .45s ease
 		&:hover::after
 			transform: translateX(4px)
-		&-key
+		&-key,
+		&-question,
+		&-pdf
 			position: relative
 			align-items: center
 			&::before
@@ -159,27 +161,17 @@
 				width: 16px
 				height: 16px
 				margin-right: 10px
-				background-image: url('../images/icons/key.svg')
 				background-repeat: no-repeat
 				background-position-y: center
 				background-size: 100%
 				transform: none
 				transition: transform .45s ease
-		&-question
-			position: relative
-			align-items: center
-			&::before
-				content: ''
-				display: inline-block
-				width: 16px
-				height: 16px
-				margin-right: 10px
-				background-image: url('../images/icons/question-accent.svg')
-				background-repeat: no-repeat
-				background-position-y: center
-				background-size: 100%
-				transform: none
-				transition: transform .45s ease
+		&-key::before
+			background-image: url('../images/icons/key.svg')
+		&-question::before
+			background-image: url('../images/icons/question-accent.svg')
+		&-pdf::before
+			background-image: url('../images/icons/pdf-file-accent.svg')
 	&-primary
 		box-shadow: 0 0 0 2px rgba($border-accent, 0.6)
 		background-color: $accent
@@ -188,6 +180,9 @@
 			box-shadow: 0 0 0 2px rgba($white, 0.4)
 			background-color: $white
 			color: $text-dark
+		&:active
+			box-shadow: 0 0 0 3px rgba($white, 0.5)
+			background-color: darken($white, 10%)
 		&.btn-icon::after
 			background-image: url('../images/icons/arrow.svg')
 	&-outline
@@ -313,6 +308,148 @@
 		margin-bottom: 15px
 		+media-breakpoint-down(xs)
 			font-size: 14px
+	&-range
+		overflow: hidden
+		position: relative
+		z-index: 2
+		width: 100%
+		height: 24px
+		padding: 0
+		background-color: $trsp
+		appearance: none
+		&:focus
+			box-shadow: none
+			outline: none
+			&::-webkit-slider-thumb
+				box-shadow: none!important
+			&::-moz-range-thumb
+				box-shadow: none!important
+			&::-ms-thumb
+				box-shadow: none!important
+		// -webkit- vendor
+		&::-webkit-slider-thumb
+			cursor: pointer
+			width: 30px
+			height: 24px
+			margin-top: -8px
+			background: $accent url('../images/icons/range-separator.svg') no-repeat center/6px
+			border: 1px solid $border-accent
+			border-radius: 2px
+			box-shadow: 0
+			transition: .45s ease
+			appearance: none
+			&:active
+				background-color: $white
+		&::range-progress
+			height: 20px
+			border-radius: 10px 0 0 10px
+			background-color: #2196F3
+			border: 2px solid #1976D2
+		&::-webkit-slider-runnable-track
+			width: 100%
+			height: 10px
+			color: transparent
+			cursor: pointer
+			background-color: $item-bg
+			border: 1px solid $border
+			border-radius: 0
+			box-shadow: 0
+		// -moz- vendor
+		&::-moz-focus-outer
+			border: 0
+		&::-moz-range-thumb
+			cursor: pointer
+			width: 30px
+			height: 24px
+			background: $accent url('../images/icons/range-separator.svg') no-repeat center/6px
+			border: 1px solid $border-accent
+			border-radius: 2px
+			box-shadow: 0
+			transition: .45s ease
+			appearance: none
+			&:active
+				background-color: $white
+		&::-moz-range-progress
+			height: 9px
+			background: $accent
+			padding: 0
+			margin: 0
+			border: 1px solid $border
+			border-left: 0
+		&::-moz-range-track
+			width: 100%
+			height: 10px
+			color: transparent
+			cursor: pointer
+			background-color: $item-bg
+			border-color: $trsp
+			border-radius: 0
+			box-shadow: 0 0 0 1px $border
+		// -ms- vendor
+		&::-ms-thumb
+			cursor: pointer
+			width: 30px
+			height: 24px
+			margin-top: 0
+			margin-right: 6px
+			margin-left: 6px
+			background: $accent url('../images/icons/range-separator.svg') no-repeat center/6px
+			border: 1px solid $border-accent
+			border-radius: 2px
+			box-shadow: 0
+			transition: .45s ease
+			appearance: none
+			&:active
+				background-color: $white
+		&::-ms-track
+			width: 100%
+			height: 10px
+			color: transparent
+			cursor: pointer
+			background-color: $item-bg
+			border-width: 0
+			border-color: $trsp
+			border-radius: 0
+			box-shadow: 0 0 0 1px $border
+		&::-ms-fill-lower
+			background-color: $accent
+		&::-ms-fill-upper
+			margin-right: 15px
+			background-color: $trsp
+		// Disabled
+		&:disabled
+			&::-webkit-slider-thumb
+				opacity: 0.5
+			&::-webkit-slider-runnable-track
+				cursor: default
+			&::-moz-range-thumb
+				opacity: 0.5
+			&::-moz-range-track
+				cursor: default
+			&::-ms-thumb
+				opacity: 0.5
+		&-mark
+			display: flex
+			justify-content: space-between
+			margin-top: -15px
+			> li
+				position: relative
+				z-index: 1
+				width: 30px
+				padding-top: 20px
+				font-size: 16px
+				line-height: 1
+				text-align: center
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					width: 1px
+					height: 7px
+					margin: 0 auto
+					background: $border
 
 
 /* ==========================================================================

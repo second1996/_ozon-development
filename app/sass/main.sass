@@ -482,29 +482,6 @@
 
 
 /* ==========================================================================
-   CTA
-   ========================================================================== */
-.cta
-	padding: 80px 0
-	+media-breakpoint-down(xl)
-		padding: 60px 0
-	&-title
-		max-width: 90%
-		+media-breakpoint-down(xl)
-			max-width: 100%
-	&-descr
-		+media-breakpoint-down(xl)
-			margin-bottom: 40px
-	.form-control
-		background: $dark
-	&-form-text
-		margin: 0
-		padding-right: 20px
-		+media-breakpoint-down(xs)
-			margin-bottom: 15px
-
-
-/* ==========================================================================
    Home section: Houses
    ========================================================================== */
 .h-houses
@@ -748,10 +725,10 @@
 			font-size: 16px
 			font-weight: $font-regular
 	&-descr
+		margin-bottom: 40px
 		font-size: 15px
 	&-inner
 		height: 100%
-		margin-top: 40px
 	&-body
 		display: flex
 		height: 100%
@@ -1297,17 +1274,20 @@
    ========================================================================== */
 .single-house
 	position: relative
-.page-bg-photo
-	height: 100vh
-	min-height: 800px
-	max-height: 1100px
-	+media-breakpoint-down(xl)
-		min-height: 750px
-	+media-breakpoint-down(sm)
-		min-height: 300px
-		max-height: 600px
-	+media-breakpoint-down(xss)
-		max-height: 500px
+	.page-bg-photo
+		height: 100vh
+		min-height: 800px
+		max-height: 1100px
+		+media-breakpoint-down(xl)
+			min-height: 750px
+		+media-breakpoint-down(sm)
+			min-height: 300px
+			max-height: 600px
+		+media-breakpoint-down(xss)
+			max-height: 500px
+	.page-section
+		margin-top: 160px
+		margin-bottom: 80px
 .p-house
 	position: relative
 	z-index: 1
@@ -1552,9 +1532,11 @@
 					width: 100%
 					height: 100%
 					object-fit: contain
+				&:hover
+					cursor: zoom-in
 		// Planning 2D/3D floor
 		&-floor
-			margin-top: 30px
+			margin-top: 20px
 			text-align: center
 			> span
 				display: inline-block
@@ -1565,3 +1547,208 @@
 				font-weight: $font-medium
 				text-transform: uppercase
 				line-height: 1
+	// Section: Calculate
+	.calculate
+		position: relative
+		z-index: 1
+		padding: 80px 0
+		background: #222
+		&-wrapper
+			padding-right: 60px
+		&-form
+			.form-range
+				margin-top: 10px
+		&-total
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 40px
+			border: 1px solid $border
+			background: $item-bg
+			&-item
+				.value
+					> em
+						font-style: normal
+			&-separator
+				width: 1px
+				height: 80px
+				margin: 0 40px
+				background: $border
+		&-legend
+			.descr
+				margin-top: 20px
+				p:not(:first-child)
+					margin-top: 10px
+			.config
+				margin-top: 40px
+		&-photo
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			opacity: 0.05
+			> img
+				width: 100%
+				height: 100%
+				object-fit: cover
+	// Section: Dynamics
+	.dynamics
+		&-text
+			margin-top: 20px
+			padding-right: 80px
+	// Section: Reserve
+	.reserve
+		&-cost
+			position: relative
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			height: 100%
+			border: 1px solid $border
+			text-align: center
+			.price
+				margin-bottom: 10px
+				color: $accent
+				font-weight: $font-regular
+				> span
+					padding-left: 10px
+					font-weight: $font-bold
+			.descr
+				margin-bottom: 40px
+				max-width: 295px
+			.config
+				.btn-outline-accent
+					background: $trsp
+					&:hover
+						background: $item-bg
+			.back-btn
+				position: absolute
+				bottom: 50px
+				.go-back
+					display: inline-flex
+					align-items: center
+					color: $white
+					> .icon
+						margin-right: 8px
+						font-size: 13px
+						transform: rotate(-180deg)
+					> span
+						display: inline-block
+						font-size: 14px
+						font-weight: $font-regular
+						text-transform: uppercase
+						transition: transform .45s ease
+					&:hover
+						color: $accent
+						> span
+							transform: translateX(4px)
+			.photo
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: -1
+				&::after
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					z-index: 1
+					display: block
+					background: rgba(#222, 0.9)
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover
+		&-form
+			&-title
+				margin-bottom: 20px
+				> span
+					display: block
+					font-size: 16px
+					font-weight: $font-regular
+			.call-us
+				padding-bottom: 20px
+				border-bottom: 1px solid $border
+				> .phone
+					display: flex
+					align-items: center
+					> svg.icon
+						fill: $accent
+					> .numbers
+						margin-left: 10px
+						> a:not(:last-child)::after
+							content: ','
+							display: inline-block
+							font-size: inherit
+			.fill-in
+				margin-top: 30px
+	// Section: Gallery
+	.gallery
+		&-wrapper
+			padding: 10px
+			border: 1px solid $border
+			background: $item-bg
+		&-slider
+			width: 100%
+			height: 69.5vh
+			min-height: 300px
+			&-slide
+				> img
+					width: 100%
+					height: 100%
+					object-fit: contain
+			&-prev,
+			&-next
+				position: absolute
+				top: 50%
+				margin-top: -25px
+			&-prev
+				left: 30px
+			&-next
+				right: 30px
+			.swiper-button-prev,
+			.swiper-button-next
+				border-color: $accent
+				background-color: $trsp
+				background-image: url('../images/icons/arrow-accent.svg')
+				&:hover
+					background-color: $darken
+		&-thumbs
+			margin: 10px 0 0
+			height: 75px
+			.swiper-wrapper
+				// justify-content: center
+			&-slide
+				cursor: pointer
+				&:hover
+					> img
+						opacity: 1
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					z-index: 1
+					border: 4px solid $accent
+					opacity: 0
+					transition: opacity .3s ease
+				&.swiper-slide-thumb-active
+					cursor: default
+					&::before,
+					> img
+						opacity: 1
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover
+					transition: opacity .3s ease
+					opacity: 0.5

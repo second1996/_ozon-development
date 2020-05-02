@@ -15,6 +15,7 @@ $(document).ready(function(){
 	 */
 	$(":input").inputmask();
 
+
 	/**
 	 * Construction Modal Template (Модальне вікно для "Хід будівництва")
 	 */
@@ -29,6 +30,7 @@ $(document).ready(function(){
 		modal.find('.modal-fancy').html(images);
 		modal.find('.modal-text').html(text);
 	});
+
 
 	/**
 	 * Init Fancybox
@@ -46,7 +48,8 @@ $(document).ready(function(){
 		},
 		backFocus: false,
 	});
-	
+
+
 	// LazyLoad images
 	var lazyLoadInstance = new LazyLoad({
 		elements_selector: ".lazy",
@@ -56,6 +59,7 @@ $(document).ready(function(){
 			$(element).siblings('.lazy-spin').remove();
 		},
 	});
+
 
 	/**
 	 * Swiper for Home section: "Heroes"
@@ -100,6 +104,7 @@ $(document).ready(function(){
 		},
 	});
 
+
 	/**
 	 * Swiper for Home section: "About Us"
 	 */
@@ -115,6 +120,7 @@ $(document).ready(function(){
 			clickable: true,
 		},
 	});
+
 
 	/**
 	 * Swiper for Home section "Construction"
@@ -145,6 +151,7 @@ $(document).ready(function(){
 		}
 	});
 
+
 	/**
 	 * Swiper for single page News & Promo section "Other news"
 	 */
@@ -171,7 +178,8 @@ $(document).ready(function(){
 		}
 	});
 
-		/**
+
+	/**
 	 * Swiper for House section "Planning"
 	 */
 	var planningSwiper = $('.planning-slider');
@@ -192,6 +200,29 @@ $(document).ready(function(){
 		});
 	});
 
+
+		/**
+	 * Swiper for House section "Planning"
+	 */
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
+		spaceBetween: 10,
+		slidesPerView: 12,
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+
+	var gallerySlider = new Swiper('.gallery-slider', {
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		thumbs: {
+			swiper: galleryThumbs,
+		}
+	});
+
+
 	/**
 	 * Open "Site menu" when clicked on hamburger button
 	 */
@@ -204,6 +235,7 @@ $(document).ready(function(){
 		siteMenu.toggleClass('shown');
 	});
 
+
 	/**
 	 * Anchor smooth scroll link
 	 */
@@ -214,6 +246,37 @@ $(document).ready(function(){
 		$('body, html').animate({scrollTop: bl_top}, 1000);
 		return false;
 	});
+
+
+	/**
+	 * Installment calculator (Section: Calculate on House page)
+	 */
+	const firstPay = $("#c-first-pay");
+	const termPay = $("#c-term-pay");
+	const cTotalCost = $("#c-total-cost-val > em").text();
+	const cFirstPay = $("#c-first-pay-val > em");
+	const cMonthlyPay = $("#c-monthly-val > em");
+
+	// calculate("90000", 40)
+	function calculateFirstPay(price, value) {
+		cFirstPay.text(Math.round( ( parseInt(price) * ( value / 100 ) ) ));
+		cMonthlyPay.text(Math.round( ( parseInt(price) - cFirstPay.text() ) / termPay.val() ));
+	}
+	function calculateMonthlyPay(price, value) {
+		cMonthlyPay.text(Math.round( ( parseInt(price) - cFirstPay.text() ) / value ));
+	}
+
+	firstPay.on("input change", function(e) {
+		console.log($(this).val());
+		calculateFirstPay(cTotalCost, $(this).val());
+	});
+	termPay.on("input change", function(e) {
+		console.log($(this).val());
+		calculateMonthlyPay(cTotalCost, $(this).val());
+	});
+
+	// Show form when one/first time change input $().bind <-
+
 
 });
 

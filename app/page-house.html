@@ -118,7 +118,7 @@
 							<span>Перейти до вибору будинків</span>
 						</a>
 					</div>
-					<h2 class="about-title section-head-title">Детальніше про будинок</h2>
+					<h2 class="about-title page-section-title">Детальніше про будинок</h2>
 					<div class="about-descr">
 						<div class="row justify-content-between">
 							<div class="col-auto">
@@ -131,7 +131,7 @@
 					</div>
 				</section><!-- /.about -->
 				<section class="page-section planning">
-					<h2 class="section-head-title"><span>Планування</span> будинку Villa «RIVER»</h2>
+					<h2 class="page-section-title"><span>Планування</span> будинку Villa «RIVER»</h2>
 					<div class="row mt-60">
 						<div class="col-lg-7">
 							<table class="planning-table">
@@ -221,12 +221,18 @@
 														<img class="lazy" data-src="images/dest/planning-house.png" alt="">
 														<div class="lazy-spin"></div>
 													</a>
+													<div class="planning-floor">
+														<span>1-й поверх</span>
+													</div>
 												</div><!-- /.slide -->
 												<div class="planning-slide swiper-slide">
 													<a href="images/dest/planning-house-2d-01.png" data-fancybox class="planning-slide-photo">
 														<img class="lazy" data-src="images/dest/planning-house-2d-01.png" alt="">
 														<div class="lazy-spin"></div>
 													</a>
+													<div class="planning-floor">
+														<span>2-й поверх</span>
+													</div>
 												</div><!-- /.slide -->
 											</div><!-- /.swiper-wrapper -->
 											<div class="planning-slider-arrows">
@@ -234,25 +240,28 @@
 												<div class="planning-slider-next swiper-button-next"></div>
 											</div>
 										</div><!-- /.planning-slider- -->
-										<div class="planning-floor">
-											<span>1-й поверх</span>
-										</div>
 									</div><!-- /.tab-pane -->
 									<div class="tab-pane fade" id="planning-3d" role="tabpanel" aria-labelledby="planning-3d-tab">
 										<div class="planning-slider swiper-container">
 											<div class="swiper-wrapper">
 												<!-- Slides -->
 												<div class="planning-slide swiper-slide">
-													<a href="images/dest/planning-house-2d-01.png" data-fancybox class="planning-slide-photo">
-														<img class="lazy" data-src="images/dest/planning-house-2d-01.png" alt="">
-														<div class="lazy-spin"></div>
-													</a>
-												</div><!-- /.slide -->
-												<div class="planning-slide swiper-slide">
 													<a href="images/dest/planning-house-2d-02.png" data-fancybox class="planning-slide-photo">
 														<img class="lazy" data-src="images/dest/planning-house-2d-02.png" alt="">
 														<div class="lazy-spin"></div>
 													</a>
+													<div class="planning-floor">
+														<span>1-й поверх</span>
+													</div>
+												</div><!-- /.slide -->
+												<div class="planning-slide swiper-slide">
+													<a href="images/dest/planning-house-2d-01.png" data-fancybox class="planning-slide-photo">
+														<img class="lazy" data-src="images/dest/planning-house-2d-01.png" alt="">
+														<div class="lazy-spin"></div>
+													</a>
+													<div class="planning-floor">
+														<span>2-й поверх</span>
+													</div>
 												</div><!-- /.slide -->
 											</div><!-- /.swiper-wrapper -->
 											<div class="planning-slider-arrows">
@@ -260,15 +269,357 @@
 												<div class="planning-slider-next swiper-button-next"></div>
 											</div>
 										</div><!-- /.planning-slider- -->
-										<div class="planning-floor">
-											<span>2-й поверх</span>
-										</div>
 									</div><!-- /.tab-pane -->
 								</div><!-- /.planning-switch-content -->
 							</div><!-- /.planning-switch -->
 						</div><!-- /.col -->
 					</div><!-- /.row -->
-				</section><!-- /.page-section -->
+				</section><!-- /.planning -->
+			</div><!-- /.container-fluid -->
+			<section class="page-section section-dark calculate">
+				<div class="container-fluid">
+					<h2 class="page-section-title"><span>Калькулятор</span> розтермінування</h2>
+					<p class="page-section-descr">Калькулятор, який дає можливість розрахувати приблизні внески при купівлі будинку в розтермінування.</p>
+					<div class="row mt-60">
+						<div class="col-xl-8 col-xxl-9">
+							<div class="calculate-wrapper">
+								<form class="calculate-form" action="">
+									<div class="row">
+										<div class="col-6">
+											<label class="title text-lg text-uppercase w-medium" for="c-first-pay">Перший внесок, %</label>
+											<input type="range" class="form-range" value="40" min="30" max="100" step="10" id="c-first-pay">
+											<ul class="form-range-mark">
+												<li>30</li>
+												<li>40</li>
+												<li>50</li>
+												<li>60</li>
+												<li>70</li>
+												<li>80</li>
+												<li>90</li>
+												<li>100</li>
+											</ul>
+										</div>
+										<div class="col-6">
+											<label class="title text-lg text-uppercase w-medium" for="c-term-pay">Термін, місяців</label>
+											<input type="range" class="form-range" value="18" min="6" max="24" step="6" id="c-term-pay">
+											<ul class="form-range-mark">
+												<li>6</li>
+												<li>12</li>
+												<li>18</li>
+												<li>24</li>
+											</ul>
+										</div>
+									</div>
+								</form><!-- /.calculate-form -->
+								<div class="calculate-total mt-40">
+									<div class="calculate-total-item">
+										<div class="title text-lg text-uppercase w-regular">Вартість будинку від, $</div>
+										<div class="value title-md text-accent w-medium" id="c-total-cost-val"><em>90000</em> <span class="w-light">*</span></div>
+									</div>
+									<div class="calculate-total-separator"></div>
+									<div class="calculate-total-item">
+										<div class="title text-lg text-uppercase w-regular">Перший внесок, $</div>
+										<div class="value title-md text-accent w-medium" id="c-first-pay-val"><em>36000</em> <span class="w-light">*</span></div>
+									</div>
+									<div class="calculate-total-separator"></div>
+									<div class="calculate-total-item">
+										<div class="title text-lg text-uppercase w-regular">Щомісячний платіж на період розтермінування, $</div>
+										<div class="value title-md text-accent w-medium" id="c-monthly-val"><em>3000</em> <span class="w-light">*</span></div>
+									</div>
+								</div><!-- /.calculate-total -->
+							</div><!-- /.calculate-wrapper -->
+						</div><!-- /.col -->
+						<div class="col-xl-4 col-xxl-3">
+							<div class="calculate-legend">
+								<div class="title title-md text-uppercase w-medium">Умовні позначення</div>
+								<div class="descr">
+									<p>Калькулятор розраховує вартість на основі <span class="text-accent w-medium">БАЗОВОЇ КОМПЛЕКТАЦІЇ</span> будинку.</p>
+									<p>Переглянути варіанти комплектації будинків можна за наступним посиланням:</p>
+								</div>
+								<div class="config">
+									<a href="#" class="btn btn-outline-accent btn-icon-pdf">Переглянути комплектації в pdf</a>
+								</div>
+							</div>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container-fluid -->
+				<div class="calculate-photo">
+					<img class="lazy" data-src="images/dest/home-heroes-photo-05.jpg" alt="">
+				</div>
+			</section><!-- /.calculate -->
+			<div class="container-fluid">
+				<section class="page-section dynamics p-graphs">
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<h2 class="page-section-title"><span>Динаміка продажу</span> котеджу Villa «RIVER»</h2>
+							<div class="dynamics-text">
+								<p>Раціональний чотирикімнатний котедж розрахований на комфортне проживання сім'ї з 4-5 чоловік. На першому поверсі розташована досить простора кухня-студія, санвузол і окрема кімната, яку можна використовувати як робочий кабінет. На другому поверсі передбачено санвузол для ванної, гардероб і три окремі спальні. Великий будинок для великої родини або тих, хто любить і цінує власний простір.</p>
+								<p>Більш того, у вас є можливість вибрати додаткові прибудови у вигляді гаража або навісу для авто, тераси і котельні. Якщо ви втомилися від тісноти в квартирі, то цей будинок вам ідеально підійде. Запрошуємо на перегляд, щоб самостійно в цьому переконатися!</p>
+							</div>
+						</div><!-- /.col -->
+						<div class="col-12 col-md-6">
+							<div class="d-graph card">
+								<div class="d-graph-inner">
+									<div class="d-graph-body">
+										<div class="d-graph-group">
+											<div class="d-graph-group-title text-uppercase w-medium">I черга</div>
+											<div class="d-graph-columns">
+												<div class="d-graph-col">
+													<div class="d-graph-bar">
+														<i class="d-graph-house d-graph-house-sold-out"></i>
+													</div>
+												</div>
+												<div class="d-graph-col">
+													<div class="d-graph-bar">
+														<i class="d-graph-house d-graph-house-sold-out"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+													</div>
+												</div>
+												<div class="d-graph-col d-graph-col--unavailable">
+													<div class="d-graph-bar">
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+													</div>
+												</div>
+											</div><!-- /.d-graph-columns -->
+											<div class="d-graph-labels">
+												<div class="d-graph-label">
+													<span>$58 000</span>
+												</div>
+												<div class="d-graph-label">
+													<span>$92 000</span>
+												</div>
+												<div class="d-graph-label">
+													<span>$106 000</span>
+												</div>
+											</div><!-- /.d-graph-lables -->
+										</div><!-- /.d-graph-group -->
+										<div class="d-graph-group d-graph-group--unavailable">
+											<div class="d-graph-group-title text-uppercase w-medium">II черга</div>
+											<div class="d-graph-columns">
+												<div class="d-graph-col">
+													<div class="d-graph-bar">
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+													</div>
+												</div>
+												<div class="d-graph-col">
+													<div class="d-graph-bar">
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+													</div>
+												</div>
+												<div class="d-graph-col">
+													<div class="d-graph-bar">
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+														<i class="d-graph-house d-graph-house-sale"></i>
+													</div>
+												</div>
+											</div><!-- /.d-graph-columns -->
+											<div class="d-graph-labels">
+												<div class="d-graph-label">
+													<span>–</span>
+												</div>
+												<div class="d-graph-label">
+													<span>–</span>
+												</div>
+												<div class="d-graph-label">
+													<span>–</span>
+												</div>
+											</div><!-- /.d-graph-lables -->
+										</div><!-- /.d-graph-group -->
+									</div><!-- /.d-graph-body -->
+								</div><!-- /.d-graph-inner -->
+								<div class="d-graph-info">
+									<div class="d-graph-info-item">
+										<div class="icon">
+											<i class="d-graph-house d-graph-house-sold-out"></i>
+										</div>
+										<div class="descr">Будинки, які вже продані</div>
+									</div>
+									<div class="d-graph-info-item">
+										<div class="icon">
+											<i class="d-graph-house d-graph-house-sale"></i>
+										</div>
+										<div class="descr">Будинки, які знаходяться в продажі</div>
+									</div>
+								</div><!-- /.d-graph-info -->
+							</div><!-- /.d-graph -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</section><!-- /.dynamics -->
+				<section class="page-section reserve">
+					<h2 class="page-section-title"><span>Забронюйте</span> свій майбутній будинок</h2>
+					<p class="page-section-descr">Залиште заявку, якщо плануєте забронювати будинок типу Villa “River” і нам менеджер зв’яжиться з вами найближчим часом.</p>
+					<div class="row mt-60">
+						<div class="col-6">
+							<div class="reserve-cost">
+								<div class="price title-md">від <span class="title-xxl">700 $</span></div>
+								<span class="descr">Вартість квадратного метру будинку з базовою комплектацією</span>
+								<div class="config">
+									<a href="#" class="btn btn-outline-accent btn-icon-pdf">Переглянути комплектації в pdf</a>
+								</div>
+								<div class="back-btn">
+									<a href="page-home.html#h-houses" class="go-back">
+										<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#icon-arrow"></use></svg>
+										<span>Перейти до вибору будинків</span>
+									</a>
+								</div>
+								<div class="photo">
+									<img class="lazy" data-src="images/dest/reserve-photo.jpg" alt="">
+								</div>
+							</div>
+						</div><!-- /.col -->
+						<div class="col-6">
+							<div class="reserve-form card card-body">
+								<div class="call-us">
+									<div class="reserve-form-title title title-md text-uppercase w-medium"><span>Зв’яжіться з нами</span> телефонуйте</div>
+									<div class="phone">
+										<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#icon-phone"></use></svg>
+										<div class="numbers">
+											<a href="tel:+380667020707" title="Зателефонувати">+38 (066) 702-07-07</a>
+											<a href="tel:+380687020707" title="Зателефонувати">+38 (068) 702-07-07</a>
+										</div>
+									</div>
+								</div>
+								<div class="fill-in">
+									<div class="reserve-form-title title title-md text-uppercase w-medium">Або заповніть заявку</div>
+									<form action="#" class="form modal-form">
+										<div class="form-row">
+											<div class="col-lg-6">
+												<input type="text" class="form-control" placeholder="Ваше ім’я" required>
+											</div>
+											<div class="col-lg-6">
+												<input type="text" class="form-control" placeholder="+38 (___) __-__-___" data-inputmask="'mask': '+38 (999) 99-99-999'" required>
+											</div>
+											<div class="col-12">
+												<textarea class="form-textarea" rows="5" placeholder="Ваше повідомлення..." required></textarea>
+											</div>
+											<div class="col-12">
+												<div class="form-row">
+													<div class="col-lg">
+														<p class="form-text text-xs">Гарантуємо повну конфіденційність і нерозголошення ваших даних третім особам.</p>
+													</div>
+													<div class="col-lg-auto">
+														<button class="form-submit btn btn-outline-accent btn-icon">Надіслати заявку</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div><!-- /.col -->
+					</div>
+				</section><!-- /.reserve -->
+				<section class="page-section gallery">
+					<h2 class="page-section-title"><span>Фотогалерея</span> котеджного будинку</h2>
+					<div class="gallery-wrapper mt-40">
+						<div class="gallery-slider swiper-container">
+							<div class="swiper-wrapper">
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/house-gallery-photo-01.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/home-heroes-photo-02.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1793.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1792.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1795.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/house-gallery-photo-01.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/home-heroes-photo-02.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1793.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1792.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1795.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/house-gallery-photo-01.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+								<div class="gallery-slider-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/home-heroes-photo-02.jpg" alt="">
+									<div class="lazy-spin"></div>
+								</div><!-- /.slide -->
+							</div>
+							<!-- Add Arrows -->
+							<div class="gallery-slider-prev swiper-button-prev"></div>
+							<div class="gallery-slider-next swiper-button-next"></div>
+						</div>
+						<div class="gallery-thumbs swiper-container">
+							<div class="swiper-wrapper">
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/house-gallery-photo-01.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/home-heroes-photo-02.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1793.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1792.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1795.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/house-gallery-photo-01.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/home-heroes-photo-02.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1793.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1792.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="https://evrodim.com/assets/gallery/188/1795.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/house-gallery-photo-01.jpg" alt="">
+								</div><!-- /.slide -->
+								<div class="gallery-thumbs-slide swiper-slide">
+									<img class="lazy" data-src="images/dest/home-heroes-photo-02.jpg" alt="">
+								</div><!-- /.slide -->
+							</div>
+						</div>
+					</div>
+				</section><!-- /.gallery -->
 			</div><!-- /.container-fluid -->
 		</div><!-- /.page-content -->
 
