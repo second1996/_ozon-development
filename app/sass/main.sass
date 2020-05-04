@@ -1288,6 +1288,9 @@
 	.page-section
 		margin-top: 160px
 		margin-bottom: 80px
+		+media-breakpoint-down(lg)
+			margin-top: 120px
+			margin-bottom: 60px
 .p-house
 	position: relative
 	z-index: 1
@@ -1304,10 +1307,15 @@
 		+media-breakpoint-down(xl)
 			min-height: 750px
 		+media-breakpoint-down(sm)
-			min-height: 300px
-			max-height: 600px
+			padding-top: 300px
+			padding-bottom: 0
+			height: 100%
+			min-height: 100%
+			max-height: 100%
+		+media-breakpoint-down(xs)
+			padding-top: 250px
 		+media-breakpoint-down(xss)
-			max-height: 500px
+			padding-top: 60px
 		&-prices
 			display: flex
 			flex-wrap: wrap
@@ -1318,6 +1326,9 @@
 				font-size: 18px
 				font-weight: $font-regular
 				line-height: 1
+				+media-breakpoint-down(lg)
+					padding: 12px 20px
+					font-size: 16px
 				> em
 					font-style: normal
 			.price-sqm
@@ -1332,6 +1343,8 @@
 				color: $white
 		&-title
 			padding-top: 30px
+			+media-breakpoint-down(lg)
+				padding-top: 20px
 		&-list
 			padding-top: 10px
 			display: flex
@@ -1340,6 +1353,8 @@
 				margin-top: 20px
 				&:not(:last-child)
 					margin-right: 60px
+					+media-breakpoint-down(sm)
+						margin-right: 30px
 				.value
 					display: block
 					color: $accent
@@ -1362,6 +1377,8 @@
 						font-size: 15px
 		&-button
 			padding-top: 80px
+			+media-breakpoint-down(sm)
+				display: none
 			.read-more
 				display: inline-flex
 				align-items: center
@@ -1396,12 +1413,18 @@
 					margin-right: 8px
 					font-size: 16px
 					transform: rotate(-180deg)
+					+media-breakpoint-down(sm)
+						font-size: 14px
 				> span
 					display: inline-block
 					font-size: 20px
 					font-weight: $font-regular
 					text-transform: uppercase
 					transition: transform .45s ease
+					+media-breakpoint-down(md)
+						font-size: 18px
+					+media-breakpoint-down(sm)
+						font-size: 16px
 				&:hover
 					color: $white
 					> span
@@ -1412,6 +1435,9 @@
 			justify-content: space-between
 			> .row > [class*="col"]
 				max-width: 680px
+				+media-breakpoint-down(xs)
+					&:not(:last-child)
+						margin-bottom: 20px
 	// Section: Planning
 	.planning
 		&-table
@@ -1423,6 +1449,8 @@
 					color: $white
 					font-weight: $font-regular
 					line-height: 1.3
+					+media-breakpoint-down(xs)
+						padding: 15px 20px
 				th
 					padding-top: 0
 					padding-bottom: 20px
@@ -1439,6 +1467,8 @@
 				td
 					padding: 15px 30px
 					line-height: 1.3
+					+media-breakpoint-down(xs)
+						padding: 15px 20px
 				.name
 					display: flex
 					align-items: center
@@ -1477,22 +1507,22 @@
 			align-items: center
 			+media-breakpoint-down(md)
 				justify-content: center
-			+media-breakpoint-down(sm)
-				> div
-					margin: 0 10px 20px
-				> div:first-child
-					flex-basis: 100%
-					margin-right: 10px!important
-					text-align: center
-			> div:not(:last-child)
-				margin-right: 40px
+			&-item
+				padding-right: 30px
+			&--reserve
 				+media-breakpoint-down(xl)
-					margin-right: 30px
-				+media-breakpoint-down(sm)
-					margin-left: 10px
-					margin-right: 10px
+					flex-basis: 100%
+					margin-bottom: 30px
+				+media-breakpoint-down(md)
+					text-align: center
+			&--pdf
+				+media-breakpoint-down(xs)
+					margin-bottom: 20px
+			// &--callback
 		// Planning 2D/3D switch buttons
 		&-switch
+			+media-breakpoint-down(md)
+				margin-bottom: 60px
 			&-tabs
 				justify-content: center
 				border: 0
@@ -1508,6 +1538,8 @@
 					font-weight: $font-regular
 					text-align: center
 					line-height: 50px
+					+media-breakpoint-down(md)
+						line-height: 40px
 					&.active
 						border-color: $accent
 						background: $accent
@@ -1525,9 +1557,16 @@
 				display: flex
 				justify-content: center
 				align-items: center
-				width: 400px
+				width: 100%
+				max-width: 400px
 				height: 600px
 				margin: 0 auto
+				+media-breakpoint-down(lg)
+					max-width: 320px
+					height: 500px
+				+media-breakpoint-down(sm)
+					max-width: 250px
+					height: 380px
 				> img
 					width: 100%
 					height: 100%
@@ -1553,37 +1592,75 @@
 		z-index: 1
 		padding: 80px 0
 		background: #222
+		+media-breakpoint-down(xl)
+			padding: 60px 0
 		&-wrapper
 			padding-right: 60px
+			+media-breakpoint-down(md)
+				padding-right: 0
 		&-form
+			&-item
+				margin-bottom: 40px
 			.form-range
 				margin-top: 10px
+				margin-bottom: 8px
 		&-total
 			display: flex
 			justify-content: space-between
 			align-items: center
-			padding: 40px
+			padding: 25px 40px 40px
 			border: 1px solid $border
 			background: $item-bg
+			+media-breakpoint-down(xl)
+				flex-wrap: wrap
+			+media-breakpoint-down(lg)
+				padding: 15px 30px 30px
 			&-item
 				position: relative
+				margin-top: 15px
+				+media-breakpoint-down(xl)
+					&:last-child
+						flex-basis: 100%
+						max-width: 100%
 				.value
 					> em
 						font-style: normal
+				+media-breakpoint-down(xs)
+					.title
+						font-size: 13px
+					.value
+						font-size: 18px
 			&-form
 				position: absolute
 				right: 0
-				bottom: 8px
+				bottom: 15px
+				line-height: 1
+				+media-breakpoint-down(xs)
+					position: static
+					display: none
+					margin-top: 20px
+					&.show
+						display: block
 				.link
-					color: $accent
+					padding: 4px 8px
+					border-radius: 2px
+					background: $accent
+					color: $text-dark
+					+media-breakpoint-down(xs)
+						padding: 2px 5px
+						font-size: 11px
 					&:hover
-						color: $white
+						background: $white
 			&-separator
 				width: 1px
 				height: 80px
 				margin: 0 40px
 				background: $border
+				+media-breakpoint-down(xl)
+					display: none
 		&-legend
+			+media-breakpoint-down(md)
+				margin-top: 60px
 			.descr
 				margin-top: 20px
 				p:not(:first-child)
@@ -1607,8 +1684,15 @@
 		&-text
 			margin-top: 20px
 			padding-right: 80px
+			+media-breakpoint-down(md)
+				padding-right: 40px
+			+media-breakpoint-down(sm)
+				padding-right: 0
+				margin-bottom: 30px
 	// Section: Reserve
 	.reserve
+		> .row > [class*="col"]
+			margin-top: 20px
 		&-cost
 			position: relative
 			display: flex
@@ -1616,6 +1700,7 @@
 			justify-content: center
 			align-items: center
 			height: 100%
+			min-height: 500px
 			border: 1px solid $border
 			text-align: center
 			.price
@@ -1688,14 +1773,16 @@
 				> .phone
 					display: flex
 					align-items: center
+					+media-breakpoint-down(xs)
+						// flex-direction: column
 					> svg.icon
 						fill: $accent
 					> .numbers
+						display: flex
+						flex-wrap: wrap
 						margin-left: 10px
-						> a:not(:last-child)::after
-							content: ','
-							display: inline-block
-							font-size: inherit
+						> a:not(:last-child)
+							margin-right: 10px
 			.fill-in
 				margin-top: 30px
 	// Section: Gallery
@@ -1707,7 +1794,14 @@
 		&-slider
 			width: 100%
 			height: 69.5vh
-			min-height: 300px
+			min-height: 400px
+			max-height: 700px
+			+media-breakpoint-down(sm)
+				min-height: 300px
+				max-height: 500px
+			+media-breakpoint-down(xs)
+				min-height: 200px
+				max-height: 300px
 			&-slide
 				> img
 					width: 100%
@@ -1718,10 +1812,17 @@
 				position: absolute
 				top: 50%
 				margin-top: -25px
+				+media-breakpoint-down(sm)
+					width: 36px
+					height: 36px
 			&-prev
 				left: 30px
+				+media-breakpoint-down(sm)
+					left: 20px
 			&-next
 				right: 30px
+				+media-breakpoint-down(sm)
+					right: 20px
 			.swiper-button-prev,
 			.swiper-button-next
 				border-color: $accent
@@ -1732,8 +1833,8 @@
 		&-thumbs
 			margin: 10px 0 0
 			height: 75px
-			.swiper-wrapper
-				// justify-content: center
+			+media-breakpoint-down(xl)
+				height: 50px
 			&-slide
 				cursor: pointer
 				&:hover
@@ -1750,6 +1851,8 @@
 					border: 4px solid $accent
 					opacity: 0
 					transition: opacity .3s ease
+					+media-breakpoint-down(sm)
+						border-width: 3px
 				&.swiper-slide-thumb-active
 					cursor: default
 					&::before,

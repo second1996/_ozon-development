@@ -121,10 +121,10 @@
 					<h2 class="about-title page-section-title">Детальніше про будинок</h2>
 					<div class="about-descr">
 						<div class="row justify-content-between">
-							<div class="col-6">
+							<div class="col-sm-6">
 								<p>Раціональний чотирикімнатний котедж розрахований на комфортне проживання сім'ї з 4-5 чоловік. На першому поверсі розташована досить простора кухня-студія, санвузол і окрема кімната, яку можна використовувати як робочий кабінет. На другому поверсі передбачено санвузол для ванної, гардероб і три окремі спальні. Великий будинок для великої родини або тих, хто любить і цінує власний простір.</p>
 							</div>
-							<div class="col-6">
+							<div class="col-sm-6">
 								<p>Більш того, у вас є можливість вибрати додаткові прибудови у вигляді гаража або навісу для авто, тераси і котельні. Якщо ви втомилися від тісноти в квартирі, то цей будинок вам ідеально підійде. Запрошуємо на перегляд, щоб самостійно в цьому переконатися!</p>
 							</div>
 						</div>
@@ -133,12 +133,12 @@
 				<section class="page-section planning">
 					<h2 class="page-section-title"><span>Планування</span> будинку Villa «RIVER»</h2>
 					<div class="row mt-60">
-						<div class="col-lg-7">
+						<div class="col-lg-7 order-1 order-lg-0">
 							<table class="planning-table">
 								<thead>
 									<tr>
-										<th scope="col" width="80%">Найменування</th>
-										<th class="text-center" scope="col" width="20%">Квадратура</th>
+										<th scope="col" width="82%">Найменування</th>
+										<th class="text-center" scope="col" width="18%">Квадратура</th>
 									</tr>
 									<tr>
 										<td class="name" scope="row">Загальна площа:</td>
@@ -196,12 +196,12 @@
 								</tbody>
 							</table>
 							<div class="planning-buttons">
-								<div><a href="#reserve" class="btn btn-primary btn-icon-key" data-link="anchor">Забронювати будинок</a></div>
-								<div><a href="#" class="btn-link-icon btn-link-icon-pdf">Переглянути в PDF</a></div>
-								<div><a href="#" class="btn-link-icon btn-link-icon-call" data-toggle="modal" data-target="#callbackModal" role="button">Замовити дзвінок</a></div>
+								<div class="planning-buttons-item planning-buttons--reserve"><a href="#reserve-house-form" class="btn btn-primary btn-icon-key" data-link="anchor">Забронювати будинок</a></div>
+								<div class="planning-buttons-item planning-buttons--pdf"><a href="#" class="btn-link-icon btn-link-icon-pdf">Переглянути в PDF</a></div>
+								<div class="planning-buttons-item planning-buttons--callback"><a href="#" class="btn-link-icon btn-link-icon-call" data-toggle="modal" data-target="#callbackModal" role="button">Замовити дзвінок</a></div>
 							</div>
 						</div><!-- /.col -->
-						<div class="col-lg-5">
+						<div class="col-lg-5 order-0 order-lg-1">
 							<div class="planning-switch">
 								<ul class="planning-switch-tabs nav nav-tabs" id="planningTab" role="tablist">
 									<li class="nav-item">
@@ -281,11 +281,11 @@
 					<h2 class="page-section-title"><span>Калькулятор</span> розтермінування</h2>
 					<p class="page-section-descr">Калькулятор, який дає можливість розрахувати приблизні внески при купівлі будинку в розтермінування.</p>
 					<div class="row mt-60">
-						<div class="col-xl-8 col-xxl-9">
+						<div class="col-lg-7 col-xl-8 col-xxl-9">
 							<div class="calculate-wrapper">
 								<form class="calculate-form" action="" id="c-calc-form">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-xl-6 calculate-form-item">
 											<label class="title text-lg text-uppercase w-medium" for="c-first-pay">Перший внесок, %</label>
 											<input type="range" class="form-range" value="40" min="30" max="100" step="10" id="c-first-pay">
 											<ul class="form-range-mark">
@@ -299,7 +299,7 @@
 												<li>100</li>
 											</ul>
 										</div>
-										<div class="col-6">
+										<div class="col-xl-6 calculate-form-item">
 											<label class="title text-lg text-uppercase w-medium" for="c-term-pay">Термін, місяців</label>
 											<input type="range" class="form-range" value="18" min="6" max="24" step="6" id="c-term-pay">
 											<ul class="form-range-mark">
@@ -311,7 +311,7 @@
 										</div>
 									</div>
 								</form><!-- /.calculate-form -->
-								<div class="calculate-total mt-40">
+								<div class="calculate-total">
 									<div class="calculate-total-item">
 										<div class="title text-lg text-uppercase w-regular">Вартість будинку від, $</div>
 										<div class="value title-md text-accent w-medium" id="c-total-cost-val"><em>142500</em> <span class="w-light">*</span></div>
@@ -330,7 +330,7 @@
 								</div><!-- /.calculate-total -->
 							</div><!-- /.calculate-wrapper -->
 						</div><!-- /.col -->
-						<div class="col-xl-4 col-xxl-3">
+						<div class="col-lg-5 col-xl-4 col-xxl-3">
 							<div class="calculate-legend">
 								<div class="title title-md text-uppercase w-medium">Умовні позначення</div>
 								<div class="descr">
@@ -460,8 +460,8 @@
 				<section class="page-section reserve">
 					<h2 class="page-section-title"><span>Забронюйте</span> свій майбутній будинок</h2>
 					<p class="page-section-descr">Залиште заявку, якщо плануєте забронювати будинок типу Villa “River” і нам менеджер зв’яжиться з вами найближчим часом.</p>
-					<div class="row mt-60">
-						<div class="col-6">
+					<div class="row mt-40">
+						<div class="col-md-6">
 							<div class="reserve-cost">
 								<div class="price title-md">від <span class="title-xxl">700 $</span></div>
 								<span class="descr">Вартість квадратного метру будинку з базовою комплектацією</span>
@@ -479,8 +479,8 @@
 								</div>
 							</div>
 						</div><!-- /.col -->
-						<div class="col-6">
-							<div class="reserve-form card card-body">
+						<div class="col-md-6">
+							<div class="reserve-form card card-body" id="reserve-house-form">
 								<div class="call-us">
 									<div class="reserve-form-title title title-md text-uppercase w-medium"><span>Зв’яжіться з нами</span> телефонуйте</div>
 									<div class="phone">
@@ -506,10 +506,10 @@
 											</div>
 											<div class="col-12">
 												<div class="form-row">
-													<div class="col-lg">
+													<div class="col-xxl">
 														<p class="form-text text-xs">Гарантуємо повну конфіденційність і нерозголошення ваших даних третім особам.</p>
 													</div>
-													<div class="col-lg-auto">
+													<div class="col-xxl-auto">
 														<button class="form-submit btn btn-outline-accent btn-icon">Надіслати заявку</button>
 													</div>
 												</div>
@@ -854,7 +854,7 @@
 		<div class="modal-dialog modal-dialog-centered modal-xls" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title title title-md w-medium text-uppercase" id="calcHouseModalLabel">Розтермінування</h5>
+					<h5 class="modal-title title title-md w-medium text-uppercase" id="calcHouseModalLabel">Розтермінування <span>Villa «RIVER»</span></h5>
 					<button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>

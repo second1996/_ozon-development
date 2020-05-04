@@ -210,6 +210,17 @@ $(document).ready(function(){
 		freeMode: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
+		breakpoints: {
+			320: {
+				slidesPerView: 4,
+			},
+			576: {
+				slidesPerView: 6,
+			},
+			768: {
+				slidesPerView: 12,
+			},
+		},
 	});
 
 	var gallerySlider = new Swiper('.gallery-slider', {
