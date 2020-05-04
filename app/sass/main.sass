@@ -1509,15 +1509,20 @@
 				justify-content: center
 			&-item
 				padding-right: 30px
+				+media-breakpoint-down(md)
+					padding: 0 15px
+				+media-breakpoint-down(xs)
+					flex-basis: 100%
+					text-align: center
+					&:not(:last-child)
+						margin-bottom: 20px
 			&--reserve
 				+media-breakpoint-down(xl)
 					flex-basis: 100%
 					margin-bottom: 30px
 				+media-breakpoint-down(md)
 					text-align: center
-			&--pdf
-				+media-breakpoint-down(xs)
-					margin-bottom: 20px
+			// &--pdf
 			// &--callback
 		// Planning 2D/3D switch buttons
 		&-switch
@@ -1667,6 +1672,9 @@
 					margin-top: 10px
 			.config
 				margin-top: 40px
+				+media-breakpoint-down(xss)
+					.btn
+						font-size: 12px
 		&-photo
 			position: absolute
 			top: 0
@@ -1718,6 +1726,8 @@
 					background: $trsp
 					&:hover
 						background: $item-bg
+					+media-breakpoint-down(xss)
+						font-size: 11px
 			.back-btn
 				position: absolute
 				bottom: 50px
