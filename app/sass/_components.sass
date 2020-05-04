@@ -262,6 +262,36 @@
    Form
    ========================================================================== */
 .form
+	&-plate
+		display: flex
+		flex-wrap: wrap
+		margin-bottom: 20px
+		padding: 10px 0
+		border: 2px solid $border
+		border-left: 0
+		border-right: 0
+		&-item
+			padding: 6px 0
+			line-height: 1
+			&:not(:last-child)
+				margin-right: 20px
+			.name
+				display: inline-block
+				color: $white
+				font-size: 14px
+				font-weight: $font-regular
+			.value
+				display: inline-block
+				margin-left: 6px
+				padding: 6px
+				border-radius: 2px
+				background: $accent
+				color: $text-dark
+				font-size: 14px
+				font-weight: $font-medium
+				font-style: normal
+				> em
+					font-style: normal
 	&-row
 		display: flex
 		flex-wrap: wrap
@@ -658,6 +688,8 @@
 .modal
 	&-xl
 		max-width: 1400px
+	&-xls
+		max-width: 1000px
 	&-dialog
 		padding-left: 30px
 		padding-right: 30px

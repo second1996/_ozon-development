@@ -1566,9 +1566,18 @@
 			border: 1px solid $border
 			background: $item-bg
 			&-item
+				position: relative
 				.value
 					> em
 						font-style: normal
+			&-form
+				position: absolute
+				right: 0
+				bottom: 8px
+				.link
+					color: $accent
+					&:hover
+						color: $white
 			&-separator
 				width: 1px
 				height: 80px

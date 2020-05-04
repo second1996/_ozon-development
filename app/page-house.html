@@ -121,10 +121,10 @@
 					<h2 class="about-title page-section-title">Детальніше про будинок</h2>
 					<div class="about-descr">
 						<div class="row justify-content-between">
-							<div class="col-auto">
+							<div class="col-6">
 								<p>Раціональний чотирикімнатний котедж розрахований на комфортне проживання сім'ї з 4-5 чоловік. На першому поверсі розташована досить простора кухня-студія, санвузол і окрема кімната, яку можна використовувати як робочий кабінет. На другому поверсі передбачено санвузол для ванної, гардероб і три окремі спальні. Великий будинок для великої родини або тих, хто любить і цінує власний простір.</p>
 							</div>
-							<div class="col-auto">
+							<div class="col-6">
 								<p>Більш того, у вас є можливість вибрати додаткові прибудови у вигляді гаража або навісу для авто, тераси і котельні. Якщо ви втомилися від тісноти в квартирі, то цей будинок вам ідеально підійде. Запрошуємо на перегляд, щоб самостійно в цьому переконатися!</p>
 							</div>
 						</div>
@@ -283,7 +283,7 @@
 					<div class="row mt-60">
 						<div class="col-xl-8 col-xxl-9">
 							<div class="calculate-wrapper">
-								<form class="calculate-form" action="">
+								<form class="calculate-form" action="" id="c-calc-form">
 									<div class="row">
 										<div class="col-6">
 											<label class="title text-lg text-uppercase w-medium" for="c-first-pay">Перший внесок, %</label>
@@ -314,17 +314,18 @@
 								<div class="calculate-total mt-40">
 									<div class="calculate-total-item">
 										<div class="title text-lg text-uppercase w-regular">Вартість будинку від, $</div>
-										<div class="value title-md text-accent w-medium" id="c-total-cost-val"><em>90000</em> <span class="w-light">*</span></div>
+										<div class="value title-md text-accent w-medium" id="c-total-cost-val"><em>142500</em> <span class="w-light">*</span></div>
 									</div>
 									<div class="calculate-total-separator"></div>
 									<div class="calculate-total-item">
 										<div class="title text-lg text-uppercase w-regular">Перший внесок, $</div>
-										<div class="value title-md text-accent w-medium" id="c-first-pay-val"><em>36000</em> <span class="w-light">*</span></div>
+										<div class="value title-md text-accent w-medium" id="c-first-pay-val"><em>0</em> <span class="w-light">*</span></div>
 									</div>
 									<div class="calculate-total-separator"></div>
 									<div class="calculate-total-item">
 										<div class="title text-lg text-uppercase w-regular">Щомісячний платіж на період розтермінування, $</div>
-										<div class="value title-md text-accent w-medium" id="c-monthly-val"><em>3000</em> <span class="w-light">*</span></div>
+										<div class="value title-md text-accent w-medium" id="c-monthly-val"><em>0</em> <span class="w-light">*</span></div>
+										<div class="calculate-total-form fade" id="c-modal-link"><a href="#" class="link text-xss text-uppercase w-regular" data-toggle="modal" data-target="#calcHouseModal" role="button">Залишити заявку?</a></div>
 									</div>
 								</div><!-- /.calculate-total -->
 							</div><!-- /.calculate-wrapper -->
@@ -846,6 +847,54 @@
 			<span>Прогулянка по містечку</span>
 			<svg class="icon icon-3d"><use xlink:href="images/symbol-defs.svg#icon-3d"></use></svg>
 		</a>
+	</div>
+
+	<!-- MODAL: Калькулятор розтермінування -->
+	<div class="modal fade" id="calcHouseModal" tabindex="-1" role="dialog" aria-labelledby="calcHouseModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-xls" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title title title-md w-medium text-uppercase" id="calcHouseModalLabel">Розтермінування</h5>
+					<button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" class="form modal-form">
+						<input type="hidden" value="142500" id="cModal-price">
+						<input type="hidden" value="	0" id="cModal-firstPay">
+						<input type="hidden" value="0" id="cModal-monthlyPay">
+						<div class="form-plate">
+							<div class="form-plate-item"><span class="name">Вартість будинку:</span> <span class="value">142500<sup>*</sup> $</span></div>
+							<div class="form-plate-item"><span class="name">Перший внесок:</span> <span class="value"><em id="cModalLabel-firstPay"></em><sup>*</sup> $</span></div>
+							<div class="form-plate-item"><span class="name">Щомісячний платіж:</span> <span class="value"><em id="cModalLabel-monthlyPay"></em><sup>*</sup> $</span></div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-6">
+								<input type="text" class="form-control" placeholder="Ваше ім’я" required>
+							</div>
+							<div class="col-lg-6">
+								<input type="text" class="form-control" placeholder="+38 (___) __-__-___" data-inputmask="'mask': '+38 (999) 99-99-999'" required>
+							</div>
+							<div class="col-12">
+								<textarea class="form-textarea" rows="5" placeholder="Ваше повідомлення..." required></textarea>
+							</div>
+							<div class="col-12">
+								<div class="form-row">
+									<div class="col-lg">
+										<p class="form-text text-xs">Гарантуємо повну конфіденційність і нерозголошення ваших даних третім особам.</p>
+									</div>
+									<div class="col-lg-auto">
+										<button class="form-submit btn btn-outline btn-icon">Надіслати заявку</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- MODAL: Замовити дзвінок -->
