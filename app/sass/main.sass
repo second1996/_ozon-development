@@ -1200,22 +1200,27 @@
 			overflow-x: auto
 			flex-wrap: nowrap
 			white-space: nowrap
-		&-link
-			display: inline-block
-			margin-bottom: 10px
-			padding: 15px 25px
-			border: 2px solid $border
-			background: $item-bg
-			font-size: 16px
-			font-weight: $font-regular
-			line-height: 1
-			+media-breakpoint-down(md)
-				padding: 12px 20px
-				font-size: 15px
+		.cat-item
 			&:not(:last-child)
 				margin-right: 10px
-			&:hover
-				border-color: $accent
+			&.current-cat
+				> a
+					color: $accent
+					border-color: $accent
+			> a
+				display: inline-block
+				margin-bottom: 10px
+				padding: 15px 25px
+				border: 2px solid $border
+				background: $item-bg
+				font-size: 16px
+				font-weight: $font-regular
+				line-height: 1
+				+media-breakpoint-down(md)
+					padding: 12px 20px
+					font-size: 15px
+				&:hover
+					border-color: $accent
 	// News cards
 	&-list
 		.news-item

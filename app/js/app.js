@@ -245,6 +245,11 @@ $(document).ready(function(){
 		$(humbBtn).toggleClass('is-active');
 		siteMenu.toggleClass('shown');
 	});
+	$('.site-menu-footer-btn, .site-menu-navigation-list > li > a').on('click', function() {
+		$('body').removeClass('menu-open');
+		$(humbBtn).removeClass('is-active');
+		siteMenu.removeClass('shown');
+	});
 
 
 	/**
