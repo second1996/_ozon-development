@@ -1200,13 +1200,15 @@
 			overflow-x: auto
 			flex-wrap: nowrap
 			white-space: nowrap
+		.cat-item-all,
 		.cat-item
 			&:not(:last-child)
 				margin-right: 10px
 			&.current-cat
 				> a
-					color: $accent
 					border-color: $accent
+					background: $accent
+					color: $text-dark
 			> a
 				display: inline-block
 				margin-bottom: 10px
@@ -1246,6 +1248,33 @@
 			margin-top: 100px
 		+media-breakpoint-down(lg)
 			margin-top: 60px
+		&-back
+			margin-bottom: 45px
+			.go-back
+				display: inline-flex
+				align-items: center
+				padding: 8px 16px
+				border-radius: 2px
+				box-shadow: 0 0 0 3px rgba($white, 0.1)
+				background: $item-bg
+				color: $text-main
+				> .icon
+					margin-top: -2px
+					margin-right: 8px
+					font-size: 14px
+					transform: rotate(-180deg)
+				> span
+					display: inline-block
+					font-size: 16px
+					font-weight: $font-regular
+					text-transform: uppercase
+					transition: transform .45s ease
+					+media-breakpoint-down(sm)
+						font-size: 14px
+				&:hover
+					color: $white
+					> span
+						transform: translateX(4px)
 // Section: Other news
 .s-news
 	&-other
