@@ -1330,6 +1330,147 @@
 
 
 /* ==========================================================================
+   Page: Calculator
+   ========================================================================== */
+.calculator
+	position: relative
+	z-index: 1
+	padding: 80px 0
+	background: #222
+	+media-breakpoint-down(xl)
+		padding: 60px 0
+	&-form
+		&-item
+			margin-bottom: 60px
+			+media-breakpoint-down(md)
+				margin-bottom: 40px
+		.form-range
+			margin-top: 10px
+			margin-bottom: 8px
+	&-houses
+		display: flex
+		.house
+			padding: 30px
+			transition: .35s ease
+			&:not(:last-child)
+				margin-right: 20px
+			&:not(.house--selected)
+				opacity: 0.5
+				&:hover
+					cursor: pointer
+					box-shadow: 0 0 0 3px $border
+					opacity: 1
+			&--selected
+				border-color: $accent
+				.house-head
+					.icon,
+					.price-square
+						color: $accent
+				.house-meta
+					.title
+						color: $accent
+			&-head
+				display: flex
+				align-items: center
+				justify-content: space-between
+				margin-bottom: 16px
+				.icon
+					flex: 0 0 auto
+					color: $white
+					font-size: 20px
+					transition: .35s ease
+				.price-square
+					color: $white
+					line-height: 1
+					transition: .35s ease
+			&-meta
+				.title
+					margin-bottom: 8px
+					line-height: 1
+					transition: .35s ease
+				.info
+					margin: 0
+	&-total
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 25px 40px 40px
+		border: 1px solid $border
+		background: $item-bg
+		+media-breakpoint-down(xl)
+			flex-wrap: wrap
+		+media-breakpoint-down(lg)
+			padding: 15px 30px 30px
+		&-item
+			position: relative
+			margin-top: 15px
+			+media-breakpoint-down(xl)
+				&:last-child
+					flex-basis: 100%
+					max-width: 100%
+			.value
+				> em
+					font-style: normal
+			+media-breakpoint-down(xs)
+				.title
+					font-size: 13px
+				.value
+					font-size: 18px
+		&-form
+			position: absolute
+			right: 0
+			bottom: 15px
+			line-height: 1
+			+media-breakpoint-down(xs)
+				position: static
+				display: none
+				margin-top: 20px
+				&.show
+					display: block
+			.link
+				padding: 4px 8px
+				border-radius: 2px
+				background: $accent
+				color: $text-dark
+				+media-breakpoint-down(xs)
+					padding: 2px 5px
+					font-size: 11px
+				&:hover
+					background: $white
+		&-separator
+			width: 1px
+			height: 80px
+			margin: 0 40px
+			background: $border
+			+media-breakpoint-down(xl)
+				display: none
+	&-legend
+		+media-breakpoint-down(md)
+			margin-top: 60px
+		.descr
+			margin-top: 20px
+			p:not(:first-child)
+				margin-top: 10px
+		.config
+			margin-top: 40px
+			+media-breakpoint-down(xss)
+				.btn
+					font-size: 12px
+	&-photo
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		opacity: 0.05
+		> img
+			width: 100%
+			height: 100%
+				object-fit: cover
+
+
+/* ==========================================================================
    Page: House
    ========================================================================== */
 .single-house
@@ -1651,102 +1792,6 @@
 				font-weight: $font-medium
 				text-transform: uppercase
 				line-height: 1
-	// Section: Calculate
-	.calculate
-		position: relative
-		z-index: 1
-		padding: 80px 0
-		background: #222
-		+media-breakpoint-down(xl)
-			padding: 60px 0
-		&-wrapper
-			padding-right: 60px
-			+media-breakpoint-down(md)
-				padding-right: 0
-		&-form
-			&-item
-				margin-bottom: 40px
-			.form-range
-				margin-top: 10px
-				margin-bottom: 8px
-		&-total
-			display: flex
-			justify-content: space-between
-			align-items: center
-			padding: 25px 40px 40px
-			border: 1px solid $border
-			background: $item-bg
-			+media-breakpoint-down(xl)
-				flex-wrap: wrap
-			+media-breakpoint-down(lg)
-				padding: 15px 30px 30px
-			&-item
-				position: relative
-				margin-top: 15px
-				+media-breakpoint-down(xl)
-					&:last-child
-						flex-basis: 100%
-						max-width: 100%
-				.value
-					> em
-						font-style: normal
-				+media-breakpoint-down(xs)
-					.title
-						font-size: 13px
-					.value
-						font-size: 18px
-			&-form
-				position: absolute
-				right: 0
-				bottom: 15px
-				line-height: 1
-				+media-breakpoint-down(xs)
-					position: static
-					display: none
-					margin-top: 20px
-					&.show
-						display: block
-				.link
-					padding: 4px 8px
-					border-radius: 2px
-					background: $accent
-					color: $text-dark
-					+media-breakpoint-down(xs)
-						padding: 2px 5px
-						font-size: 11px
-					&:hover
-						background: $white
-			&-separator
-				width: 1px
-				height: 80px
-				margin: 0 40px
-				background: $border
-				+media-breakpoint-down(xl)
-					display: none
-		&-legend
-			+media-breakpoint-down(md)
-				margin-top: 60px
-			.descr
-				margin-top: 20px
-				p:not(:first-child)
-					margin-top: 10px
-			.config
-				margin-top: 40px
-				+media-breakpoint-down(xss)
-					.btn
-						font-size: 12px
-		&-photo
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			z-index: -1
-			opacity: 0.05
-			> img
-				width: 100%
-				height: 100%
-				object-fit: cover
 	// Section: Dynamics
 	.dynamics
 		&-text
