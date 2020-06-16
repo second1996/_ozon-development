@@ -259,6 +259,58 @@
 
 
 /* ==========================================================================
+   JS Range Slider
+   ========================================================================== */
+.form-range-slider
+	.js-range-slider
+		margin-top: -10px
+	.irs--round
+		.irs-bar--single,
+		.irs-line
+			border-radius: 0
+			top: 16px
+		.irs-from,
+		.irs-to,
+		.irs-single
+			display: none
+		.irs-line
+			z-index: 1
+			width: 100%
+			height: 12px
+			color: transparent
+			cursor: pointer
+			background-color: $item-bg
+			border: 1px solid $border
+			border-radius: 0
+			box-shadow: 0
+		.irs-bar
+			z-index: 2
+			height: 12px
+			border: 1px solid $border-accent
+			background-color: $accent
+		.irs-handle
+			top: 10px
+			z-index: 3
+			cursor: pointer
+			width: 30px
+			height: 24px
+			box-shadow: none
+			background: $accent url('../images/icons/range-separator.svg') no-repeat center/6px
+			border: 1px solid $border-accent
+			border-radius: 2px
+			box-shadow: 0
+			transition: background-color .45s ease
+		.irs-grid-pol
+			background-color: $border
+			&.small
+				height: 6px
+		.irs-grid-text
+			color: darken($text-main, 25%)
+			line-height: 0
+		&.irs-with-grid
+			height: 51px
+
+/* ==========================================================================
    Form
    ========================================================================== */
 .form
@@ -338,6 +390,33 @@
 		margin-bottom: 15px
 		+media-breakpoint-down(xs)
 			font-size: 14px
+	&-label-tabs
+		display: inline-block
+		position: relative
+	&-range-tabs
+		position: absolute
+		top: -6px
+		left: 100%
+		display: flex
+		margin-left: 30px
+		.tab-item
+			position: relative
+			height: 34px
+			padding: 0 18px
+			border: 1px solid $border
+			background-color: $item-bg
+			line-height: 34px
+			transition: .35s ease
+			&:not(.tab-item--selected)
+				opacity: 0.5
+				&:hover
+					cursor: pointer
+					opacity: 1
+			&--selected
+				pointer-events: none
+				z-index: 1
+				border-color: $accent
+				color: $accent
 	&-range
 		overflow: hidden
 		position: relative
