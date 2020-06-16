@@ -92,7 +92,7 @@
 					<form class="calculator-form" action="" id="c-calc-form">
 						<div class="row">
 							<div class="col-12 calculator-form-item">
-								<div class="title text-lg text-uppercase w-medium mb-20">Оберіть тип будинку:</div>
+								<div class="title text-lg text-uppercase w-medium">Оберіть тип будинку:</div>
 								<div class="calculator-houses">
 									<div class="house card house--selected" data-house-type="river" data-house-price="226548">
 										<div class="house-head">
@@ -157,15 +157,15 @@
 							<div class="title text-lg text-uppercase w-regular">Перший внесок, $</div>
 							<div class="value title-md text-accent w-medium"><em id="c-first-pay-val">0</em></div>
 						</div>
-						<!-- <div class="calculator-total-separator"></div>
+						<div class="calculator-total-separator"></div>
 						<div class="calculator-total-item">
-							<div class="title text-lg text-uppercase w-regular">Термін</div>
-							<div class="value title-md text-accent w-medium"><em id="c-first-pay-val">0</em> <small>місяць (-ів)</small></div>
-						</div> -->
+							<div class="title text-lg text-uppercase w-regular">Термін, <span class="text-white" id="c-term-type">міс.</span></div>
+							<div class="value title-md text-accent w-medium"><em id="c-term-val">0</em></div>
+						</div>
 						<div class="calculator-total-separator"></div>
 						<div class="calculator-total-item">
 							<div class="title text-lg text-uppercase w-regular">Платіж на період розтермінування, $</div>
-							<div class="value title-md text-accent w-medium"><em id="c-term-val">0</em></div>
+							<div class="value title-md text-accent w-medium"><em id="c-term-pay-val">0</em></div>
 							<div class="calculator-total-form fade" id="c-modal-link"><a href="#" class="link text-xss text-uppercase w-regular" data-toggle="modal" data-target="#calcHouseModal" role="button">Залишити заявку?</a></div>
 						</div>
 					</div><!-- /.calculator-total -->
@@ -413,15 +413,16 @@
 					<form action="#" class="form modal-form">
 						<input type="hidden" value="0" id="cModal-house">
 						<input type="hidden" value="0" id="cModal-price">
-						<input type="hidden" value="0" id="cModal-firstPay">
+						<input type="hidden" value="0" id="cModal-firstpay">
 						<input type="hidden" value="0" id="cModal-term">
-						<input type="hidden" value="0" id="cModal-monthlyPay">
+						<input type="hidden" value="0" id="cModal-termpay">
 						<div class="form-plate">
-							<div class="form-plate-item"><span class="name">Будинок:</span> <span class="value"><em id="cModalLabel-house"></em><sup>*</sup> $</span></div>
-							<div class="form-plate-item"><span class="name">Вартість:</span> <span class="value"><em id="cModalLabel-cost"></em><sup>*</sup> $</span></div>
-							<div class="form-plate-item"><span class="name">Перший внесок:</span> <span class="value"><em id="cModalLabel-firstPay"></em><sup>*</sup> $</span></div>
-							<div class="form-plate-item"><span class="name">Термін:</span> <span class="value"><em id="cModalLabel-term"></em><sup>*</sup> $</span></div>
-							<div class="form-plate-item"><span class="name">Платіж на період розтермінування:</span> <span class="value"><em id="cModalLabel-monthlyPay"></em><sup>*</sup> $</span></div>
+							<div class="form-plate-item"><span class="name">Будинок:</span> <span class="value"><em id="cModalLabel-house">0</em></span></div>
+							<div class="form-plate-item"><span class="name">Вартість:</span> <span class="value">$<em id="cModalLabel-price">0</em></span></div>
+							<div class="form-plate-item"><span class="name">Завдаток:</span> <span class="value">$10 000</span></div>
+							<div class="form-plate-item"><span class="name">Перший внесок:</span> <span class="value">$<em id="cModalLabel-firstpay">0</em></span></div>
+							<div class="form-plate-item"><span class="name">Термін:</span> <span class="value"><em id="cModalLabel-term">0</em> <em id="cModalLabel-term-label">міс.</em></span></div>
+							<div class="form-plate-item"><span class="name">Платіж на період розтермінування:</span> <span class="value">$<em id="cModalLabel-termpay">0</em></span></div>
 						</div>
 						<div class="form-row">
 							<div class="col-lg-6">
