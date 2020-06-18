@@ -555,6 +555,26 @@
 
 
 /* ==========================================================================
+   Home section: Genplan
+   ========================================================================== */
+.h-genplan
+	&-wrap
+		position: relative
+		text-align: center
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			.part
+				fill: red
+				opacity: 0.3
+	&-map
+		user-select: none
+
+
+/* ==========================================================================
    Home section: Construction
    ========================================================================== */
 .h-construction
@@ -1414,32 +1434,13 @@
 			.value
 				> em
 					font-style: normal
+			.descr
+				color: #888
 			+media-breakpoint-down(xs)
 				.title
 					font-size: 13px
 				.value
 					font-size: 18px
-		&-form
-			position: absolute
-			right: 0
-			bottom: 15px
-			line-height: 1
-			+media-breakpoint-down(xs)
-				position: static
-				display: none
-				margin-top: 20px
-				&.show
-					display: block
-			.link
-				padding: 4px 8px
-				border-radius: 2px
-				background: $accent
-				color: $text-dark
-				+media-breakpoint-down(xs)
-					padding: 2px 5px
-					font-size: 11px
-				&:hover
-					background: $white
 		&-separator
 			width: 1px
 			height: 80px
@@ -1447,30 +1448,9 @@
 			background: $border
 			+media-breakpoint-down(xl)
 				display: none
-	&-legend
-		+media-breakpoint-down(md)
-			margin-top: 60px
-		.descr
-			margin-top: 20px
-			p:not(:first-child)
-				margin-top: 10px
-		.config
-			margin-top: 40px
-			+media-breakpoint-down(xss)
-				.btn
-					font-size: 12px
-	&-photo
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		z-index: -1
-		opacity: 0.05
-		> img
-			width: 100%
-			height: 100%
-			object-fit: cover
+	&-descr
+		margin-top: 60px
+		text-align: center
 
 
 /* ==========================================================================
