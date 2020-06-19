@@ -13,27 +13,60 @@ $(document).ready(function(){
   /**
    * Genplan Tooltip
    */
-  $gpWrap = $('.h-genplan-wrap');
-  $gpHouse = $('.h-genplan-map .house');
-  $gpTooltip = $('.h-genplan-tooltip');
+  $gpWrap = $('.h-genplan-wrap')
+  $gpHouse = $('.h-genplan-map .house')
+  $gpTooltip = $('.h-genplan-tooltip')
+  $gpTooltipPhotoRiver = $('#gp-tooltip-photo-1')
+  $gpTooltipPhotoSun = $('#gp-tooltip-photo-2')
+  $gpTooltipPhotoForest = $('#gp-tooltip-photo-3')
+  $gpTooltipTitle = $('#gp-tooltip-title')
+  $gpTooltipNumber = $('#gp-tooltip-number')
+  $gpTooltipSquare = $('#gp-tooltip-square')
+  $gpTooltipArea = $('#gp-tooltip-area')
+  $gpTooltipStatus = $('#gp-tooltip-status')
 
   $gpHouse.hover(function() {
-    
-    // $(this).attr("class", "enabled heyo");
-    $gpTooltip.addClass('active');
-    // $gpTooltip.html($(this).attr('id'));
-  }, function() {
-    $gpTooltip.removeClass('active');
-  });
+    let houseType = $(this).data('house-name')
+    let houseStatus = $(this).data('house-status')
 
-$(document).on('mousemove', $gpWrap, function(e){
-  
-  $gpTooltip.css({
-    left:  e.pageX,
-    top:   e.pageY - 70
-  });
-  
-});
+    $gpTooltip.addClass('active');
+    $gpTooltipTitle.text($(this).data('house-name'))
+    $gpTooltipNumber.text($(this).data('house-number'))
+    $gpTooltipSquare.text($(this).data('house-square'))
+    $gpTooltipArea.text($(this).data('house-area'))
+
+    if ( houseType === 'Villa «River»' ) {
+      $gpTooltipPhotoRiver.addClass('active')
+    } else if ( houseType === 'Villa «Sun»' ) {
+      $gpTooltipPhotoSun.addClass('active')
+    } else if ( houseType === 'Villa «Forest»' ) {
+      $gpTooltipPhotoForest.addClass('active')
+    }
+
+    if ( houseStatus === 'reserved' ) {
+      $gpTooltipStatus.attr('class', 'status status--reserved')
+      $gpTooltipStatus.text('Заброньовано')
+    } else if ( houseStatus === 'sold' ) {
+      $gpTooltipStatus.attr('class', 'status status--sold')
+      $gpTooltipStatus.text('Продано')
+    } else if ( houseStatus === 'sale' ) {
+      $gpTooltipStatus.attr('class', 'status status--sale')
+      $gpTooltipStatus.text('В продажу')
+    }
+  }, function() {
+    $gpTooltip.removeClass('active')
+    $gpTooltipPhotoRiver.removeClass('active')
+    $gpTooltipPhotoSun.removeClass('active')
+    $gpTooltipPhotoForest.removeClass('active')
+  })
+
+  $gpWrap.on('mousemove', function(e){
+    // console.log($gpTooltip.position());
+    $gpTooltip.css({
+      top: e.pageY + 30,
+      left: e.pageX - 10,
+    })
+  })
 
 
   /**
