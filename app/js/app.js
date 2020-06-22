@@ -68,14 +68,14 @@ $(document).ready(function(){
     $gpStageTooltip.removeClass('active')
   })
 
-  $gpStage.on('mousemove', function(e){
+  $('#second-stage').on('mousemove', function(e){
     $gpStageTooltip.css({
       top: e.pageY + 30,
       left: e.pageX,
     })
   })
 
-  $gpHouse.on('mousemove', function(e){
+  $gpWrap.on('mousemove', function(e){
     $gpTooltip.css({
       top: e.pageY + 30,
       left: e.pageX - 10,
