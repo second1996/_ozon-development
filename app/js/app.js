@@ -10,6 +10,28 @@
 
 $(document).ready(function(){
 
+	/**
+	 * Form Ajax send
+	 */
+	$('.form').submit(function() {
+		var form = $(this);
+		var msg = form.serialize();
+		$.ajax({
+			type: 'POST',
+			url: '/wp-content/themes/ozon/inc/telegram-send.php',
+			data: msg,
+			success: function(data) {
+				form.find('.form-submit').attr('disabled', 'disabled');
+				location.href = '/thanks';
+				form[0].reset();
+			},
+			error: function(xhr, str){
+				alert('Виникла помилка при відправці форми: ' + xhr.responseCode);
+			}
+		});
+		return false;
+	});
+
   /**
    * Genplan Tooltip
    */
