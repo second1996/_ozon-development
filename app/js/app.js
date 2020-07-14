@@ -258,23 +258,60 @@ $(document).ready(function(){
   /**
    * Swiper for House section "Planning"
    */
-  var planningSwiper = $('.planning-slider');
-  planningSwiper.each(function(){
-    var planningSlider = new Swiper (this, {
+  // var planningSwiper = $('.planning-slider');
+  // planningSwiper.each(function(){
+  //   var planningSlider = new Swiper (this, {
+  //     slidesPerView: 1,
+  //     grabCursor: true,
+  //     preloadImages: false,
+  //     navigation: {
+  //       nextEl: $(this).parent().find('.planning-slider-next')[0],
+  //       prevEl: $(this).parent().find('.planning-slider-prev')[0],
+  //     }
+  //   });
+  //   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  //     // e.target // newly activated tab
+  //     // e.relatedTarget // previous active tab
+  //     planningSlider.update();
+  //   });
+  // });
+
+
+  // breakpoint where swiper will be destroyed
+  const breakpoint = window.matchMedia( '(min-width:991.98px)' );
+  // keep track of swiper instances to destroy later
+  let planningSwiper;
+
+  const breakpointChecker = function() {
+    // if larger viewport and multi-row layout needed
+    if ( breakpoint.matches === true ) {
+      // clean up old instances and inline styles when available
+	  if ( planningSwiper !== undefined ) planningSwiper.destroy( true, true );
+	  // or/and do nothing
+	  return;
+      // else if a small viewport and single column layout needed
+      } else if ( breakpoint.matches === false ) {
+        // fire small viewport version of swiper
+        return enableSwiper();
+      }
+  };
+
+  const enableSwiper = function() {
+    planningSwiper = new Swiper ('.planning-slider', {
       slidesPerView: 1,
       grabCursor: true,
       preloadImages: false,
       navigation: {
-        nextEl: $(this).parent().find('.planning-slider-next')[0],
-        prevEl: $(this).parent().find('.planning-slider-prev')[0],
-      },
+        nextEl: '.planning-slider-next',
+        prevEl: '.planning-slider-prev'
+      }
     });
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      // e.target // newly activated tab
-      // e.relatedTarget // previous active tab
-      planningSlider.update();
-    });
-  });
+  };
+
+  // keep an eye on viewport size changes
+  breakpoint.addListener(breakpointChecker);
+  // kickstart
+  breakpointChecker();
 
 
     /**

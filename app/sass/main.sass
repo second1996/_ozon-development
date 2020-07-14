@@ -1987,18 +1987,33 @@
 						color: $text-dark
 		// Planning 2D/3D slider
 		&-slider
+			.swiper-wrapper
+				flex-wrap: wrap
+				+media-breakpoint-down(md)
+					flex-wrap: nowrap
 			&-prev,
 			&-next
-				position: absolute
-				top: 50%
-				margin-top: -25px
+				display: none
+				+media-breakpoint-down(md)
+					display: inline-block
+					position: absolute
+					top: 50%
+					margin-top: -25px
+				+media-breakpoint-down(sm)
+					top: auto
+					bottom: 0
+					margin-top: 0
 		&-slide
+			&:not(:last-child)
+				margin-bottom: 60px
+				+media-breakpoint-down(md)
+					margin-bottom: 0
 			&-photo
 				position: relative
 				display: flex
 				justify-content: center
 				align-items: center
-				width: 78%
+				width: 90%
 				height: 600px
 				margin: 0 auto
 				+media-breakpoint-down(xl)
@@ -2017,8 +2032,13 @@
 					cursor: zoom-in
 		// Planning 2D/3D floor
 		&-floor
-			margin-top: 20px
+			margin-top: 15px
 			text-align: center
+			+media-breakpoint-down(md)
+				margin-top: 30px
+				margin-bottom: 10px
+			+media-breakpoint-down(xss)
+				margin-bottom: 5px
 			> span
 				display: inline-block
 				padding-bottom: 6px
