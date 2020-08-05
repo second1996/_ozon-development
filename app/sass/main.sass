@@ -1913,6 +1913,8 @@
 					text-align: center
 			tbody
 				tr
+					display: flex
+					align-items: center
 					border-bottom: 1px solid $border
 				td
 					padding: 15px 30px
@@ -1922,6 +1924,7 @@
 				.name
 					display: flex
 					align-items: center
+					flex: 1 1 auto
 					> .number
 						flex: 0 0 auto
 						display: inline-block
@@ -1939,10 +1942,15 @@
 						margin-left: 15px
 						color: $white
 				.value
+					flex-basis: 130px
+					min-width: 130px
 					color: $accent
 					font-weight: $font-regular
 					text-align: center
+					+media-breakpoint-down(xs)
+						padding-right: 0
 			&-section
+				width: 100%
 				padding: 16px 30px
 				border-bottom: 1px solid $border
 				background: #262626
@@ -1956,6 +1964,9 @@
 			flex-wrap: wrap
 			align-items: center
 			justify-content: center
+			margin-top: 30px
+			+media-breakpoint-down(xl)
+				margin-top: 0
 			&-item
 				margin-bottom: 20px
 				padding-right: 30px
