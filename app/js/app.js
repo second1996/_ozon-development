@@ -278,40 +278,40 @@ $(document).ready(function(){
 
 
   // breakpoint where swiper will be destroyed
-  const breakpoint = window.matchMedia( '(min-width:991.98px)' );
-  // keep track of swiper instances to destroy later
-  let planningSwiper;
+  // const breakpoint = window.matchMedia( '(min-width:991.98px)' );
+  // // keep track of swiper instances to destroy later
+  // let planningSwiper;
 
-  const breakpointChecker = function() {
-    // if larger viewport and multi-row layout needed
-    if ( breakpoint.matches === true ) {
-      // clean up old instances and inline styles when available
-	  if ( planningSwiper !== undefined ) planningSwiper.destroy( true, true );
-	  // or/and do nothing
-	  return;
-      // else if a small viewport and single column layout needed
-      } else if ( breakpoint.matches === false ) {
-        // fire small viewport version of swiper
-        return enableSwiper();
-      }
-  };
+  // const breakpointChecker = function() {
+  //   // if larger viewport and multi-row layout needed
+  //   if ( breakpoint.matches === true ) {
+  //     // clean up old instances and inline styles when available
+	//   if ( planningSwiper !== undefined ) planningSwiper.destroy( true, true );
+	//   // or/and do nothing
+	//   return;
+  //     // else if a small viewport and single column layout needed
+  //     } else if ( breakpoint.matches === false ) {
+  //       // fire small viewport version of swiper
+  //       return enableSwiper();
+  //     }
+  // };
 
-  const enableSwiper = function() {
-    planningSwiper = new Swiper ('.planning-slider', {
-      slidesPerView: 1,
-      grabCursor: true,
-      preloadImages: false,
-      navigation: {
-        nextEl: '.planning-slider-next',
-        prevEl: '.planning-slider-prev'
-      }
-    });
-  };
+  // const enableSwiper = function() {
+  //   planningSwiper = new Swiper ('.planning-slider', {
+  //     slidesPerView: 1,
+  //     grabCursor: true,
+  //     preloadImages: false,
+  //     navigation: {
+  //       nextEl: '.planning-slider-next',
+  //       prevEl: '.planning-slider-prev'
+  //     }
+  //   });
+  // };
 
-  // keep an eye on viewport size changes
-  breakpoint.addListener(breakpointChecker);
-  // kickstart
-  breakpointChecker();
+  // // keep an eye on viewport size changes
+  // breakpoint.addListener(breakpointChecker);
+  // // kickstart
+  // breakpointChecker();
 
 
     /**

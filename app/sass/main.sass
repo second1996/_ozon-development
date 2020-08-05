@@ -1955,25 +1955,16 @@
 			display: flex
 			flex-wrap: wrap
 			align-items: center
-			+media-breakpoint-down(md)
-				justify-content: center
+			justify-content: center
 			&-item
 				margin-bottom: 20px
 				padding-right: 30px
 				+media-breakpoint-down(md)
 					padding: 0 15px
-				+media-breakpoint-down(xs)
-					flex-basis: 100%
-					text-align: center
-					&:not(:last-child)
 			&--reserve
-				+media-breakpoint-down(xl)
+				+media-breakpoint-down(sm)
 					flex-basis: 100%
-					margin-bottom: 30px
-				+media-breakpoint-down(md)
 					text-align: center
-			// &--pdf
-			// &--callback
 		// Planning 2D/3D switch buttons
 		&-switch
 			+media-breakpoint-down(md)
@@ -2028,20 +2019,19 @@
 				justify-content: center
 				align-items: center
 				width: 90%
-				height: 600px
 				margin: 0 auto
-				+media-breakpoint-down(xl)
-					height: 400px
 				+media-breakpoint-down(md)
-					height: 500px
-				+media-breakpoint-down(sm)
-					height: 400px
-				+media-breakpoint-down(xs)
-					height: 260px
+					margin-bottom: 30px
 				> img
-					width: 100%
-					height: 100%
-					object-fit: contain
+					max-height: 600px
+					+media-breakpoint-down(xl)
+						max-height: 540px
+					+media-breakpoint-down(md)
+						max-height: 500px
+					+media-breakpoint-down(sm)
+						max-height: 400px
+					+media-breakpoint-down(xs)
+						max-height: 260px
 				&:hover
 					cursor: zoom-in
 		// Planning 2D/3D floor
