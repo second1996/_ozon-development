@@ -315,7 +315,7 @@ $(document).ready(function(){
 
 
     /**
-   * Swiper for House section "Planning"
+   * Swiper for House section "Gallery"
    */
   var galleryThumbs = new Swiper('.gallery-thumbs', {
     spaceBetween: 10,
