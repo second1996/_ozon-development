@@ -82,7 +82,8 @@
 							<button data-toggle="modal" data-target="#reviewModal" class="btn btn-primary">Записатися на огляд</button>
 						</div>
 						<div>
-							<div class="price-full">Вартість за м<sup>2</sup> від $899</div>
+							<button data-toggle="modal" data-target="#housePriceModal" class="btn btn-solid">Дізнатися ціну</button>
+							<!-- <div class="price-full">Вартість за м<sup>2</sup> від $899</div> -->
 						</div>
 					</div>
 					<h1 class="details-title title title-xxl text-uppercase w-bold">Villa «RIVER»</h1>
@@ -884,6 +885,43 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title title title-md w-medium text-uppercase" id="callbackModalLabel">Замовити дзвінок</h5>
+					<button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" class="form modal-form">
+						<div class="form-row">
+							<div class="col-lg-6">
+								<input type="text" class="form-control" placeholder="Ваше ім’я" required>
+							</div>
+							<div class="col-lg-6">
+								<input type="text" class="form-control" placeholder="+38 (___) __-__-___" data-inputmask="'mask': '+38 (999) 99-99-999'" required>
+							</div>
+							<div class="col-12">
+								<div class="form-row">
+									<div class="col-lg">
+										<p class="form-text text-xs">Гарантуємо повну конфіденційність і нерозголошення ваших даних третім особам.</p>
+									</div>
+									<div class="col-lg-auto">
+										<button class="form-submit btn btn-outline btn-icon">Надіслати заявку</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- MODAL: Дізнатися ціну -->
+	<div class="modal fade" id="housePriceModal" tabindex="-1" role="dialog" aria-labelledby="housePriceModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title title title-md w-medium text-uppercase" id="housePriceModalLabel">Дізнатися ціну</h5>
 					<button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true"></span>
 						<span aria-hidden="true"></span>
