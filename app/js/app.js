@@ -28,6 +28,7 @@ $(document).ready(function(){
     'Nebokray': '/images/dest/villa-nebokray-main.jpg',
     'Zatyshok': '/images/dest/villa-zatyshok-main.jpg',
     'Svitanok': '/images/dest/villa-svitanok-main.jpg'
+    // 'Harmonia': '/wp-content/uploads/2020/05/villa-harmonia-main-1024x579.jpg',
     // 'Nebokray': '/wp-content/uploads/2020/05/villa-nebokray-main-1024x579.jpg',
     // 'Zatyshok': '/wp-content/uploads/2020/05/villa-zatyshok-main-1024x579.jpg',
     // 'Svitanok': '/wp-content/uploads/2020/05/villa-svitanok-main-1024x579.jpg'
@@ -49,6 +50,8 @@ $(document).ready(function(){
       $gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Svitanok + '")')
     } else if ( houseType === 'VILLA «ZATYSHOK»' ) {
       $gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Zatyshok + '")')
+    } else if ( houseType === 'VILLA «HARMONIA»' ) {
+      $gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Harmonia + '")')
     }
 
     if ( houseStatus === 'reserved' ) {
