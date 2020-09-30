@@ -28,6 +28,18 @@
 				top: -40px
 
 /* ==========================================================================
+   Home page
+   ========================================================================== */
+body.home
+	+media-breakpoint-down(xs)
+		.section
+			margin: 0
+			margin-bottom: 100px
+		.h-features
+			margin-bottom: 100px
+
+
+/* ==========================================================================
    Home section: Heroes
    ========================================================================== */
 .h-heroes
@@ -464,6 +476,8 @@
 			height: 100px
 			border-radius: 100%
 			border: 2px solid #6b6b6b
+			backface-visibility: hidden
+			transform: translate3d(0, 0, 0)
 			+media-breakpoint-down(xl)
 				width: 80px
 				height: 80px
@@ -621,7 +635,9 @@
 			margin-top: 10px
 		.info-item
 			position: relative
+			margin-bottom: 5px
 			padding-left: 16px
+			line-height: 1.2
 			&:not(:last-child)
 				margin-right: 10px
 			&::before
@@ -1740,6 +1756,15 @@
 		+media-breakpoint-down(lg)
 			margin-top: 120px
 			margin-bottom: 60px
+	+media-breakpoint-down(xs)
+		.page-section
+			margin: 0
+			margin-bottom: 100px
+		.planning
+			margin-top: 100px
+		.houses
+			margin-bottom: 0
+
 .p-house
 	position: relative
 	z-index: 1
@@ -2116,6 +2141,26 @@
 	// 			padding-right: 0
 	// 			margin-bottom: 30px
 	// Section: Reserve
+	.reserve-mobile
+		margin-top: 30px
+		text-align: center
+		&-actions
+			margin-bottom: 20px
+		&-text
+			margin-bottom: 10px
+		&-phone
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-left: -28px
+			> svg.icon
+				fill: $accent
+				font-size: 18px
+			> .numbers
+				margin-left: 10px
+				a
+					font-size: 18px
+					font-weight: 400
 	.reserve
 		> .row > [class*="col"]
 			margin-top: 20px
