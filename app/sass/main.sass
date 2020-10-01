@@ -78,6 +78,8 @@ body.home
 				bottom: 60px
 			+media-breakpoint-down(sm)
 				bottom: 40px
+			+media-breakpoint-down(xs)
+				display: none
 			.swiper-pagination-bullet
 				position: relative
 				display: inline-block
@@ -174,7 +176,7 @@ body.home
 			+media-breakpoint-down(sm)
 				padding-top: 60px
 			+media-breakpoint-down(xss)
-				justify-content: flex-start
+				padding-top: 0
 			.title
 				max-width: 75%
 				font-size: 70px
@@ -225,6 +227,8 @@ body.home
 					bottom: -12px
 					right: 15px
 					font-size: 100px
+				+media-breakpoint-down(xs)
+					display: none
 		// Slider background photo
 		&-photo
 			position: absolute
