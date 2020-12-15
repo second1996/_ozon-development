@@ -75,10 +75,10 @@
 				<div class="h-heroes-wrapper swiper-wrapper">
 					<!-- Slides -->
 					<div class="h-heroes-slide swiper-slide">
-						<div data-background="images/dest/home-heroes-photo-03.jpg" class="h-heroes-slide-photo swiper-lazy"></div>
+						<div data-background="images/dest/home-heroes-photo-new-year-2.jpg" class="h-heroes-slide-photo swiper-lazy"></div>
 						<div class="h-heroes-slide-content container-fluid">
-							<h3 class="title"><span>OZON</span> VILLAge</h3>
-							<p class="descr">Перше енергоефективне котеджне містечко в Івано-Франківську</p>
+							<h3 class="title"><span>OZON</span> Village</h3>
+							<p class="descr">Розумне котеджне містечко</p>
 							<div class="button">
 								<a href="/index.html#h-houses" class="btn btn-primary btn-icon">Обрати будинок</a>
 							</div>
@@ -982,6 +982,23 @@
 
 	<!-- Quick buttons -->
 	<div class="q-buttons">
+		<a href="#" id="ozon_play_song" class="q-buttons-link">
+			<!-- <span>Музика</span> -->
+			<svg class="audio-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+				<path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z">
+			</svg>
+			<svg class="audio-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 38.05">
+				<path class="line_1" d="M0.91,15L0.78,15A1,1,0,0,0,0,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H0.91Z"/>
+				<path class="line_2" d="M6.91,9L6.78,9A1,1,0,0,0,6,10V28a1,1,0,1,0,2,0s0,0,0,0V10A1,1,0,0,0,7,9H6.91Z"/>
+				<path class="line_3" d="M12.91,0L12.78,0A1,1,0,0,0,12,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H12.91Z"/>
+				<path class="line_4" d="M18.91,10l-0.12,0A1,1,0,0,0,18,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H18.91Z"/>
+				<path class="line_5" d="M24.91,15l-0.12,0A1,1,0,0,0,24,16v6a1,1,0,0,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H24.91Z"/>
+				<path class="line_6" d="M30.91,10l-0.12,0A1,1,0,0,0,30,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H30.91Z"/>
+				<path class="line_7" d="M36.91,0L36.78,0A1,1,0,0,0,36,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H36.91Z"/>
+				<path class="line_8" d="M42.91,9L42.78,9A1,1,0,0,0,42,10V28a1,1,0,1,0,2,0s0,0,0,0V10a1,1,0,0,0-1-1H42.91Z"/>
+				<path class="line_9" d="M48.91,15l-0.12,0A1,1,0,0,0,48,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H48.91Z"/>
+			</svg>
+		</a>
 		<a href="#" class="q-buttons-link">
 			<span>Переглянути генплан</span>
 			<svg class="icon icon-genplan"><use xlink:href="images/symbol-defs.svg#icon-genplan"></use></svg>
@@ -1093,6 +1110,43 @@
 	</div>
 
 	<script src="js/app.min.js"></script>
+
+	<!-- OZON Christmas song-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha512-L6Z/YtIPQ7eU3BProP34WGU5yIRk7tNHk7vaC2dB1Vy1atz6wl9mCkTPPZ2Rn1qPr+vY2mZ9odZLdGYuaBk7dQ==" crossorigin="anonymous"></script>
+	<script>
+	$(document).ready(function() {
+		var audio_btn = document.querySelector('#ozon_play_song');
+		var ozon_audio = new Howl({
+			src: ['music/jingle-bell-rock.mp3'],
+			// onplayerror: function() {
+			// 	ozon_audio.once('unlock', function() {
+			// 		ozon_audio.play();
+			// 	});
+			// },
+			autoplay: true,
+			onplay: function() {
+				audio_btn.classList.add('audio-playing')
+			}
+		});
+		Howler.volume(0.15);
+		// ozon_audio.once('load', function(){
+		// 	ozon_audio.play();
+		// });
+
+		audio_btn.addEventListener('click', function() {
+			togglePlay();
+		})
+
+		function togglePlay() {
+			if( ozon_audio.playing() ) {
+				ozon_audio.pause();
+				audio_btn.classList.remove('audio-playing')
+			} else {
+				ozon_audio.play();
+			}
+		}
+	});
+	</script>
 
 </body>
 </html>

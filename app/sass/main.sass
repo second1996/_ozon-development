@@ -4,6 +4,44 @@
 
 
 /* ==========================================================================
+   AUDIO customize button
+   ========================================================================== */
+#ozon_play_song
+	background-color: $accent
+	.audio-play
+		width: 20px
+		height: 20px
+		fill: $text-dark
+	.audio-waves
+		width: 30px
+		height: 30px
+		fill: $text-dark
+
+	&.audio-playing
+		.audio-play
+			display: none
+	&:not(.audio-playing)
+		.audio-waves
+			display: none
+
+	@for $i from 1 through 9
+		.line_#{$i}
+			animation: waves 1s infinite
+			animation-delay: $i * .1s
+
+@keyframes waves
+	0%
+		transform: scaleY(1)
+		transform-origin: 50% 50%
+	50%
+		transform: scaleY(.7)
+		transform-origin: 50% 50%
+	100%
+		transform: scaleY(1)
+		transform-origin: 50% 50%
+
+
+/* ==========================================================================
    Technical page
    ========================================================================== */
 .error-404,
@@ -31,12 +69,18 @@
    Home page
    ========================================================================== */
 body.home
+	.section
+		margin-top: 160px
+		margin-bottom: 0
+	.h-promo
+		margin-bottom: 0
+	.h-features, .cta
+		margin-top: 160px
 	+media-breakpoint-down(xs)
 		.section
-			margin: 0
-			margin-bottom: 100px
-		.h-features
-			margin-bottom: 100px
+			margin-top: 100px
+		.h-features, .cta
+			margin-top: 100px
 
 
 /* ==========================================================================
@@ -253,7 +297,7 @@ body.home
 				right: 0
 				bottom: 0
 				z-index: -1
-				background: rgba($black, 0.6)
+				background: rgba($black, 0.45)
 
 
 /* ==========================================================================
@@ -1756,10 +1800,9 @@ body.home
 			max-height: 500px
 	.page-section
 		margin-top: 160px
-		margin-bottom: 80px
+		margin-bottom: 0
 		+media-breakpoint-down(lg)
 			margin-top: 120px
-			margin-bottom: 60px
 	+media-breakpoint-down(xs)
 		.page-section
 			margin: 0
