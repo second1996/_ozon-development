@@ -1628,6 +1628,16 @@ body.home
 					color: $white
 					> span
 						transform: translateX(4px)
+		&-gallery
+			padding-bottom: 20px
+			border-bottom: 1px solid #323232
+			&-list
+				[class*="col"]
+					margin-bottom: 20px
+				.card-image
+					height: 180px
+					+media-breakpoint-down(sm)
+						height: 120px
 // Section: Other news
 .s-news
 	&-other
