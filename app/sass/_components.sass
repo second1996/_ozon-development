@@ -844,10 +844,24 @@
 		padding-top: 60px
 		+media-breakpoint-down(lg)
 			padding-top: 40px
+		*
+			scrollbar-width: thin
+			scrollbar-color: rgba($accent, 0.15) $white
+		::-webkit-scrollbar
+			width: 3px
+			height: 4px
+		::-webkit-scrollbar-track
+			border-radius: 3px
+			background-color: $item-bg
+		::-webkit-scrollbar-thumb
+			background-color: $border
+			border-radius: 20px
+			&:hover
+				background-color: $accent
 	&-fancy
 		overflow-x: auto
 		height: 100%
-		margin-bottom: 10px
+		margin-bottom: 20px
 		white-space: nowrap
 		&-item
 			display: inline-block
