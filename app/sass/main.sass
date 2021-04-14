@@ -675,12 +675,11 @@ body.home
 				fill: rgba(#09c005, 0.5)
 				stroke: #09c005
 			&--process
-				pointer-events: none
 				fill: rgba(#ccc, 0.5)
 				stroke: #ccc
 	&-info
 		display: none
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			display: flex
 			flex-wrap: wrap
 			justify-content: center
@@ -712,9 +711,14 @@ body.home
 			&.sold:before
 				border-color: darken(#e32c2c, 10%)
 				background: #e32c2c
+			&.process:before
+				border-color: darken(#ccc, 10%)
+				background: #ccc
 			&.stage:before
 				border-color: $border-accent
 				background: #ffc700
+
+	// Stage tooltip
 	&-stage-tooltip
 		pointer-events: none
 		visibility: hidden
@@ -733,14 +737,15 @@ body.home
 		+media-breakpoint-down(lg)
 			margin-top: -75px
 			margin-left: 0
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			display: none
 		&.active
 			visibility: visible
 			opacity: 1
+
+	// House tooltip
 	&-tooltip
 		pointer-events: none
-		visibility: hidden
 		position: absolute
 		top: 0
 		left: 0
@@ -751,12 +756,13 @@ body.home
 		font-size: 18px
 		text-align: center
 		line-height: 30px
+		visibility: hidden
 		opacity: 0
 		transition: visibility .35s ease, opacity .35s ease
 		+media-breakpoint-down(lg)
 			margin-top: -75px
 			margin-left: 0
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			display: none
 		&.active
 			visibility: visible
@@ -848,6 +854,58 @@ body.home
 				background: #039300
 				color: $white
 				font-weight: $font-medium
+
+	// Choose your house tooltip
+	&-process-tooltip
+		pointer-events: none
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 5
+		width: 320px
+		margin-left: -150px
+		background: $item-bg
+		font-size: 18px
+		text-align: center
+		line-height: 30px
+		visibility: hidden
+		opacity: 0
+		transition: visibility .35s ease, opacity .35s ease
+		+media-breakpoint-down(lg)
+			margin-top: -75px
+			margin-left: 0
+		+media-breakpoint-down(md)
+			display: none
+		&.active
+			visibility: visible
+			opacity: 1
+		.meta
+			padding: 30px
+			.number
+				display: inline-block
+				padding: 10px
+				border: 1px solid $border-accent
+				background: $accent
+				color: $darken
+				font-size: 14px
+				font-weight: $font-medium
+				line-height: 1
+				> em
+					font-style: normal
+			.title
+				margin-top: 30px
+				font-size: 16px
+				font-weight: $font-medium
+				line-height: 1.2
+				text-transform: uppercase
+			.descr
+				margin-top: 15px
+				margin-bottom: 0
+				color: $text-main
+				font-size: 13px
+				font-weight: $font-light
+				line-height: 1.3
+
 	&-image
 		user-select: none
 
