@@ -679,9 +679,12 @@ body.home
 			&--sale
 				fill: rgba(#09c005, 0.5)
 				stroke: #09c005
+			&--process
+				fill: rgba(#ccc, 0.5)
+				stroke: #ccc
 	&-info
 		display: none
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			display: flex
 			flex-wrap: wrap
 			justify-content: center
@@ -713,9 +716,14 @@ body.home
 			&.sold:before
 				border-color: darken(#e32c2c, 10%)
 				background: #e32c2c
+			&.process:before
+				border-color: darken(#ccc, 10%)
+				background: #ccc
 			&.stage:before
 				border-color: $border-accent
 				background: #ffc700
+
+	// Stage tooltip
 	&-stage-tooltip
 		pointer-events: none
 		visibility: hidden
@@ -734,14 +742,15 @@ body.home
 		+media-breakpoint-down(lg)
 			margin-top: -75px
 			margin-left: 0
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			display: none
 		&.active
 			visibility: visible
 			opacity: 1
+
+	// House tooltip
 	&-tooltip
 		pointer-events: none
-		visibility: hidden
 		position: absolute
 		top: 0
 		left: 0
@@ -752,12 +761,13 @@ body.home
 		font-size: 18px
 		text-align: center
 		line-height: 30px
+		visibility: hidden
 		opacity: 0
 		transition: visibility .35s ease, opacity .35s ease
 		+media-breakpoint-down(lg)
 			margin-top: -75px
 			margin-left: 0
-		+media-breakpoint-down(sm)
+		+media-breakpoint-down(md)
 			display: none
 		&.active
 			visibility: visible
@@ -849,6 +859,58 @@ body.home
 				background: #039300
 				color: $white
 				font-weight: $font-medium
+
+	// Choose your house tooltip
+	&-process-tooltip
+		pointer-events: none
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 5
+		width: 320px
+		margin-left: -150px
+		background: $item-bg
+		font-size: 18px
+		text-align: center
+		line-height: 30px
+		visibility: hidden
+		opacity: 0
+		transition: visibility .35s ease, opacity .35s ease
+		+media-breakpoint-down(lg)
+			margin-top: -75px
+			margin-left: 0
+		+media-breakpoint-down(md)
+			display: none
+		&.active
+			visibility: visible
+			opacity: 1
+		.meta
+			padding: 30px
+			.number
+				display: inline-block
+				padding: 10px
+				border: 1px solid $border-accent
+				background: $accent
+				color: $darken
+				font-size: 14px
+				font-weight: $font-medium
+				line-height: 1
+				> em
+					font-style: normal
+			.title
+				margin-top: 30px
+				font-size: 16px
+				font-weight: $font-medium
+				line-height: 1.2
+				text-transform: uppercase
+			.descr
+				margin-top: 15px
+				margin-bottom: 0
+				color: $text-main
+				font-size: 13px
+				font-weight: $font-light
+				line-height: 1.3
+
 	&-image
 		user-select: none
 
@@ -1251,6 +1313,16 @@ body.home
 /* ==========================================================================
    Page: Infrastructure
    ========================================================================== */
+.h-promo-content
+	.title
+		margin-bottom: 0
+		> span
+			display: inline-block
+			font-size: inherit
+			font-weight: 800
+	.descr
+		margin-top: 0
+
 .inf-external
 	.row > [class*="col"]
 		margin-bottom: 20px
@@ -1629,6 +1701,16 @@ body.home
 					color: $white
 					> span
 						transform: translateX(4px)
+		&-gallery
+			padding-bottom: 20px
+			border-bottom: 1px solid #323232
+			&-list
+				[class*="col"]
+					margin-bottom: 20px
+				.card-image
+					height: 180px
+					+media-breakpoint-down(sm)
+						height: 120px
 // Section: Other news
 .s-news
 	&-other
@@ -2148,6 +2230,64 @@ body.home
 				font-weight: $font-medium
 				text-transform: uppercase
 				line-height: 1
+	// Section: Includes
+	.includes
+		position: relative
+		+media-breakpoint-down(xs)
+			// &::before
+			// 	content: ''
+			// 	position: absolute
+			// 	left: -15px
+			// 	right: -15px
+			// 	bottom: 0
+			// 	display: block
+			// 	height: 50px
+			// 	background: linear-gradient(180deg, rgba($accent, 0) 0%, $accent 100%)
+		&-list
+			+media-breakpoint-down(xs)
+				// height: 400px
+				// overflow-y: auto
+		&-item
+			display: flex
+			height: 100%
+			padding: 15px 15px 15px 0
+			border-bottom: 1px solid rgba($white, 0.05)
+			+media-breakpoint-down(xs)
+				display: block
+				padding-left: 0
+				padding-right: 0
+		&-head
+			display: inline-flex
+			flex: 0 0 35%
+			padding-top: 2px
+			padding-right: 30px
+			.icon
+				flex: 0 0 auto
+				width: 16px
+				height: 16px
+				margin-right: 15px
+			.title
+				font-size: 16px
+				font-weight: $font-regular
+				line-height: 1.2
+				text-transform: uppercase
+			+media-breakpoint-down(xl)
+				.title
+					word-break: break-word
+			+media-breakpoint-down(sm)
+				flex-direction: column
+				.icon
+					margin-right: 0
+					margin-bottom: 8px
+			+media-breakpoint-down(xs)
+				flex-direction: row
+				margin-bottom: 10px
+				.icon
+					margin-right: 10px
+		&-text
+			flex: 0 0 65%
+			> p
+				line-height: 1.35
 	// Section: Calculator
 	.calculate
 		position: relative

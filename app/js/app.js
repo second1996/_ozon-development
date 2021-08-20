@@ -1,20 +1,9 @@
-// document.addEventListener("DOMContentLoaded", function() {
-
-// 	// Custom JS
-
-// });
-
-// Scrollbar.initAll({
-// 	damping: 0.125,
-// });
-
 $(document).ready(function(){
 
   /**
    * Genplan Tooltip
    */
   $gpWrap = $('.h-genplan-wrap')
-  $gpHouse = $('.h-genplan-map .house')
   $gpStage = $('.h-genplan-map .second-stage')
   $gpTooltip = $('.h-genplan-tooltip')
   $gpStageTooltip = $('.h-genplan-stage-tooltip')
@@ -25,16 +14,13 @@ $(document).ready(function(){
   $gpTooltipStatus = $('#gp-tooltip-status')
   $gpTooltipPhoto = $('#gp-tooltip-photo')
   $gpHousePhotos = {
-    'Nebokray': '/images/dest/villa-nebokray-main.jpg',
-    'Zatyshok': '/images/dest/villa-zatyshok-main.jpg',
-    'Svitanok': '/images/dest/villa-svitanok-main.jpg'
-    // 'Harmonia': '/wp-content/uploads/2020/09/villa-harmonia-main-1024x579.jpg',
-    // 'Nebokray': '/wp-content/uploads/2020/05/villa-nebokray-main-1024x579.jpg',
-    // 'Zatyshok': '/wp-content/uploads/2020/05/villa-zatyshok-main-1024x579.jpg',
-    // 'Svitanok': '/wp-content/uploads/2020/05/villa-svitanok-main-1024x579.jpg'
+    'Harmonia': 'https://ozon-ltd.com/wp-content/uploads/2020/09/villa-harmonia-main-1024x579.jpg',
+    'Nebokray': 'https://ozon-ltd.com/wp-content/uploads/2020/05/villa-nebokray-main-1024x579.jpg',
+    'Zatyshok': 'https://ozon-ltd.com/wp-content/uploads/2020/05/villa-zatyshok-main-1024x579.jpg',
+    'Svitanok': 'https://ozon-ltd.com/wp-content/uploads/2020/05/villa-svitanok-main-1024x579.jpg'
   }
 
-  $gpHouse.hover(function() {
+  $('.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved').hover(function(e) {
     let houseType = $(this).data('house-name')
     let houseStatus = $(this).data('house-status')
 
@@ -81,8 +67,34 @@ $(document).ready(function(){
     })
   })
 
-  $gpWrap.on('mousemove', function(e){
+  $('.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved').on('mousemove', function(e) {
     $gpTooltip.css({
+      top: e.pageY + 30,
+      left: e.pageX - 10,
+    })
+  })
+
+
+  /**
+   * Choose your house tooltip
+   */
+  $('.h-genplan-map .house--process').hover(function() {
+    $('.h-genplan-process-tooltip').addClass('active')
+    $('#gp-process-tooltip-number').text($(this).data('house-number'))
+  }, function() {
+    $('.h-genplan-process-tooltip').removeClass('active')
+  })
+
+  $('.h-genplan-map .house--process').bind('click.smoothscroll', function() {
+    var target = $(this).parent().attr('xlink:href'),
+        bl_top = $(target).offset().top - 75;
+
+    $('body, html').animate({scrollTop: bl_top}, 1000);
+    return false;
+  })
+
+  $('.h-genplan-map .house--process').on('mousemove', function(e) {
+    $('.h-genplan-process-tooltip').css({
       top: e.pageY + 30,
       left: e.pageX - 10,
     })
