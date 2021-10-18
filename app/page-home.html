@@ -577,7 +577,7 @@
 										<path data-house-number="3" class="house house--process" d="m -589.4055,-170.03406 -26.09894,30.50966 36.94926,10.38017 24.54667,-31.51187 -35.11622,-9.76401 z" />
 									</a>
 									<a xlink:href="page-house.html">
-										<path data-house-name="VILLA «NEBOKRAY»" data-house-number="4" data-house-square="252" data-house-area="11" data-house-status="sold" class="house house--sold" d="m -554.00851,-160.6561 36.78421,10.32251 -23.21859,32.35676 -38.11229,-11.1674 z" />
+										<path data-house-name="VILLA «NEBOKRAY»" data-house-progress="25%" data-house-number="4" data-house-square="252" data-house-area="11" data-house-status="sold" class="house house--sold" d="m -554.00851,-160.6561 36.78421,10.32251 -23.21859,32.35676 -38.11229,-11.1674 z" />
 									</a>
 									<a xlink:href="#h-houses">
 										<path data-house-number="5" class="house house--process" d="m -517.2243,-150.33359 37.85269,10.65427 -22.55049,32.57594 -38.52079,-10.87345 z" />
@@ -604,7 +604,7 @@
 										<path data-house-number="20" class="house house--process" d="m -424.60339,-244.0053 32.25443,10.16737 12.91524,-23.02279 -32.23197,-8.55195 z" />
 									</a>
 									<a xlink:href="page-house.html">
-										<path data-house-name="VILLA «NEBOKRAY»" data-house-number="21" data-house-square="252" data-house-area="11" data-house-status="sale" class="house house--sale" d="m -456.27216,-252.90712 31.66877,8.90182 12.9377,-21.40737 -31.30496,-8.17422 z" />
+										<path data-house-name="VILLA «NEBOKRAY»" data-house-progress="91%" data-house-number="21" data-house-square="252" data-house-area="11" data-house-status="sale" class="house house--sale" d="m -456.27216,-252.90712 31.66877,8.90182 12.9377,-21.40737 -31.30496,-8.17422 z" />
 									</a>
 									<a xlink:href="page-house.html">
 										<path data-house-name="VILLA «NEBOKRAY»" data-house-number="22" data-house-square="252" data-house-area="11" data-house-status="sale" class="house house--sale" d="m -487.94092,-261.80894 31.66876,8.90182 13.30151,-20.67977 -31.8672,-7.67813 z" />
@@ -674,6 +674,9 @@
 									</a>
 									<path class="first-stage" d="m -284.05902,-228.17518 -122.38866,-36.04189 -91.02252,-23.40057 -222.38607,114.9865 0.84229,5.05379 241.73889,71.969567 21.0348,1.463556 c 41.38821,-1.19742 55.08695,-3.477604 123.13475,-3.490096 l 8.2094,-17.375487 7.68729,-16.44812 -13.63303,-9.10911 15.22811,-31.86089 11.94799,-4.23455 8.30594,-18.1953 -0.1881,-7.43188 z" />
 								</g>
+								<g id="vacation-zone">
+									<path class="vacation-zone" d="m -530.19902,-197.26833 95.46036,24.84777 7.81801,1.4957 111.30688,-1.50307 11.94797,-4.23455 -30.62263,0.58822 -74.19864,-25.8969 -31.01221,-10.40348 -41.06638,-13.97535 -19.61472,12.1418 -39.73051,-10.3777 -8.51448,3.71021 40.27807,11.11341 z" />
+								</g>
 								<g id="second-stage">
 									<path class="second-stage" d="m -333.10554,-97.634323 c 22.88514,0.577298 37.00537,-0.05054 80.03646,4.101042 35.78188,3.733944 100.98194,6.412848 164.745593,18.450437 l 0.171494,-95.992346 -195.907027,-57.09999 -11.48892,25.88552 0.1881,7.43188 -8.30594,18.1953 -11.94799,4.23455 -15.22811,31.86089 13.63303,9.10911 z" />
 								</g>
@@ -706,6 +709,13 @@
 							<div class="number">Буд. <em id="gp-tooltip-number">42</em></div>
 						</div>
 					</div>
+					<div class="progress" id="gp-tooltip-progress">
+						<div class="progress-title text-accent text-xss w-medium text-uppercase">Хід будівництва</div>
+						<div class="progress-bar">
+							<div class="value">0%</div>
+							<div class="line" style="width: 0%"></div>
+						</div>
+					</div>
 					<div class="square">
 						<div class="square-item">
 							<span><em id="gp-tooltip-square">252</em> м<sup>2</sup></span>
@@ -717,14 +727,27 @@
 						</div>
 					</div>
 					<div class="status status--reserved" id="gp-tooltip-status">Заброньовано</div>
-				</div>
+				</div><!-- /.h-genplan-tooltip -->
 				<div class="h-genplan-process-tooltip">
 					<div class="meta">
 						<div class="number">Ділянка #<em id="gp-process-tooltip-number">42</em></div>
 						<div class="title" id="gp-process-tooltip-title">Ділянка вільна під будівництво будь-якого типу будинку</div>
 						<p class="descr">Ознайомитись з типами будинків можна, клікнувши на ділянку, яка вам сподобалась.</p>
 					</div>
-				</div>
+				</div><!-- /.h-genplan-process-tooltip -->
+				<div class="h-genplan-vacation-tooltip">
+					<div class="photo">
+						<img src="images/dest/landspacing/landscaping-06.jpg" alt="Рекреаційна зона">
+					</div>
+					<div class="title text-md w-medium text-uppercase">Рекреаційна зона</div>
+					<div class="progress">
+						<div class="progress-title text-accent text-xss w-medium text-uppercase">Хід будівництва</div>
+						<div class="progress-bar">
+							<div class="value">21%</div>
+							<div class="line" style="width: 21%"></div>
+						</div>
+					</div>
+				</div><!-- /.h-genplan-vacation-tooltip -->
 			</section>
 
 			<!-- Section: Construction -->

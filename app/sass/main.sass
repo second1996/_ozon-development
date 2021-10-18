@@ -662,6 +662,14 @@ body.home
 			&:hover
 				cursor: help
 				fill: rgba($accent, 0.65)
+		.vacation-zone
+			fill: rgba(aqua, 0.15)
+			stroke: rgba(aqua, 0.25)
+			transition: .35s ease
+			&:hover
+				cursor: help
+				fill: rgba(aqua, 0.25)
+				stroke: rgba(aqua, 0.35)
 		.house
 			fill: none
 			stroke-width: 0.5px
@@ -748,8 +756,9 @@ body.home
 			visibility: visible
 			opacity: 1
 
-	// House tooltip
-	&-tooltip
+	// House & Vacation zone tooltip
+	&-tooltip,
+	&-vacation-tooltip
 		pointer-events: none
 		position: absolute
 		top: 0
@@ -774,7 +783,7 @@ body.home
 			opacity: 1
 		.head
 			position: relative
-			margin-bottom: 20px
+			margin-bottom: 12px
 			.photo
 				position: relative
 				width: 100%
@@ -816,14 +825,41 @@ body.home
 					display: inline-block
 					padding: 6px 8px
 					border-radius: 2px
-					border: 1px solid $border-accent
-					background: $accent
-					color: $darken
+					background-color: rgba($accent, 0.35)
+					color: $white
 					font-size: 14px
 					font-weight: $font-medium
 					line-height: 1
 					> em
 						font-style: normal
+		.progress
+			&-text
+				margin-bottom: 6px
+				text-align: center
+			&-bar
+				position: relative
+				z-index: 2
+				display: flex
+				align-items: center
+				justify-content: center
+				height: 26px
+				margin: 0 30px 25px
+				overflow: hidden
+				border-radius: 2px
+				background-color: rgba($accent, 0.1)
+				.value
+					color: $white
+					font-size: 13px
+					font-weight: $font-semibold
+					line-height: 1
+					text-shadow: 0 1px 1px $dark
+				.line
+					position: absolute
+					top: 0
+					left: 0
+					bottom: 0
+					z-index: -1
+					background-color: $accent
 		.square
 			display: flex
 			justify-content: center
@@ -859,6 +895,10 @@ body.home
 				background: #039300
 				color: $white
 				font-weight: $font-medium
+	&-vacation-tooltip
+		.title
+			margin-top: 20px
+			margin-bottom: 10px
 
 	// Choose your house tooltip
 	&-process-tooltip
