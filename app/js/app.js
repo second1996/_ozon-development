@@ -11,8 +11,7 @@ $(document).ready(function(){
 	$gpStageTooltip = $('.h-genplan-stage-tooltip')
 	$gpTooltipTitle = $('#gp-tooltip-title')
 	$gpTooltipNumber = $('#gp-tooltip-number')
-	$gpTooltipProgressValue = $('#gp-tooltip-progress').find('.progress-bar .value')
-	$gpTooltipProgressLine = $('#gp-tooltip-progress').find('.progress-bar .line')
+	$gpTooltipProgress = $('#gp-tooltip-progress')
 	$gpTooltipSquare = $('#gp-tooltip-square')
 	$gpTooltipArea = $('#gp-tooltip-area')
 	$gpTooltipStatus = $('#gp-tooltip-status')
@@ -28,13 +27,19 @@ $(document).ready(function(){
 		let houseType = $(this).data('house-name')
 		let houseStatus = $(this).data('house-status')
 
-		$gpTooltip.addClass('active');
+		$gpTooltip.addClass('active')
 		$gpTooltipTitle.text($(this).data('house-name'))
 		$gpTooltipNumber.text($(this).data('house-number'))
-		$gpTooltipProgressValue.text($(this).data('house-progress'))
-		$gpTooltipProgressLine.css('width', $(this).data('house-progress'))
+		$gpTooltipProgress.find('.progress-bar .value').text($(this).data('house-progress'))
+		$gpTooltipProgress.find('.progress-bar .line').css('width', $(this).data('house-progress'))
 		$gpTooltipSquare.text($(this).data('house-square'))
 		$gpTooltipArea.text($(this).data('house-area'))
+
+		if (houseStatus == 'sold' || houseStatus == 'reserved') {
+			$gpTooltipProgress.addClass('d-none')
+		} else {
+			$gpTooltipProgress.removeClass('d-none')
+		}
 
 		switch (houseType) {
 			case 'VILLA «NEBOKRAY»':
