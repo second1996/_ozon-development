@@ -2,9 +2,10 @@
 @import base
 @import components
 
+
 /* ==========================================================================
- AUDIO customize button
- ========================================================================== */
+	AUDIO customize button
+	========================================================================== */
 #ozon_play_song
 	border: 0
 	box-shadow: none
@@ -44,9 +45,10 @@
 		transform: scaleY(1)
 		transform-origin: 50% 50%
 
+
 /* ==========================================================================
- Technical page
- ========================================================================== */
+	Technical page
+	========================================================================== */
 .error-404,
 .page-thanks
 	position: relative
@@ -69,8 +71,8 @@
 				top: -40px
 
 /* ==========================================================================
- Home page
- ========================================================================== */
+	Home page
+	========================================================================== */
 body.home
 	.section
 		margin-top: 160px
@@ -85,9 +87,10 @@ body.home
 		.h-features, .cta
 			margin-top: 100px
 
+
 /* ==========================================================================
- Home section: Heroes
- ========================================================================== */
+	Home section: Heroes
+	========================================================================== */
 .h-heroes
 	height: 100vh
 	min-height: 800px
@@ -301,9 +304,10 @@ body.home
 				z-index: -1
 				background: rgba($black, 0.45)
 
+
 /* ==========================================================================
- Home section: Promo
- ========================================================================== */
+	Home section: Promo
+	========================================================================== */
 .h-promo
 	margin: 130px 0
 	+media-breakpoint-down(sm)
@@ -370,9 +374,10 @@ body.home
 			> a
 				margin: 0 10px
 
+
 /* ==========================================================================
- Home section: About
- ========================================================================== */
+	Home section: About
+	========================================================================== */
 .h-about
 	overflow-x: hidden
 	padding-bottom: 130px
@@ -458,9 +463,10 @@ body.home
 		.descr
 			max-width: 545px
 
+
 /* ==========================================================================
- Home section: Features
- ========================================================================== */
+	Home section: Features
+	========================================================================== */
 .h-features
 	padding-top: 80px
 	padding-bottom: 20px
@@ -493,9 +499,10 @@ body.home
 			padding-left: 34px
 			line-height: 27px
 
+
 /* ==========================================================================
- Home section: Advantages
- ========================================================================== */
+	Home section: Advantages
+	========================================================================== */
 .h-advantages
 	&-head
 		display: flex
@@ -541,9 +548,10 @@ body.home
 		.link
 			margin-top: 40px
 
+
 /* ==========================================================================
- Home section: Gallery
- ========================================================================== */
+	Home section: Gallery
+	========================================================================== */
 .h-gallery
 	&-fancy
 		position: absolute
@@ -579,14 +587,16 @@ body.home
 				font-weight: $font-regular
 				line-height: 1
 
+
 /* ==========================================================================
- Home section: Houses
- ========================================================================== */
+	Home section: Houses
+	========================================================================== */
 .h-houses
 	&-individual
 		position: relative
 		min-height: 400px
 		&::after
+			pointer-events: none
 			content: ''
 			position: absolute
 			top: 0
@@ -666,9 +676,10 @@ body.home
 					color: $white
 					font-style: normal
 
+
 /* ==========================================================================
- Home section: Genplan
- ========================================================================== */
+	Home section: Genplan
+	========================================================================== */
 .h-genplan
 	position: static
 	&-wrap
@@ -862,7 +873,6 @@ body.home
 					> em
 						font-style: normal
 		.progress
-			&-title
 			&-bar
 				position: relative
 				z-index: 2
@@ -981,9 +991,10 @@ body.home
 	&-image
 		user-select: none
 
+
 /* ==========================================================================
- Home section: Construction
- ========================================================================== */
+	Home section: Construction
+	========================================================================== */
 .h-construction
 	overflow: hidden
 	&-slider
@@ -1020,9 +1031,10 @@ body.home
 				font-weight: $font-regular
 				line-height: 1
 
+
 /* ==========================================================================
- Page: About Us
- ========================================================================== */
+	Page: About Us
+	========================================================================== */
 .p-about
 	position: relative
 	z-index: 1
@@ -1120,9 +1132,10 @@ body.home
 				+media-breakpoint-down(md)
 					font-size: 15px
 
+
 /* ==========================================================================
- Page: Dynamic sales
- ========================================================================== */
+	Page: Dynamic sales
+	========================================================================== */
 .p-graphs
 	.row > [class*="col"]
 		margin-bottom: 20px
@@ -1271,7 +1284,7 @@ body.home
 			left: 0
 			width: 1px
 			height: 8px
-			background: #454545
+			background:#454545
 		&:last-child::after
 			content: ''
 			position: absolute
@@ -1279,7 +1292,7 @@ body.home
 			right: -1px
 			width: 1px
 			height: 8px
-			background: #454545
+			background:#454545
 	&-info
 		display: flex
 		flex-wrap: wrap
@@ -1328,9 +1341,11 @@ body.home
 				+media-breakpoint-down(md)
 					font-size: 14px
 
+
+
 /* ==========================================================================
- Page: Documents
- ========================================================================== */
+	Page: Documents
+	========================================================================== */
 .documents-list
 	display: flex
 	flex-wrap: wrap
@@ -1371,9 +1386,10 @@ body.home
 			.icon
 				font-size: 20px
 
+
 /* ==========================================================================
- Page: Infrastructure
- ========================================================================== */
+	Page: Infrastructure
+	========================================================================== */
 .h-promo-content
 	.title
 		margin-bottom: 0
@@ -1417,9 +1433,10 @@ body.home
 				font-size: 15px
 				line-height: 1.4
 
+
 /* ==========================================================================
- Page: Contacts
- ========================================================================== */
+	Page: Contacts
+	========================================================================== */
 .p-contacts
 	&-list
 		margin-bottom: 30px
@@ -1474,9 +1491,10 @@ body.home
 		.form-text
 			margin-top: 20px
 
+
 /* ==========================================================================
- Page: Energy
- ========================================================================== */
+	Page: Energy
+	========================================================================== */
 .p-energy
 	// Render photo with points
 	.render
@@ -1672,9 +1690,10 @@ body.home
 				.descr
 					margin-top: 0
 
+
 /* ==========================================================================
- Page: News & Promo
- ========================================================================== */
+	Page: News & Promo
+	========================================================================== */
 .news
 	// News categories
 	&-category
@@ -1798,9 +1817,10 @@ body.home
 	&-slide
 		height: auto
 
+
 /* ==========================================================================
- Page: Calculator
- ========================================================================== */
+	Page: Calculator
+	========================================================================== */
 .calculator
 	position: relative
 	z-index: 1
@@ -1925,9 +1945,10 @@ body.home
 		&.shown
 			display: block
 
+
 /* ==========================================================================
- Page: House
- ========================================================================== */
+	Page: House
+	========================================================================== */
 .single-house
 	position: relative
 	.page-bg-photo
@@ -1959,6 +1980,10 @@ body.home
 	position: relative
 	z-index: 1
 	padding-top: 0
+	&.p-house--individual
+		.details
+			+media-breakpoint-down(sm)
+				padding-bottom: 100px
 	// Section: Details
 	.details
 		display: flex
@@ -2286,6 +2311,54 @@ body.home
 				font-weight: $font-medium
 				text-transform: uppercase
 				line-height: 1
+	// Section: Steps
+	.steps
+		&-content
+			padding-top: 60px
+			padding-right: 70px
+			+media-breakpoint-down(xl)
+				padding-top: 40px
+				padding-right: 30px
+		&-list
+			counter-reset: steps-list
+			margin-top: 40px
+			> li
+				display: flex
+				&:not(:last-child)
+					margin-bottom: 20px
+				&::before
+					content: counter(steps-list)
+					counter-increment: steps-list
+					flex: 0 0 auto
+					display: inline-flex
+					align-items: center
+					justify-content: center
+					width: 36px
+					height: 36px
+					margin-right: 20px
+					border-radius: 50%
+					background-color: $accent
+					color: $text-dark
+					font-size: 17px
+					font-weight: 400
+					+media-breakpoint-down(sm)
+						width: 30px
+						height: 30px
+						margin-right: 15px
+						font-size: 14px
+				> span
+					flex: 1 1 auto
+					align-self: center
+		&-photo
+			height: 725px
+			border: 1px solid $border
+			background-color: $item-bg
+			+media-breakpoint-down(md)
+				height: auto
+			> img
+				width: 100%
+				height: 100%
+				object-fit: cover
 	// Section: Includes
 	.includes
 		position: relative
