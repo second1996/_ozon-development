@@ -872,6 +872,7 @@ body.home
 					line-height: 1
 					> em
 						font-style: normal
+
 		.progress
 			&-bar
 				position: relative
@@ -963,17 +964,33 @@ body.home
 			opacity: 1
 		.meta
 			padding: 30px
-			.number
-				display: inline-block
-				padding: 10px
-				border: 1px solid $border-accent
-				background: $accent
-				color: $darken
-				font-size: 14px
-				font-weight: $font-medium
-				line-height: 1
-				> em
-					font-style: normal
+			.heading
+				display: flex
+				align-items: center
+				justify-content: space-between
+				&-title
+					display: inline-block
+					padding: 10px
+					border: 1px solid $border-accent
+					background: $accent
+					color: $darken
+					font-size: 14px
+					font-weight: $font-medium
+					line-height: 1
+					> em
+						font-style: normal
+				&-square
+					color: $text-main
+					font-size: 14px
+					font-weight: $font-light
+					line-height: 1.5
+					> span
+						display: block
+						color: $white
+						font-size: 16px
+						font-weight: $font-regular
+						> em
+							font-style: normal
 			.title
 				margin-top: 30px
 				font-size: 16px

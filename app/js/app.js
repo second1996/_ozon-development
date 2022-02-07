@@ -118,6 +118,7 @@ $(document).ready(function(){
 	$('.h-genplan-map .house--process').hover(function() {
 		$('.h-genplan-process-tooltip').addClass('active')
 		$('#gp-process-tooltip-number').text($(this).data('house-number'))
+		$('#gp-process-tooltip-area').text($(this).data('house-area'))
 	}, function() {
 		$('.h-genplan-process-tooltip').removeClass('active')
 	})
