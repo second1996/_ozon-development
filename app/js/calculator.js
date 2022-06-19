@@ -3,16 +3,51 @@
  */
 const calcForm = $("#c-calc-form")
 const cModalLink = $("#c-modal-link")
-const reqPay = 20000
+const individualSquareSection = $('.calculator-individual-square')
+const individualSquareText = $('#c-individual-square')
+const individualSquareSlider = $('#c-individual-square-slider')
+const individualSquareCard = $('#c-individual-card-square')
 const firstpaySlider = $('#c-first-pay')
 const termSlider = $('#c-term-pay')
 const termTab = $('.form-range-tabs > .tab-item')
+const periodTab = $(".calculator-periods .period")
 const houseTab = $(".calculator-houses .house")
-let houseCost = parseInt($(".house--selected").data('house-price'))
+const includesHouse = $(".calculator-includes #includes-house")
+let periodCost = parseInt($(".period--selected").data('period-price'))
+let houseSquare = parseInt($(".house--selected").data('house-square'))
+let individualSquareSliderValue = parseInt(individualSquareSlider.val())
 let firstpaySliderValue = parseInt(firstpaySlider.val())
 let termSliderValue = parseInt(termSlider.val())
-let firstpayValue = ''
-let termValue = ''
+let houseTotalCost = 0
+let firstpayValue = 0
+let termValue = 0
+
+
+/**
+ * Змінюємо назву будинку в секції "У вартість входить".
+ */
+includesHouse.text($('.house--selected').find('.house-meta .title').text())
+
+
+/**
+ * Обираємо період платежу: перезаписуємо ціну будинку.
+ */
+ periodTab.on('click', function() {
+  // Забираємо активний клас у всіх елементів
+  periodTab.removeClass('period--selected')
+  // Додаємо активний клас
+  $(this).addClass('period--selected')
+  // Перезаписуємо змінну houseCost
+  periodCost = $(this).data('period-price')
+
+  // Виконуємо перерахунок функцій
+  calcHouseCost()
+  calcFirstpay(periodCost, houseSquare, firstpaySlider.val())
+  calcTermpay(houseTotalCost, termSlider.val())
+
+  // Показуємо персональну пропозицію
+  cModalLink.addClass('shown')
+})
 
 
 /**
@@ -24,81 +59,61 @@ houseTab.on('click', function() {
   // Додаємо активний клас
   $(this).addClass('house--selected')
   // Перезаписуємо змінну houseCost
-  houseCost = $(this).data('house-price')
+  houseSquare = $(this).data('house-square') || individualSquareSlider.val()
+  // Змінюємо назву будинку в секції "У вартість входить"
+  includesHouse.text($(this).find('.house-meta .title').text())
+
+  if ($(this).hasClass('house-individual')) {
+    houseSquare = parseInt(individualSquareSlider.val())
+    individualSquareSection.slideDown()
+    individualSquareCard.html(individualSquareSlider.val() + ' м<sup>2</sup>')
+  } else {
+    individualSquareSection.slideUp()
+  }
+
   // Виконуємо перерахунок функцій
   calcHouseCost()
-  calcFirstpay(houseCost, firstpaySlider.val())
-  calcTermpay(houseCost, termSlider.val())
+  calcFirstpay(periodCost, houseSquare, firstpaySlider.val())
+  calcTermpay(houseTotalCost, termSlider.val())
+
+  // Показуємо персональну пропозицію
+  cModalLink.addClass('shown')
 })
 
-
-/**
- * Термін розтермінування: помісячно/квартально
- */
-const currentDate = new Date()
-const endDate = new Date(2022, 11, 31)
-const monthsLeft = (endDate.getFullYear() - currentDate.getFullYear()) * 12 + endDate.getMonth() - currentDate.getMonth() + 1
-const quartersLeft = Math.floor(monthsLeft / 3)
-const quartersArr = []
-const monthsArr = []
-
-for(let q = 1; q <= quartersLeft; q++) {
-  quartersArr.push(q)
-}
-for(let m = 1; m <= monthsLeft; m++) {
-  monthsArr.push(m)
-}
 
 
 /**
  * Ініціалізація ionRangeSlider();
  */
+const individualSquareSliderMin = +individualSquareSlider.attr('min');
+const individualSquareSliderMax = +individualSquareSlider.attr('max');
+const individualSquareSliderStep = +individualSquareSlider.attr('step');
+
+individualSquareSlider.ionRangeSlider({
+  skin: 'round',
+  min: individualSquareSliderMin,
+  max: individualSquareSliderMax,
+  step: individualSquareSliderStep,
+  hide_min_max: true,
+  grid: true,
+  grid_num: 5,
+})
+
 firstpaySlider.ionRangeSlider({
   skin: 'round',
-  values: [30,40,50,60,70,80,90],
+  values: [50, 60, 70, 80, 90],
   step: 10,
   hide_min_max: true,
   grid: true,
 })
+
 termSlider.ionRangeSlider({
   skin: 'round',
-  values: monthsArr,
+  min: 1,
+  max: 12,
   hide_min_max: true,
   grid: true,
-})
-
-
-/**
- * Таби помісячно/квартально.
- * Оновлюємо значення слайдерів.
- */
-termTab.on('click', function() {
-  const termType = $(this).data('term-type')
-  const termTypeLabel = $("#c-term-type")
-  const termTypeDescrLabel = $("#c-descr-term-label")
-  const termTypeModalValue = $("#cModal-term-label")
-  const termTypeModalLabel = $("#cModalLabel-term-label")
-  const termRS = termSlider.data('ionRangeSlider')
-
-  termTab.removeClass('tab-item--selected')
-  $(this).addClass('tab-item--selected')
-  if( termType === 'months' ) {
-    termRS.update({
-      values: monthsArr,
-    })
-    termTypeLabel.text('міс.')
-    termTypeDescrLabel.text('міс.')
-    termTypeModalLabel.text('міс.')
-    termTypeModalValue.val('помісячно')
-  } else {
-    termRS.update({
-      values: quartersArr,
-    })
-    termTypeLabel.text('кв.')
-    termTypeDescrLabel.text('кв.')
-    termTypeModalLabel.text('кв.')
-    termTypeModalValue.val('квартально')
-  }
+  grid_num: 11,
 })
 
 
@@ -107,14 +122,21 @@ termTab.on('click', function() {
  */
 function calcHouseCost() {
   const houseName = $(".house--selected > .house-meta > .title").text();
-  const houseCostFormat = houseCost.toLocaleString('uk-UA')
+  let houseCost = periodCost * houseSquare
+  let houseCostFormat = houseCost.toLocaleString('uk-UA')
+
   // Записуємо значення в блок "Загальні обрахунки"
   $("#c-total-cost-val").text(houseCostFormat)
+
   // Записуємо значення в модальне вікно "Залишити заявку"
   $("#cModal-house").val(houseName)
+  $("#cModal-square").val(houseSquare)
+  $("#cModalLabel-square").html(houseSquare + ' м<sup>2</sup>')
   $("#cModalLabel-house").text(houseName)
   $("#cModal-price").val(houseCostFormat)
   $("#cModalLabel-price").text(houseCostFormat)
+
+  return houseTotalCost = houseCost
 };
 calcHouseCost()
 
@@ -122,16 +144,19 @@ calcHouseCost()
 /**
  * Обраховуємо перший внесок
  */
-function calcFirstpay(price = houseCost, persent = firstpaySliderValue) {
-  let fpVal = Math.round(parseInt(price * persent / 100 - reqPay))
+function calcFirstpay(price = periodCost, square = houseSquare, percent = firstpaySliderValue) {
+  let fpVal = Math.round( parseInt(price * square * percent / 100) )
   let fpFormat = fpVal.toLocaleString('uk-UA')
+
   // Записуємо значення в блок "Загальні обрахунки"
   $('#c-first-pay-val').text(fpFormat)
-  $('#c-descr-firstpay-percent').text(persent)
+  $('#c-descr-firstpay-percent').text(percent)
   $('#c-descr-firstpay').text(fpFormat)
+
   // Записуємо значення в модальне вікно "Залишити заявку"
   $("#cModal-firstpay").val(fpFormat)
   $("#cModalLabel-firstpay").text(fpFormat)
+
   // Записуємо повернене значення в змінну
   return firstpayValue = fpVal
 }
@@ -141,19 +166,22 @@ calcFirstpay()
 /**
  * Обраховуємо платіж на період розтермінування
  */
-function calcTermpay(price = houseCost, term = termSliderValue) {
+function calcTermpay(price = houseTotalCost, term = termSliderValue) {
   let termVal = Math.round( parseInt(price - firstpayValue) / term )
   let termFormat = termVal.toLocaleString('uk-UA')
+
   // Записуємо значення в блок "Загальні обрахунки"
   $('#c-term-val').text(termSlider.val())
   $('#c-term-pay-val').text(termFormat)
   $('#c-descr-term').text(termSlider.val())
   $('#c-descr-termpay').text(termFormat)
+
   // Записуємо значення в модальне вікно "Залишити заявку"
   $("#cModal-term").val(termSlider.val())
   $("#cModal-termpay").val(termFormat)
   $("#cModalLabel-term").text(termSlider.val())
   $("#cModalLabel-termpay").text(termFormat)
+
   // Записуємо повернене значення в змінну
   return termVal = term
 }
@@ -164,13 +192,27 @@ calcTermpay()
  * Перераховуємо платежі, якщо користувач рухає повзунком.
  * Показуємо кнопку "Залишити заявку".
  */
+individualSquareSlider.on("input change", function() {
+  const thisValue = parseInt($(this).val())
+
+  individualSquareCard.html(thisValue + ' м<sup>2</sup>')
+  individualSquareText.html(thisValue + ' м<sup>2</sup>')
+  houseSquare = parseInt(thisValue)
+
+  calcHouseCost()
+  calcFirstpay(periodCost, houseSquare, firstpaySlider.val())
+  calcTermpay(houseTotalCost, termSlider.val())
+})
+
 firstpaySlider.on("input change", function() {
-  calcFirstpay(houseCost, $(this).val())
-  calcTermpay(houseCost, termSlider.val())
+  calcFirstpay(periodCost, houseSquare, $(this).val())
+  calcTermpay(houseTotalCost, termSlider.val())
 })
+
 termSlider.on("input change", function() {
-  calcTermpay(houseCost, $(this).val())
+  calcTermpay(houseTotalCost, $(this).val())
 })
+
 calcForm.on('input change', function() {
   cModalLink.addClass('shown')
 })

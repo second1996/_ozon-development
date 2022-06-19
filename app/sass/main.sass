@@ -340,7 +340,7 @@ body.home
 		text-align: center
 		transform: translateY(-50%)
 		.title
-			margin-bottom: 30px
+			margin-bottom: 0
 			font-weight: $font-bold
 			text-transform: uppercase
 			> span
@@ -355,6 +355,10 @@ body.home
 					font-size: 20px
 				+media-breakpoint-down(sm)
 					font-size: 18px
+		.descr.mb-30 ~ .btn
+			margin-top: 0
+		.btn
+			margin-top: 30px
 	&-photo
 		width: 100%
 		height: 100%
@@ -1409,7 +1413,6 @@ body.home
 	========================================================================== */
 .h-promo-content
 	.title
-		margin-bottom: 0
 		> span
 			display: inline-block
 			font-size: inherit
@@ -1853,22 +1856,15 @@ body.home
 		.form-range
 			margin-top: 10px
 			margin-bottom: 8px
-	&-houses
+	&-periods
 		> [class*="col"]
-			max-width: 300px
 			margin-top: 20px
-			+media-breakpoint-down(xs)
-				flex-basis: 50%
-				max-width: 50%
-			+media-breakpoint-down(xss)
-				flex-basis: 100%
-				max-width: 100%
-		.house
-			padding: 30px
+		.period
+			padding: 20px
 			transition: .35s ease
 			+media-breakpoint-down(sm)
 				padding: 20px
-			&:not(.house--selected)
+			&:not(.period--selected)
 				opacity: 0.5
 				&:hover
 					cursor: pointer
@@ -1876,11 +1872,11 @@ body.home
 					opacity: 1
 			&--selected
 				border-color: $accent
-				.house-head
+				.period-head
 					.icon,
 					.price-square
 						color: $accent
-				.house-meta
+				.period-meta
 					.title
 						color: $accent
 			&-head
@@ -1889,15 +1885,15 @@ body.home
 				justify-content: space-between
 				margin-bottom: 16px
 				+media-breakpoint-down(md)
-				.icon
-					flex: 0 0 auto
-					color: $white
-					font-size: 20px
-					transition: .35s ease
-				.price-square
-					color: $white
-					line-height: 1
-					transition: .35s ease
+					.icon
+						flex: 0 0 auto
+						color: $white
+						font-size: 20px
+						transition: .35s ease
+					.price-square
+						color: $white
+						line-height: 1
+						transition: .35s ease
 			&-meta
 				.title
 					margin-bottom: 8px
@@ -1905,6 +1901,100 @@ body.home
 					transition: .35s ease
 				.info
 					margin: 0
+	&-houses
+		> [class*="col"]
+			margin-top: 20px
+		.house
+			flex-direction: row
+			align-items: center
+			transition: .35s ease
+			&:not(.house--selected)
+				opacity: 0.5
+				&:hover
+					cursor: pointer
+					box-shadow: 0 0 0 3px $border
+					opacity: 1
+			&--selected
+				border-color: $accent
+				.house-meta
+					.title
+						color: $accent
+			&-photo
+				flex: 0 0 auto
+				width: 110px
+				height: 100%
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover
+			&-meta
+				padding: 20px 10px 20px 20px
+				+media-breakpoint-down(xl)
+					padding: 15px 10px 15px 15px
+				.title
+					margin-bottom: 8px
+					line-height: 1.25
+					transition: .35s ease
+				.info
+					margin: 0
+					line-height: 1.25
+	&-individual-square
+		display: none
+		.title
+			display: flex
+			align-items: baseline
+			+media-breakpoint-down(xs)
+				flex-direction: column
+			&-label
+				flex: 1 1 auto
+				padding-right: 30px
+				+media-breakpoint-down(xs)
+					flex: 1 1 100%
+			&-square
+				flex: 0 0 auto
+				margin-left: auto
+				+media-breakpoint-down(xs)
+					flex: 1 1 100%
+					margin-top: 15px
+					margin-left: 0
+					font-size: 16px
+					font-weight: $font-regular
+				> span
+					display: inline-block
+					min-width: 60px
+					color: $accent
+					text-align: right
+					+media-breakpoint-down(xs)
+						min-width: auto
+						text-align: left
+	&-includes
+		margin-top: 60px
+		+media-breakpoint-down(sm)
+			&::after
+				content: ''
+				position: absolute
+				left: 0
+				right: 0
+				bottom: 0
+				height: 40px
+				background: linear-gradient(to top, rgba(#222, 1) 0%, rgba(#222, 0) 100%)
+		.page-section-title
+			font-size: 32px
+			+media-breakpoint-down(xs)
+				font-size: 24px
+			> span
+				font-size: 18px
+				font-weight: $font-medium
+			> em
+				font-style: normal
+		.includes-list
+			margin-top: 40px
+			+media-breakpoint-down(sm)
+				margin-top: 20px
+				overflow-y: auto
+				overflow-x: hidden
+				max-height: 320px
+				padding-bottom: 20px
 	&-total
 		display: flex
 		flex-wrap: wrap
@@ -1920,20 +2010,25 @@ body.home
 		+media-breakpoint-down(sm)
 			align-items: flex-start
 			justify-content: flex-start
+			padding: 30px
+		+media-breakpoint-down(xs)
+			padding: 25px
+		+media-breakpoint-down(xss)
+			padding: 20px
 		&-item
 			position: relative
 			margin: 20px 0
 			+media-breakpoint-down(xl)
 				padding-right: 20px
 			+media-breakpoint-down(sm)
-				flex-basis: 50%
-				max-width: 50%
+				&:first-child
+					margin-top: 0
 				&:last-child
-					flex-basis: 100%
-					max-width: 100%
-			+media-breakpoint-down(xss)
+					margin-bottom: 0	
+			+media-breakpoint-down(xs)
 				flex-basis: 100%
 				max-width: 100%
+			+media-breakpoint-down(xss)
 				margin: 10px 0
 			.title
 				white-space: nowrap
