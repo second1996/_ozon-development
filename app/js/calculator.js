@@ -96,7 +96,7 @@ individualSquareSlider.ionRangeSlider({
   step: individualSquareSliderStep,
   hide_min_max: true,
   grid: true,
-  grid_num: 5,
+  grid_num: 4,
 })
 
 firstpaySlider.ionRangeSlider({
@@ -121,6 +121,7 @@ termSlider.ionRangeSlider({
  * Обраховуэмо вартість за будинок на основні вибраного типу будинку.
  */
 function calcHouseCost() {
+  const periodDate = $(".period--selected > .period-meta > .title").text();
   const houseName = $(".house--selected > .house-meta > .title").text();
   let houseCost = periodCost * houseSquare
   let houseCostFormat = houseCost.toLocaleString('uk-UA')
@@ -129,6 +130,8 @@ function calcHouseCost() {
   $("#c-total-cost-val").text(houseCostFormat)
 
   // Записуємо значення в модальне вікно "Залишити заявку"
+  $("#cModal-period").val(periodDate)
+  $("#cModalLabel-period").text(periodDate)
   $("#cModal-house").val(houseName)
   $("#cModal-square").val(houseSquare)
   $("#cModalLabel-square").html(houseSquare + ' м<sup>2</sup>')
@@ -215,4 +218,36 @@ termSlider.on("input change", function() {
 
 calcForm.on('input change', function() {
   cModalLink.addClass('shown')
+})
+
+
+/**
+ * Генеруємо дані для PDF
+ */
+ $('#generate-calculator-pdf').on('click', function(event) {
+	event.preventDefault();
+
+	const form = $('#c-pdf-form');
+	const periodPrice = $(".period--selected").data('period-price');
+	const periodDate = $(".period--selected > .period-meta > .title").text();
+	const periodMonths = $(".period--selected > .period-meta > .info").text();
+	const houseName = $(".house--selected > .house-meta > .title").text();
+	const houseCost = $("#c-total-cost-val").text();
+	const firstpayPercent =  $('#c-first-pay').val();
+	const firstpay = $("#c-first-pay-val").text();
+	const term = $("#c-term-val").text();
+	const termpay = $("#c-term-pay-val").text();
+
+	$('#c-pdf-period-price').val(periodPrice)
+	$('#c-pdf-period-date').val(periodDate)
+	$('#c-pdf-period-months').val(periodMonths)
+	$('#c-pdf-house').val(houseName)
+	$('#c-pdf-square').val(houseSquare)
+	$('#c-pdf-price').val('$' + houseCost)
+	$('#c-pdf-firstpay-percent').val(firstpayPercent + '%')
+	$('#c-pdf-firstpay').val('$' + firstpay)
+	$('#c-pdf-term').val(term + ' міс.')
+	$('#c-pdf-termpay').val('$' + termpay)
+
+	form.submit();
 })

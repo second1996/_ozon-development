@@ -100,7 +100,7 @@
 										<div class="period card period--selected" data-period-price="1150">
 											<div class="period-head">
 												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#icon-calendar"></use></svg>
-												<div class="price-square text-md w-medium">$ 1150/м<sup>2</sup></div>
+												<div class="price-square text-md w-medium">від $1150/м<sup>2</sup></div>
 											</div>
 											<div class="period-meta">
 												<h5 class="title text-md w-medium">01.06.2022 - 01.09.2022</h5>
@@ -112,7 +112,7 @@
 										<div class="period card" data-period-price="1200">
 											<div class="period-head">
 												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#icon-calendar"></use></svg>
-												<div class="price-square text-md w-medium">$ 1200/м<sup>2</sup></div>
+												<div class="price-square text-md w-medium">від $1200/м<sup>2</sup></div>
 											</div>
 											<div class="period-meta">
 												<h5 class="title text-md w-medium">01.09.2022 - 01.02.2023</h5>
@@ -124,7 +124,7 @@
 										<div class="period card" data-period-price="1250">
 											<div class="period-head">
 												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#icon-calendar"></use></svg>
-												<div class="price-square text-md w-medium">$ 1250/м<sup>2</sup></div>
+												<div class="price-square text-md w-medium">від $1250/м<sup>2</sup></div>
 											</div>
 											<div class="period-meta">
 												<h5 class="title text-md w-medium">01.02.2023 - 01.06.2023</h5>
@@ -135,7 +135,7 @@
 								</div><!-- /.calculator-houses, .row -->
 							</div><!-- /.col -->
 							<div class="col-12 calculator-form-item">
-								<div class="title text-lg text-uppercase w-medium">Оберіть тип будинку</div>
+								<div class="title text-lg text-uppercase w-medium">Тип будинку</div>
 								<div class="row calculator-houses">
 									<div class="col-sm-6 col-lg-4 col-xxl-3">
 										<div class="house card house--selected" data-house-square="252">
@@ -294,7 +294,10 @@
 						<div class="row justify-content-center">
 							<div class="col-sm-10 col-lg-8 col-xl-7">
 								<p class="mb-30 text-md text-white"><span class="text-accent w-regular">Ваші персональні умови наступні:</span> перший платіж в розмірі <span id="c-descr-firstpay-percent">0</span>% складає $<span id="c-descr-firstpay">0</span>, сума розтермінування складатиме $<span id="c-descr-termpay">0</span> на <span id="c-descr-term">0</span> <span id="c-descr-term-label">міс.</span></p>
-								<a href="#" class="btn btn-primary"data-toggle="modal" data-target="#calcHouseModal" role="button">Залишити заявку</a>
+								<div class="calculator-descr-btns">
+									<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#calcHouseModal" role="button">Залишити заявку</a>
+									<a href="#" onclick="window.print();" class="btn-link-icon btn-link-icon-pdf" role="button">Зберегти в PDF</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -541,6 +544,7 @@
 				</div>
 				<div class="modal-body">
 					<form action="#" class="form modal-form">
+						<input type="hidden" value="0" id="cModal-period">
 						<input type="hidden" value="0" id="cModal-house">
 						<input type="hidden" value="0" id="cModal-square">
 						<input type="hidden" value="0" id="cModal-price">
@@ -549,6 +553,7 @@
 						<input type="hidden" value="помісячно" id="cModal-term-label">
 						<input type="hidden" value="0" id="cModal-termpay">
 						<div class="form-plate">
+							<div class="form-plate-item"><span class="name">Час придбання:</span> <span class="value"><em id="cModalLabel-period">0</em></span></div>
 							<div class="form-plate-item"><span class="name">Будинок:</span> <span class="value"><em id="cModalLabel-house">0</em></span></div>
 							<div class="form-plate-item"><span class="name">Площа:</span> <span class="value"><em id="cModalLabel-square">0</em></span></div>
 							<div class="form-plate-item"><span class="name">Вартість:</span> <span class="value">$<em id="cModalLabel-price">0</em></span></div>
