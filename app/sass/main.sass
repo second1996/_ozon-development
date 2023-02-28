@@ -109,7 +109,7 @@ body.home
           animation: fromLeft 1.5s 0.25s both
         .descr
           animation: fromLeft 1.5s 0.5s both
-        .btn
+        .button
           animation: fromLeft 1.8s 0.75s both
         .slide-number
           opacity: 0.15
@@ -245,10 +245,15 @@ body.home
         +media-breakpoint-down(sm)
           max-width: 100%
           font-size: 15px
-      .btn
+      .button
+        display: flex
+        flex-wrap: wrap
+        gap: 10px 15px
         margin-top: 40px
         +media-breakpoint-down(xl)
           margin-top: 30px
+        div.btn
+          pointer-events: none
       .slide-number
         user-select: none
         position: absolute
@@ -640,6 +645,10 @@ body.home
     +media-breakpoint-down(xs)
       height: 280px
   &-meta
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     +media-breakpoint-down(xl)
       padding-left: 25px
       padding-right: 25px
@@ -655,15 +664,16 @@ body.home
     &-list
       display: flex
       flex-wrap: wrap
+      justify-content: space-between
       margin-bottom: 20px
       > li
-        flex-basis: 50%
+        flex: 0 0 calc(50% - 10px)
         margin-bottom: 20px
         padding: 0 5px
         color: rgba($white, 0.5)
         line-height: 1.35
         +media-breakpoint-down(md)
-          flex-basis: 50%
+          flex: 0 0 calc(50% - 16px)
           padding: 0 8px
           text-align: left
         em
@@ -2794,3 +2804,21 @@ body.home
           object-fit: cover
           transition: opacity .3s ease
           opacity: 0.5
+
+  // Section: Other houses
+  .houses
+    overflow: hidden
+    &-slider
+      overflow: visible
+      +media-breakpoint-down(xs)
+        &-prev,
+        &-next
+          margin-top: 20px
+      .swiper-lazy
+        opacity: 0
+        transition: opacity .45s ease
+        &-loaded
+          opacity: 1
+    &-slide
+      height: auto
+      padding-bottom: 4px
