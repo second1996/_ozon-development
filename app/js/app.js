@@ -3,6 +3,7 @@ $(document).ready(function () {
 	 * Genplan Tooltip
 	 */
 	$gpWrap = $('.h-genplan-wrap');
+	$gpCards = $('.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved, .h-genplan-map .house--second-stage');
 	$gpVacation = $('.h-genplan-map .vacation-zone');
 	$gpStage = $('.h-genplan-map .second-stage');
 	$gpTooltip = $('.h-genplan-tooltip');
@@ -16,15 +17,17 @@ $(document).ready(function () {
 	$gpTooltipStatus = $('#gp-tooltip-status');
 	$gpTooltipPhoto = $('#gp-tooltip-photo');
 	$gpHousePhotos = {
-		Harmonia: 'https://ozon-ltd.com/wp-content/uploads/2020/09/villa-harmonia-main-1024x579.jpg',
 		Nebokray: 'https://ozon-ltd.com/wp-content/uploads/2020/05/villa-nebokray-main-1024x579.jpg',
 		Zatyshok: 'https://ozon-ltd.com/wp-content/uploads/2020/05/villa-zatyshok-main-1024x579.jpg',
 		Svitanok: 'https://ozon-ltd.com/wp-content/uploads/2020/05/villa-svitanok-main-1024x579.jpg',
+		Harmonia: 'https://ozon-ltd.com/wp-content/uploads/2020/09/villa-harmonia-main-1024x579.jpg',
+		Prostir: 'https://ozon-ltd.com/wp-content/uploads/2021/11/02_CShading_LightMix-1-1024x673.jpg',
+		Mriya: 'https://ozon-ltd.com/wp-content/uploads/2022/04/03-1024x578.jpg',
+		Obriy: 'https://ozon-ltd.com/wp-content/uploads/2023/02/1-1024x576.jpg',
+		Vesna: 'https://ozon-ltd.com/wp-content/uploads/2023/02/1-1-1024x576.jpg',
 	};
 
-	$(
-		'.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved',
-	).hover(
+	$gpCards.hover(
 		function () {
 			let houseType = $(this).data('house-name');
 			let houseStatus = $(this).data('house-status');
@@ -33,7 +36,7 @@ $(document).ready(function () {
 			$gpTooltipTitle.text($(this).data('house-name'));
 			$gpTooltipNumber.text($(this).data('house-number'));
 			$gpTooltipProgress.find('.progress-bar .value').text($(this).data('house-progress') + '%');
-			$gpTooltipProgress.find('.progress-bar .line').css('width', $(this).data('house-progress'));
+			$gpTooltipProgress.find('.progress-bar .line').css('width', $(this).data('house-progress') + '%');
 			$gpTooltipSquare.text($(this).data('house-square'));
 			$gpTooltipArea.text($(this).data('house-area'));
 
@@ -44,17 +47,29 @@ $(document).ready(function () {
 			}
 
 			switch (houseType) {
-				case 'VILLA «NEBOKRAY»':
+				case 'VILLA NEBOKRAY':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Nebokray + '")');
 					break;
-				case 'VILLA «SVITANOK»':
+				case 'VILLA SVITANOK':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Svitanok + '")');
 					break;
-				case 'VILLA «ZATYSHOK»':
+				case 'VILLA ZATYSHOK':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Zatyshok + '")');
 					break;
-				case 'VILLA «HARMONIA»':
+				case 'VILLA HARMONIA':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Harmonia + '")');
+					break;
+				case 'VILLA PROSTIR':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Prostir + '")');
+					break;
+				case 'VILLA MRIYA':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Mriya + '")');
+					break;
+				case 'VILLA OBRIY':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Obriy + '")');
+					break;
+				case 'VILLA VESNA':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Vesna + '")');
 					break;
 				default:
 					break;
@@ -114,15 +129,12 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved').on(
-		'mousemove',
-		function (e) {
-			$gpTooltip.css({
-				top: e.pageY + 30,
-				left: e.pageX - 10,
-			});
-		},
-	);
+	$gpCards.on('mousemove', function (e) {
+		$gpTooltip.css({
+			top: e.pageY + 30,
+			left: e.pageX - 10,
+		});
+	});
 
 	/**
 	 * Choose your house tooltip
