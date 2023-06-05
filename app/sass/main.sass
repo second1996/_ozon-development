@@ -735,6 +735,9 @@ body.home
       &--process
         fill: rgba(#ccc, 0.5)
         stroke: #ccc
+      &--first-stage
+        fill: rgba(#09c005, 0.5)
+        stroke: #09c005
       &--second-stage
         fill: rgba(#b8e400, 0.5)
         stroke: #b8e400
@@ -775,16 +778,15 @@ body.home
       &.process:before
         border-color: darken(#ccc, 10%)
         background: #ccc
-      &.second-stage
-        color: #b8e400
-        &:before
-          border-color: darken(#b8e400, 10%)
-          background: #b8e400
-      &.stage
-        color: #ffc700
-        &:before
-          border-color: $border-accent
-          background: #ffc700
+      &.first-stage:before
+        border-color: darken(#09c005, 10%)
+        background: #09c005
+      &.second-stage:before
+        border-color: darken(#b8e400, 10%)
+        background: #b8e400
+      &.stage:before
+        border-color: $border-accent
+        background: #ffc700
 
   // Stage tooltip
   &-stage-tooltip
@@ -948,6 +950,14 @@ body.home
         font-weight: $font-medium
       &--sale
         background: #039300
+        color: $white
+        font-weight: $font-medium
+      &--first-stage
+        background: #09c005
+        color: $white
+        font-weight: $font-medium
+      &--second-stage
+        background: #99bb08
         color: $white
         font-weight: $font-medium
   &-vacation-tooltip

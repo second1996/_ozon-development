@@ -3,7 +3,7 @@ $(document).ready(function () {
 	 * Genplan Tooltip
 	 */
 	$gpWrap = $('.h-genplan-wrap');
-	$gpCards = $('.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved, .h-genplan-map .house--second-stage');
+	$gpCards = $('.h-genplan-map .house--sale, .h-genplan-map .house--sold, .h-genplan-map .house--reserved, .h-genplan-map .house--first-stage, .h-genplan-map .house--second-stage');
 	$gpVacation = $('.h-genplan-map .vacation-zone');
 	$gpStage = $('.h-genplan-map .second-stage');
 	$gpTooltip = $('.h-genplan-tooltip');
@@ -87,6 +87,14 @@ $(document).ready(function () {
 				case 'sale':
 					$gpTooltipStatus.attr('class', 'status status--sale');
 					$gpTooltipStatus.text('В продажу');
+					break;
+				case 'first-stage':
+					$gpTooltipStatus.attr('class', 'status status--first-stage');
+					$gpTooltipStatus.text('1 черга');
+					break;
+				case 'second-stage':
+					$gpTooltipStatus.attr('class', 'status status--second-stage');
+					$gpTooltipStatus.text('2 черга');
 					break;
 				default:
 					break;
