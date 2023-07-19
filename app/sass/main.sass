@@ -689,6 +689,8 @@ body.home
   &-wrap
     position: relative
     text-align: center
+    border: 1px solid $border
+    background-color: $item-bg
   &-map
     user-select: none
     position: absolute
@@ -718,7 +720,7 @@ body.home
     .house
       fill: none
       stroke-width: 0.5px
-      opacity: 0.65
+      opacity: 0.6
       transition: opacity .35s ease
       &:hover
         cursor: pointer
@@ -733,14 +735,14 @@ body.home
         fill: rgba(#09c005, 0.5)
         stroke: #09c005
       &--process
-        fill: rgba(#ccc, 0.5)
-        stroke: #ccc
+        fill: rgba(#fffbbb, 0.5)
+        stroke: #fffbbb
       &--first-stage
         fill: rgba(#09c005, 0.5)
         stroke: #09c005
       &--second-stage
-        fill: rgba(#b8e400, 0.5)
-        stroke: #b8e400
+        fill: rgba(#9be400, 0.5)
+        stroke: #9be400
   &-info
     display: none
     +media-breakpoint-down(md)
@@ -776,14 +778,14 @@ body.home
         border-color: darken(#e32c2c, 10%)
         background: #e32c2c
       &.process:before
-        border-color: darken(#ccc, 10%)
-        background: #ccc
+        border-color: darken(#fffbbb, 10%)
+        background: #fffbbb
       &.first-stage:before
         border-color: darken(#09c005, 10%)
         background: #09c005
       &.second-stage:before
-        border-color: darken(#b8e400, 10%)
-        background: #b8e400
+        border-color: darken(#9be400, 10%)
+        background: #9be400
       &.stage:before
         border-color: $border-accent
         background: #ffc700
@@ -825,6 +827,7 @@ body.home
     z-index: 5
     width: 320px
     margin-left: -150px
+    border: 1px solid $border
     background: $item-bg
     font-size: 18px
     text-align: center
@@ -974,6 +977,7 @@ body.home
     z-index: 5
     width: 320px
     margin-left: -150px
+    border: 1px solid $border
     background: $item-bg
     font-size: 18px
     text-align: center
