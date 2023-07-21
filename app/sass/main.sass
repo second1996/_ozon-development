@@ -703,12 +703,10 @@ body.home
       visibility: hidden
       opacity: 0
     .second-stage
-      fill: rgba($accent, 0.5)
-      stroke: $border-accent
-      transition: fill .35s ease
+      fill: #ccc
+      stroke: #c1c1c1
       &:hover
         cursor: help
-        fill: rgba($accent, 0.65)
     .vacation-zone
       fill: rgba(aqua, 0.15)
       stroke: rgba(aqua, 0.25)
@@ -741,8 +739,13 @@ body.home
         fill: rgba(#09c005, 0.5)
         stroke: #09c005
       &--second-stage
-        fill: rgba(#9be400, 0.5)
-        stroke: #9be400
+        fill: lighten($accent, 5%)
+        stroke: darken($accent, 20%)
+        opacity: 1
+      &--second-stage-addition
+        fill: darken($accent, 5%)
+        stroke: darken($accent, 20%)
+        opacity: 1
   &-info
     display: none
     +media-breakpoint-down(md)
@@ -784,11 +787,11 @@ body.home
         border-color: darken(#09c005, 10%)
         background: #09c005
       &.second-stage:before
-        border-color: darken(#9be400, 10%)
-        background: #9be400
+        background: lighten($accent, 5%)
+        border-color: darken($accent, 20%)
       &.stage:before
-        border-color: $border-accent
-        background: #ffc700
+        border-color: #c1c1c1
+        background: #ccc
 
   // Stage tooltip
   &-stage-tooltip
