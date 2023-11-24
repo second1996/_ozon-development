@@ -23,8 +23,11 @@ $(document).ready(function () {
 		Harmonia: 'https://ozon-ltd.com/wp-content/uploads/2020/09/villa-harmonia-main-1024x579.jpg',
 		Prostir: 'https://ozon-ltd.com/wp-content/uploads/2021/11/02_CShading_LightMix-1-1024x673.jpg',
 		Mriya: 'https://ozon-ltd.com/wp-content/uploads/2022/04/03-1024x578.jpg',
-		Obriy: 'https://ozon-ltd.com/wp-content/uploads/2023/02/1-1024x576.jpg',
-		Vesna: 'https://ozon-ltd.com/wp-content/uploads/2023/02/1-1-1024x576.jpg',
+		Obriy: 'https://ozon-ltd.com/wp-content/uploads/2023/02/3_31-Photo-1024x576.jpg',
+		ObriyB: 'https://ozon-ltd.com/wp-content/uploads/2023/11/1_12-Photo-1024x576.jpg',
+		Vesna: 'https://ozon-ltd.com/wp-content/uploads/2023/02/2_21-Photo-1024x576.jpg',
+		VesnaB: 'https://ozon-ltd.com/wp-content/uploads/2023/11/1_1-Photo-1024x576.jpg',
+		Oberih: 'https://ozon-ltd.com/wp-content/uploads/2023/11/1_26-Photo-1024x576.jpg',
 	};
 
 	$gpCards.hover(
@@ -68,8 +71,17 @@ $(document).ready(function () {
 				case 'VILLA OBRIY':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Obriy + '")');
 					break;
+				case 'VILLA OBRIY Б':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.ObriyB + '")');
+					break;
 				case 'VILLA VESNA':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Vesna + '")');
+					break;
+				case 'VILLA VESNA Б':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.VesnaB + '")');
+					break;
+				case 'VILLA OBERIH':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Oberih + '")');
 					break;
 				default:
 					break;
