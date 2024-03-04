@@ -947,6 +947,12 @@
     +media-breakpoint-down(xs)
       width: 44px
       height: 44px
+    &--accent
+      background-color: $accent
+    &-call
+      animation: pulse-accent 2s infinite
+      &:hover
+        animation: none
     &:not(:first-child)
       margin-top: 20px
       +media-breakpoint-down(xs)
