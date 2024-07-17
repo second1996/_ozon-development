@@ -724,28 +724,26 @@ body.home
         cursor: pointer
         opacity: 1
       &--reserved
-        fill: rgba(#ffc700, 0.5)
-        stroke: #ffc700
+        fill: rgba(#ffc700, 0.1)
+        // stroke: #ffc700
       &--sold
-        fill: rgba(#e32c2c, 0.5)
-        stroke: #e32c2c
+        fill: rgba(#e32c2c, 0.1)
+        // stroke: #e32c2c
       &--sale
-        fill: rgba(#09c005, 0.5)
-        stroke: #09c005
+        fill: rgba(#09c005, 0.1)
+        // stroke: #09c005
       &--process
-        fill: rgba(#fffbbb, 0.5)
-        stroke: #fffbbb
+        fill: rgba(#fffbbb, 0.1)
+        // stroke: #fffbbb
       &--first-stage
-        fill: rgba(#09c005, 0.5)
-        stroke: #09c005
+        fill: rgba(#09c005, 0.1)
+        // stroke: #09c005
       &--second-stage
-        fill: lighten($accent, 5%)
-        stroke: darken($accent, 20%)
-        opacity: 1
+        fill: rgba($accent, 0.1)
+        // stroke: darken($accent, 20%)
       &--second-stage-addition
-        fill: darken($accent, 5%)
-        stroke: darken($accent, 20%)
-        opacity: 1
+        fill: rgba($accent, 0.1)
+        // stroke: darken($accent, 20%)
   &-info
     display: none
     +media-breakpoint-down(md)
@@ -899,6 +897,7 @@ body.home
             font-style: normal
 
     .progress
+      display: none
       &-bar
         position: relative
         z-index: 2
