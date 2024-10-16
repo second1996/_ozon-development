@@ -447,7 +447,7 @@ img.error
     +media-breakpoint-down(lg)
       padding: 140px 30px 60px
     +media-breakpoint-down(xs)
-      padding-top: 130px
+      padding-top: 100px
       padding-left: 15px
       padding-right: 15px
     &::-webkit-scrollbar
@@ -461,11 +461,21 @@ img.error
     z-index: 2
     margin-bottom: 100px
     +media-breakpoint-down(xs)
-      margin-bottom: 60px
+      margin-bottom: 48px
     +media-breakpoint-down(xss)
       .text-right
-        margin-top: 20px
         text-align: left
+    &-phones
+      .site-menu-header-item
+        &:not(:last-child)
+          +media-breakpoint-up(md)
+            padding-right: 32px
+          +media-breakpoint-down(sm)
+            margin-bottom: 16px
+          +media-breakpoint-down(xss)
+            margin-bottom: 0
+        +media-breakpoint-down(xss)
+          margin-top: 16px
     &-item
       .title
         +media-breakpoint-down(xs)
@@ -738,11 +748,7 @@ body.single-house
     padding-top: 0
     margin-top: 70px
     +media-breakpoint-down(xl)
-      margin-top: 55px
-    +media-breakpoint-down(lg)
-      margin-top: 60px
-    +media-breakpoint-down(xs)
-      margin-top: 50px
+      margin-top: 32px
 .page-head
   position: relative
   z-index: 1
@@ -751,15 +757,20 @@ body.single-house
     padding-top: 55px
   +media-breakpoint-down(lg)
     padding-top: 60px
-  +media-breakpoint-down(xs)
-    padding-top: 50px
-  +media-breakpoint-down(xss)
+  +media-breakpoint-down(sm)
     display: none
+  &-phones
+    .page-head-item
+      &:not(:last-child)
+        +media-breakpoint-up(md)
+          padding-right: 32px
+        +media-breakpoint-down(sm)
+          margin-bottom: 16px
   &-item
     .title
       +media-breakpoint-down(xs)
         font-size: 15px
-    .adress
+    .address
       color: $white
       font-size: 22px
       font-weight: $font-regular
