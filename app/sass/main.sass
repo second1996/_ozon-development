@@ -729,22 +729,25 @@ body.home
         &:hover
           fill: rgba(#ffc700, 0.5)
       &--sold
-        fill: rgba(#e32c2c, 0.1)
+        fill: rgba(#e32c2c, 0.2)
         // stroke: #e32c2c
       &--sale
-        fill: rgba(#09c005, 0.1)
+        fill: rgba(#09c005, 0.2)
         // stroke: #09c005
       &--process
-        fill: rgba(#fffbbb, 0.1)
+        fill: rgba(#fffbbb, 0.2)
         // stroke: #fffbbb
       &--first-stage
-        fill: rgba(#09c005, 0.1)
+        fill: rgba(#09c005, 0.2)
         // stroke: #09c005
       &--second-stage
-        fill: rgba($accent, 0.1)
+        fill: rgba($accent, 0.2)
         // stroke: darken($accent, 20%)
       &--second-stage-addition
-        fill: rgba($accent, 0.1)
+        fill: rgba($accent, 0.2)
+        // stroke: darken($accent, 20%)
+      &--third-stage
+        fill: rgba(#0b6eab, 0.1)
         // stroke: darken($accent, 20%)
   &-info
     display: none
@@ -789,6 +792,9 @@ body.home
       &.second-stage:before
         background: lighten($accent, 5%)
         border-color: darken($accent, 20%)
+      &.third-stage:before
+        background: #0b6eab
+        border-color: #06853d
       &.stage:before
         border-color: #c1c1c1
         background: #ccc
@@ -964,7 +970,11 @@ body.home
         color: $white
         font-weight: $font-medium
       &--second-stage
-        background: #99bb08
+        background: #bbb808
+        color: $white
+        font-weight: $font-medium
+      &--third-stage
+        background: #0b6eab
         color: $white
         font-weight: $font-medium
   &-vacation-tooltip
