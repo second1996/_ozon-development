@@ -28,6 +28,8 @@ $(document).ready(function () {
 		Vesna: 'https://ozon-ltd.com/wp-content/uploads/2023/02/2_21-Photo-1024x576.jpg',
 		VesnaB: 'https://ozon-ltd.com/wp-content/uploads/2023/11/1_1-Photo-1024x576.jpg',
 		Oberih: 'https://ozon-ltd.com/wp-content/uploads/2023/11/1_26-Photo-1024x576.jpg',
+		Zahid: 'https://ozon-ltd.com/wp-content/uploads/2024/10/2_4-Photo-1024x576.jpg',
+		Zlahoda: 'https://ozon-ltd.com/wp-content/uploads/2024/10/10-1-1-1024x576.jpg',
 	};
 
 	$gpCards.hover(
@@ -71,17 +73,23 @@ $(document).ready(function () {
 				case 'VILLA OBRIY':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Obriy + '")');
 					break;
-				case 'VILLA OBRIY Б':
+				case 'VILLA OBRIY В':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.ObriyB + '")');
 					break;
 				case 'VILLA VESNA':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Vesna + '")');
 					break;
-				case 'VILLA VESNA Б':
+				case 'VILLA VESNA В':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.VesnaB + '")');
 					break;
 				case 'VILLA OBERIH':
 					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Oberih + '")');
+					break;
+				case 'VILLA ZAHID':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Zahid + '")');
+					break;
+				case 'VILLA ZLAHODA':
+					$gpTooltipPhoto.attr('style', 'background-image: url("' + $gpHousePhotos.Zlahoda + '")');
 					break;
 				default:
 					break;
