@@ -574,8 +574,22 @@ img.error
     padding-top: 70px
     +media-breakpoint-down(xs)
       padding-top: 60px
-    &-madeby
+    .callback-btn
       margin-top: 20px
+      > .link
+        display: inline-block
+        margin-top: 8px
+        border-bottom: 1px solid $trsp
+        color: $accent
+        font-size: 18px
+        font-weight: $font-regular
+        &:hover
+          border-color: $accent
+        +media-breakpoint-down(lg)
+          margin-top: 4px
+          font-size: 16px
+        +media-breakpoint-down(xs)
+          font-size: 15px
   // Background Sliding Text
   > .bg-text
     position: fixed
@@ -631,6 +645,13 @@ img.error
         display: block
         margin-top: 0
         color: #5a5c5f
+      > .madeby
+        margin-top: 15px
+        > a
+          font-size: 14px
+          > span
+            color: $accent
+
   &-title
     position: relative
     display: inline-block
